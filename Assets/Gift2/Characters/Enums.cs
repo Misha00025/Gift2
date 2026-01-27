@@ -1,6 +1,7 @@
 public enum Element
 {
     Physical,
-    Fire, Water, Wind, Stone,
+    Fire, Ice, Water, 
+    Stone, Wind, Plant,
 }
 

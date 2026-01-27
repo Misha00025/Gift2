@@ -1420,7 +1420,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1187808607689356874, guid: 74c658bf8dc25bee0919626799751b61, type: 3}
       propertyPath: m_Name
-      value: LavaGolem
+      value: StoneGolem
       objectReference: {fileID: 0}
     - target: {fileID: 4943139902072720848, guid: 74c658bf8dc25bee0919626799751b61, type: 3}
       propertyPath: m_LocalPosition.x
