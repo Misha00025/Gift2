@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 6711375891962769112}
   - component: {fileID: 3666699634363909218}
   m_Layer: 0
-  m_Name: LavaGolem
+  m_Name: StoneGolem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

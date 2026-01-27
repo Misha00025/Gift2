@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LavaGolem : Character
+public class StoneGolem : Character
 {
     public void BaseAttack()
     {
