@@ -18,6 +18,6 @@ public class HealthBar : MonoBehaviour
     
     private void ChangeFiller(int value)
     {
-        healthFiller.fillAmount = value/_maxValue;
+        healthFiller.fillAmount = ((float)value)/_maxValue;
     }
 }

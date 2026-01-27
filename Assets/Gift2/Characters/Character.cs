@@ -27,7 +27,7 @@ public class Character : MonoBehaviour
     
     public virtual void ApplyDamage(Damage damage)
     {
-        Health = damage.Value;
+        Health -= damage.Value;
         DamageTaken.Invoke(damage);
     }
 }
