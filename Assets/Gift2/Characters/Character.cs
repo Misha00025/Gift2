@@ -2,9 +2,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class Character : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
     [SerializeField] private int _health;
+    
+    public Animator Animator;
 
     public int Health { 
         get => _health;
@@ -18,6 +20,8 @@ public class Character : MonoBehaviour
     [field: SerializeField] public UnityEvent<Damage> DamageTaken { get; private set; } = new();
     [field: SerializeField] public UnityEvent<int> HealthChanged { get; private set; } = new();
     
+    
+    public abstract void Attack(Character target); 
     
     public virtual Damage CalculateDamage(Damage damage)
     {
