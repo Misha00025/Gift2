@@ -10,11 +10,7 @@ public abstract class Character : MonoBehaviour
 
     public int Health { 
         get => _health;
-        private set
-        {
-            _health = value;
-            HealthChanged.Invoke(_health);
-        } 
+        protected set => SetHealth(value);
     }
     
     [field: SerializeField] public UnityEvent<Damage> DamageTaken { get; private set; } = new();
@@ -22,6 +18,12 @@ public abstract class Character : MonoBehaviour
     
     
     public abstract void Attack(Character target); 
+    
+    protected virtual void SetHealth(int newValue)
+    {
+        _health = newValue;
+        HealthChanged.Invoke(_health);
+    }
     
     public virtual Damage CalculateDamage(Damage damage)
     {
