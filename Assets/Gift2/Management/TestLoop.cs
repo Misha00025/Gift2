@@ -5,15 +5,12 @@ public class TestLoop : MonoBehaviour
     public float Delay = 1.0f;
     public float RemainingDelay;
     
-    public Character Player;
-    public Character Enemy;
-    
-    private Character CurrentCharacter;
+    public Character Attacker;
+    public Character Target;
     
     public void Start()
     {
         RemainingDelay = Delay;
-        CurrentCharacter = Player;
     }
     
     
@@ -22,16 +19,8 @@ public class TestLoop : MonoBehaviour
         
         if (RemainingDelay < 0)
         {
-            if (CurrentCharacter == Player)
-            {
-                CurrentCharacter.Attack(Enemy);
-                CurrentCharacter = Enemy;
-            }
-            else
-            {
-                CurrentCharacter.Attack(Player);
-                CurrentCharacter = Player;
-            }
+            Attacker.Attack(Target);
+            RemainingDelay = Delay;
         }
         else
         {
