@@ -136,11 +136,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 100
+  _stats:
+    attackSpeed: 0.3
+    damage: 5
   Animator: {fileID: 1925597671340519740}
   <DamageTaken>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
   <HealthChanged>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <AttackCompleted>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
 --- !u!95 &1925597671340519740

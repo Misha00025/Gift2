@@ -9,12 +9,14 @@ public class Mannequin : Character
     public override void Attack(Character target)
     {
         Debug.Log("mannequin can't attack someone");
+        CompleteAttack();
     }
 
-    public void Start()
+    protected override void Init()
     {
         _remainingHealDelay = HealDelay;
         _startHealth = Health;
+        base.Init();
     }
     
     public void Update()

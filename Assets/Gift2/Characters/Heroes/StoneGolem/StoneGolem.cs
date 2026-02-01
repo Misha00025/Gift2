@@ -8,11 +8,11 @@ public class StoneGolem : Character
         Animator?.Play("BaseAttack");
     }
     
-    public void CompleteAttack()
+    public void BaseAttack()
     {
         if (_target == null) return;
         
-        var damage = new Damage(){ Value = 5, Element = Element.Stone};
+        var damage = new Damage(){ Value = Stats.damage, Element = Element.Stone};
         damage = _target.CalculateDamage(damage);
         _target.ApplyDamage(damage);
     }
