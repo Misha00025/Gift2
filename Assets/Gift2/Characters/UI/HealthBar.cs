@@ -12,8 +12,8 @@ public class HealthBar : MonoBehaviour
     public void Start()
     {
         if (character == null || healthFiller == null) return;
-        _maxValue = character.Health;
-        character.HealthChanged.AddListener(ChangeFiller);
+        _maxValue = character.Health.MaxValue;
+        character.Health.Changed.AddListener((e) => ChangeFiller(e.Value));
     }
     
     private void ChangeFiller(int value)

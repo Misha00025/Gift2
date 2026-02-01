@@ -1,49 +1,33 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 
 public abstract class Character : MonoBehaviour
 {
-    [SerializeField] private int _health;
-    private Stats _baseStats;
     [SerializeField]private Stats _stats = new(){attackSpeed = 1f, damage = 1};
+    private Stats _baseStats;
+    
     public Stats BaseStats => _baseStats;
     public Stats Stats => _stats;
     
     public Animator Animator;
 
-    public int Health { 
-        get => _health;
-        protected set => SetHealth(value);
-    }
+    [field: SerializeField] public Property Health { get; private set; }
+    [field: SerializeField] public Property Shield { get; private set; }
     
     [field: SerializeField] public UnityEvent<Damage> DamageTaken { get; private set; } = new();
-    [field: SerializeField] public UnityEvent<int> HealthChanged { get; private set; } = new();
     [field: SerializeField] public UnityEvent<Character> AttackCompleted { get; private set; } = new();
     
-    void Awake()
-    {
-        Init();
-    }
+    void Awake() { Init(); }
     
     protected virtual void Init()
     {
         _baseStats = _stats;
     } 
     
-    public abstract void Attack(Character target); 
-    
-    public virtual void CompleteAttack()
-    {
-        AttackCompleted.Invoke(this);
-    }
-    
-    
     protected virtual void SetHealth(int newValue)
     {
-        _health = newValue;
-        HealthChanged.Invoke(_health);
+        Health.Value = newValue;
     }
     
     public virtual Damage CalculateDamage(Damage damage)
@@ -54,7 +38,10 @@ public abstract class Character : MonoBehaviour
     
     public virtual void ApplyDamage(Damage damage)
     {
-        Health -= damage.Value;
+        SetHealth(Health.Value - damage.Value);
         DamageTaken.Invoke(damage);
     }
+    
+    public virtual void CompleteAttack() => AttackCompleted.Invoke(this);
+    public abstract void Attack(Character target);
 }

@@ -8,22 +8,22 @@ public class Mannequin : Character
 
     public override void Attack(Character target)
     {
-        Debug.Log("mannequin can't attack someone");
+        Debug.Log("Mannequin can't attack someone");
         CompleteAttack();
     }
 
     protected override void Init()
     {
         _remainingHealDelay = HealDelay;
-        _startHealth = Health;
+        _startHealth = Health.Value;
         base.Init();
     }
     
     public void Update()
     {
-        if (_remainingHealDelay < 0 && Health != _startHealth)
+        if (_remainingHealDelay < 0 && Health.Value != _startHealth)
         {
-            Health = _startHealth;
+            Health.Value = _startHealth;
         }
         else
         {
