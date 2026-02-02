@@ -21,6 +21,7 @@ public class BattleLoop : MonoBehaviour
         foreach (var character in Characters)
         {
             character.AttackCompleted.AddListener(OnCharacterAttackCompleted);
+            character.SetTarget(GetTarget(character));
             RemainingTimes.Add(character, GetRemaining(character));
         }
     }
@@ -36,8 +37,7 @@ public class BattleLoop : MonoBehaviour
                 _paused = true;
                 _currentAttacker = character;
                 RemainingTimes[character] = GetRemaining(character);
-                var target = GetTarget(character);
-                character.Attack(target);
+                character.Attack();
                 return;
             }
             RemainingTimes[character] -= Time.deltaTime;

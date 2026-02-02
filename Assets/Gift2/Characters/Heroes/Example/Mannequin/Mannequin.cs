@@ -6,7 +6,7 @@ public class Mannequin : Character
     private float _remainingHealDelay;
     private int _startHealth;
 
-    public override void Attack(Character target)
+    public override void Attack()
     {
         Debug.Log("Mannequin can't attack someone");
         CompleteAttack();

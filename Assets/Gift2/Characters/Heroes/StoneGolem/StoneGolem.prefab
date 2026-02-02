@@ -135,22 +135,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d8a632c5a31b117848535bd1ebbddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stats:
-    attackSpeed: 0.5
-    damage: 5
-  Animator: {fileID: 1925597671340519740}
   <Health>k__BackingField:
     _value: 10
     _maxValue: 10
     Changed:
       m_PersistentCalls:
         m_Calls: []
+  <Shield>k__BackingField:
+    _value: 10
+    _maxValue: 10
+    Changed:
+      m_PersistentCalls:
+        m_Calls: []
+  _stats:
+    attackSpeed: 0.5
+    damage: 5
+  <Elements>k__BackingField: 04000000
   <DamageTaken>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
   <AttackCompleted>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  Animator: {fileID: 1925597671340519740}
 --- !u!95 &1925597671340519740
 Animator:
   serializedVersion: 7

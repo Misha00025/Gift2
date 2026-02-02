@@ -135,8 +135,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69457c80654114f138f62e17b64661a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 30
-  Animator: {fileID: 4991820362887141781}
+  <Health>k__BackingField:
+    _value: 100
+    _maxValue: 100
+    Changed:
+      m_PersistentCalls:
+        m_Calls: []
+  <Shield>k__BackingField:
+    _value: 10
+    _maxValue: 10
+    Changed:
+      m_PersistentCalls:
+        m_Calls: []
+  _stats:
+    attackSpeed: 1
+    damage: 1
+  <Elements>k__BackingField: 
   <DamageTaken>k__BackingField:
     m_PersistentCalls:
       m_Calls:
@@ -152,10 +166,11 @@ MonoBehaviour:
           m_StringArgument: OnDamage
           m_BoolArgument: 0
         m_CallState: 2
-  <HealthChanged>k__BackingField:
+  <AttackCompleted>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  HealDelay: 4
+  Animator: {fileID: 4991820362887141781}
+  HealDelay: 2
 --- !u!95 &4991820362887141781
 Animator:
   serializedVersion: 7
