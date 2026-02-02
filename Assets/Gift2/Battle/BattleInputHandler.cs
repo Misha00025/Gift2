@@ -26,5 +26,9 @@ public class BattleInputHandler : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
             Character.ApplyEffect(new DamageEffect(AdditionalDamage));
+            
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            for (int i = 0; i < 5; i++)
+                Character.ApplyEffect(new DamageEffect(AdditionalDamage));
     }
 }

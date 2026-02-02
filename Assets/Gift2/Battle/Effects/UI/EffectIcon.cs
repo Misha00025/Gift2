@@ -1,10 +1,9 @@
-// EffectIconUI.cs
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 [RequireComponent(typeof(RectTransform), typeof(Image))]
-public class EffectIconUI : MonoBehaviour
+public class EffectIcon : MonoBehaviour
 {
     [Header("Компоненты")]
     [SerializeField] private Image _iconImage;

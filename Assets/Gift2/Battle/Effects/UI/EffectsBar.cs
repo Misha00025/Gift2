@@ -2,20 +2,19 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EffectsBar : MonoBehaviour
 {
     [Header("Основные настройки")]
     [SerializeField] private Character _character;
-    [SerializeField] private EffectIconUI _effectIconPrefab;
+    [SerializeField] private EffectIcon _effectIconPrefab;
     [SerializeField] private int _maxVisibleIcons = 5;
     [SerializeField] private float _spacing = 10f;
     
     [Header("Индикатор переполнения")]
     [SerializeField] private MoreIndicator _moreIndicatorPrefab;
     
-    private List<EffectIconUI> _effectIcons = new List<EffectIconUI>();
+    private List<EffectIcon> _effectIcons = new List<EffectIcon>();
     private RectTransform _rectTransform;
     private float _iconWidth = 0f;
     private MoreIndicator _moreIndicator;
