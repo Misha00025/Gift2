@@ -5,17 +5,24 @@ public class BattleLoop : MonoBehaviour
 {
     public Character Player;
     public Character Enemy;
+    public float TickRate = 0.5f;
 
     private List<Character> Characters = new();
     private Dictionary<Character, float> RemainingTimes = new();
     
     private Character _currentAttacker;
+    private EffectsRegister _effectsRegister;
     
     public bool PauseOnStart = false;
     private bool _paused;
 
-    void Start()
+    void Awake()
     {
+        _effectsRegister = new(TickRate);
+    }
+
+    void Start()
+    {    
         _paused = PauseOnStart;
         Characters = new(){ Player, Enemy };
         foreach (var character in Characters)
@@ -29,6 +36,8 @@ public class BattleLoop : MonoBehaviour
     void Update()
     {
         if (_paused) return;
+        
+        _effectsRegister.Update(Time.deltaTime);
         foreach (var character in Characters)
         {
             var remainingTime = RemainingTimes[character];
@@ -42,6 +51,13 @@ public class BattleLoop : MonoBehaviour
             }
             RemainingTimes[character] -= Time.deltaTime;
         }
+        
+    }
+    
+    void FixedUpdate()
+    {
+        if (_paused) return;
+        
     }
     
     private float GetRemaining(Character character)

@@ -14,11 +14,17 @@ public interface IOnEffectApplyEffect
     public void OnEffectApply(IEffect effect);
 }
 
+public interface ITikableEffect : IEffect
+{
+    public float Duration { get; }
+    public void OnTick();
+}
+
 public class Effect : IEffect
 {
     protected Character Target { get; private set; }
 
-    public void Apply(Character character)
+    public virtual void Apply(Character character)
     {
         if (Target == null)
         {
@@ -31,6 +37,24 @@ public class Effect : IEffect
         Target?.DisableEffect(this);
         Target = null;
     }
+}
+
+public abstract class TikableEffect : Effect, ITikableEffect
+{
+    public float Duration { get; private set; }
+    
+    public TikableEffect(float duration = 1f)
+    {
+        Duration = duration;
+    }
+
+    public override void Apply(Character character)
+    {
+        EffectsRegister.Instance?.Register(this);
+        base.Apply(character);
+    }
+
+    public abstract void OnTick();
 }
 
 public class CountedOnHitEffect : Effect, IOnHitEffect
@@ -50,7 +74,4 @@ public class CountedOnHitEffect : Effect, IOnHitEffect
     }
 }
 
-public class OneHitEffect : CountedOnHitEffect
-{
-
-}
+public class OneHitEffect : CountedOnHitEffect {  }
