@@ -59,6 +59,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: 0}
   _effectIconPrefab: {fileID: 7824549945295536736, guid: 0650ee1004e2ed2688c3a8f5967fdbf1, type: 3}
-  _maxVisibleIcons: 5
-  _spacing: 0.3
+  _maxVisibleIcons: 3
+  _spacing: 0.25
   _moreIndicatorPrefab: {fileID: 6587134378188843447, guid: d74d25e9706e223e7a79c76ea3e77f70, type: 3}
