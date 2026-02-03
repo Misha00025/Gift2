@@ -12,6 +12,7 @@ public class BattleLoop : MonoBehaviour
     
     private Character _currentAttacker;
     private EffectsRegister _effectsRegister;
+    private EffectConfigsRegister _effectsConfigRegister;
     
     public bool PauseOnStart = false;
     private bool _paused;
@@ -19,6 +20,7 @@ public class BattleLoop : MonoBehaviour
     void Awake()
     {
         _effectsRegister = new(TickRate);
+        _effectsConfigRegister = new EffectConfigsRegister();
     }
 
     void Start()

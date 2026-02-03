@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febd4a2bc501b271487d12c321ce580a, type: 3}
   m_Name: Flame
   m_EditorClassIdentifier: 
-  Key: flame
   Icon: {fileID: 21300000, guid: 11e6f279ade864c6d951e8db74c11b54, type: 3}
+  EffectViewPrefab: {fileID: -8865760250201735785, guid: 6dcae8b10273c28d1a03207759c3e97e, type: 3}
   Duration: 4
   DamageOnTick:
     Value: 1

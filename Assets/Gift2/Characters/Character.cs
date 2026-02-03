@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,6 +24,7 @@ public abstract class Character : MonoBehaviour
     // Not inspected
     private Stats _baseStats;
     private List<IEffect> _effects = new();
+    private Dictionary<string, EffectView> _effectsViews = new();
     protected Character Target { get; private set; }
     
     
@@ -55,6 +57,17 @@ public abstract class Character : MonoBehaviour
         
         _effects.Add(effect);
         effect.Apply(this);
+        
+        if (_effectsViews.ContainsKey(effect.Key))
+        {
+            _effectsViews[effect.Key].gameObject.SetActive(true);
+        }
+        else
+        {
+            var view = EffectConfigsRegister.Instance.CreateView(effect.Key, this);
+            if (view != null)
+                _effectsViews.Add(effect.Key, view);
+        }
     }
     
     public void DisableEffect(IEffect effect)
@@ -63,6 +76,11 @@ public abstract class Character : MonoBehaviour
         
         _effects.Remove(effect);
         effect.Disable();
+        
+        if (!_effects.Any(e => e.Key == effect.Key) && _effectsViews.ContainsKey(effect.Key))
+        {
+            _effectsViews[effect.Key].gameObject.SetActive(false); 
+        }
     }
     
     protected virtual Hit PrepareHit(Damage damage)

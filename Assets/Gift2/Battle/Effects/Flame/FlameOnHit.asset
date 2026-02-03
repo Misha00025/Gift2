@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: FlameOnHit
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 1fa6ee9de92b645ecbf1f64c60b79880, type: 3}
-  Duration: 1
+  EffectViewPrefab: {fileID: 0}
+  Duration: 10
   effectConfiguredBuilder: {fileID: 11400000, guid: 89ce5f9d97a555699803ed7ddf4a7c47, type: 2}
