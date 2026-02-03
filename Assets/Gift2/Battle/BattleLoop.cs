@@ -35,9 +35,9 @@ public class BattleLoop : MonoBehaviour
 
     void Update()
     {
+        _effectsRegister.Update(Time.deltaTime);
         if (_paused) return;
         
-        _effectsRegister.Update(Time.deltaTime);
         foreach (var character in Characters)
         {
             var remainingTime = RemainingTimes[character];
