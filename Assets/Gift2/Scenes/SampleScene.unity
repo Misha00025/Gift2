@@ -1139,10 +1139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Character: {fileID: 727470776}
-  AdditionalDamage:
-    Value: 10
-    Element: 1
-  tickableDamageEffectBuilder: {fileID: 11400000, guid: 89ce5f9d97a555699803ed7ddf4a7c47, type: 2}
+  onHitAdditionalDamageEffectBuilder: {fileID: 11400000, guid: 523bba70cbf22fe22a4e73c0b7674337, type: 2}
+  tickableDamageEffectBuilder: {fileID: 11400000, guid: b458cc9a01fa9948581d910ae29426d6, type: 2}
 --- !u!1001 &1173856755382173547
 PrefabInstance:
   m_ObjectHideFlags: 0

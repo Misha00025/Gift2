@@ -3,14 +3,14 @@ using UnityEngine;
 // [CreateAssetMenu(fileName = "EffectConfig", menuName = "Effects/EffectConfig")]
 public abstract class EffectConfiguredBuilder : ScriptableObject
 {
-    public string Key;
     public Sprite Icon;
     // public EffectView EffectViewPrefab;
     
     public IEffect Build()
     {
         var effect = ConfigureEffect();
-        effect.Key = Key;
+        effect.Key = name;
+        Debug.Log(effect.Key);
         effect.Icon = Icon;
         return effect;
     }
