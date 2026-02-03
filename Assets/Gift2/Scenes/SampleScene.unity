@@ -1124,6 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 727470776}
   Enemy: {fileID: 507292713}
+  TickRate: 0.5
   PauseOnStart: 0
 --- !u!114 &1750054613
 MonoBehaviour:
@@ -1141,6 +1142,7 @@ MonoBehaviour:
   AdditionalDamage:
     Value: 10
     Element: 1
+  tickableDamageEffectBuilder: {fileID: 11400000, guid: 89ce5f9d97a555699803ed7ddf4a7c47, type: 2}
 --- !u!1001 &1173856755382173547
 PrefabInstance:
   m_ObjectHideFlags: 0

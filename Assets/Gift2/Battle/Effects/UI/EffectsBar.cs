@@ -18,7 +18,7 @@ public class EffectsBar : MonoBehaviour
     private RectTransform _rectTransform;
     private float _iconWidth = 0f;
     private MoreIndicator _moreIndicator;
-    private Dictionary<Type, (IEffect Example, int Count)> _groupedEffects;
+    private Dictionary<string, (IEffect Example, int Count)> _groupedEffects;
 
     void Awake()
     {
@@ -67,7 +67,7 @@ public class EffectsBar : MonoBehaviour
         _groupedEffects = EffectGrouper.GroupEffectsByType(_character.Effects);
         
         // Рассчитываем, сколько типов эффектов показываем
-        var effectTypes = new List<Type>(_groupedEffects.Keys);
+        var effectTypes = new List<string>(_groupedEffects.Keys);
         bool showMoreIndicator = effectTypes.Count > _maxVisibleIcons;
         
         // Если показываем индикатор, то показываем на один тип меньше
@@ -85,7 +85,7 @@ public class EffectsBar : MonoBehaviour
                 var (exampleEffect, count) = _groupedEffects[effectType];
                 
                 // Инициализируем или обновляем иконку
-                if (_effectIcons[i].Effect == null || _effectIcons[i].Effect.GetType() != effectType)
+                if (_effectIcons[i].Effect == null || _effectIcons[i].Effect.Key != effectType)
                 {
                     _effectIcons[i].Initialize(exampleEffect);
                 }
@@ -147,7 +147,7 @@ public class EffectsBar : MonoBehaviour
         
         foreach (var kvp in _groupedEffects)
         {
-            info += $"- {kvp.Key.Name}: {kvp.Value.Count} instances\n";
+            info += $"- {kvp.Key}: {kvp.Value.Count} instances\n";
         }
         
         return info;
@@ -158,9 +158,9 @@ public class EffectsBar : MonoBehaviour
 public static class EffectGrouper
 {
    
-    public static Dictionary<Type, (IEffect Example, int Count)> GroupEffectsByType(IReadOnlyList<IEffect> effects)
+    public static Dictionary<string, (IEffect Example, int Count)> GroupEffectsByType(IReadOnlyList<IEffect> effects)
     {
-        var result = new Dictionary<Type, (IEffect, int)>();
+        var result = new Dictionary<string, (IEffect, int)>();
         
         if (effects == null || effects.Count == 0)
             return result;
@@ -169,7 +169,7 @@ public static class EffectGrouper
         {
             if (effect == null) continue;
             
-            var effectType = effect.GetType();
+            var effectType = effect.Key;
             
             if (result.ContainsKey(effectType))
             {

@@ -1,5 +1,10 @@
+using UnityEngine;
+
 public interface IEffect 
 {
+    public string Key { get; }
+    public Sprite Icon { get; }
+
     public void Apply(Character character);
     public void Disable();
 }
@@ -21,6 +26,8 @@ public interface ITikableEffect
 
 public class Effect : IEffect
 {
+    public string Key { get; set; } = "";
+    public Sprite Icon { get; set; }
     protected Character Target { get; private set; }
 
     public virtual void Apply(Character character)

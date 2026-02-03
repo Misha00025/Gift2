@@ -6,7 +6,8 @@ public class BattleInputHandler : MonoBehaviour
     public Character Character;
     
     public Damage AdditionalDamage = new Damage(){Value = 5, Element = Element.Fire};
-    public Damage DamageOnTick = new Damage(){Value = 1, Element = Element.Fire};
+    public TickableDamageEffectBuilder tickableDamageEffectBuilder;
+
 
     private class AdditionalDamageEffect : OneHitEffect
     {
@@ -20,20 +21,6 @@ public class BattleInputHandler : MonoBehaviour
         {
             hit.Target.ApplyDamage(_damage);
             base.OnHit(hit);
-        }
-    }
-
-    private class DamageByTickEffect : TikableEffect
-    {
-        private Damage _damage;
-    
-        public DamageByTickEffect(Damage damage) : base(4f)
-        {
-            _damage = damage;
-        }
-        public override void OnTick()
-        {
-            Target.ApplyDamage(_damage);
         }
     }
     
@@ -62,6 +49,6 @@ public class BattleInputHandler : MonoBehaviour
                 Character.ApplyEffect(new AdditionalDamageEffect(AdditionalDamage));
                 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            Character.ApplyEffect(new EffectByHit(() => new DamageByTickEffect(DamageOnTick)));  
+            Character.ApplyEffect(new EffectByHit(() => tickableDamageEffectBuilder?.Build()));  
     }
 }

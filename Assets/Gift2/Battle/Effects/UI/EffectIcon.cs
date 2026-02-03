@@ -56,7 +56,7 @@ public class EffectIcon : MonoBehaviour
         if (_effect == null) return;
         
         // Устанавливаем иконку
-        _iconImage.sprite = null;
+        _iconImage.sprite = _effect.Icon;
         
         // Обновляем отображение количества
         bool showCount = _currentCount > 1;
