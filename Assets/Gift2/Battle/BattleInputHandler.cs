@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BattleInputHandler : MonoBehaviour
@@ -26,7 +27,7 @@ public class BattleInputHandler : MonoBehaviour
     {
         private Damage _damage;
     
-        public DamageByTickEffect(Damage damage)
+        public DamageByTickEffect(Damage damage) : base(4f)
         {
             _damage = damage;
         }
@@ -36,18 +37,17 @@ public class BattleInputHandler : MonoBehaviour
         }
     }
     
-    private class EffectByHit : OneHitEffect
+    private class EffectByHit : DurationEffect, IOnHitEffect
     {
-        private IEffect _effect;
-        public EffectByHit(IEffect effect)
+        private Func<IEffect> _effectFactory;
+        public EffectByHit(Func<IEffect> effect) : base(2f)
         {
-            _effect = effect;
+            _effectFactory = effect;
         }
 
-        public override void OnHit(Hit hit)
+        public void OnHit(Hit hit)
         {
-            base.OnHit(hit);
-            hit.Target.ApplyEffect(_effect);
+            hit.Target.ApplyEffect(_effectFactory?.Invoke());
         }
         
     }
@@ -62,6 +62,6 @@ public class BattleInputHandler : MonoBehaviour
                 Character.ApplyEffect(new AdditionalDamageEffect(AdditionalDamage));
                 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            Character.ApplyEffect(new EffectByHit(new DamageByTickEffect(DamageOnTick)));  
+            Character.ApplyEffect(new EffectByHit(() => new DamageByTickEffect(DamageOnTick)));  
     }
 }

@@ -6,9 +6,10 @@ public class EffectsRegister
     
     private class EffectData
     {
-        public ITikableEffect Effect;
+        public IEffect Effect;
         public float AccumulatedTime;
         public float LastTickTime;
+        public float Duration;
     }
     
     private List<EffectData> _effects = new List<EffectData>();
@@ -37,31 +38,30 @@ public class EffectsRegister
             effectData.AccumulatedTime += deltaTime;
             effectData.LastTickTime += deltaTime;
             
-            if (effectData.LastTickTime >= _tickRate)
+            if (effectData.Effect is ITikableEffect && (effectData.LastTickTime > _tickRate))
             {
-                effectData.Effect.OnTick();
+                ((ITikableEffect)effectData.Effect).OnTick();
                 effectData.LastTickTime = 0f;
             }
             
-            if (effectData.AccumulatedTime >= effectData.Effect.Duration)
+            if (effectData.AccumulatedTime >= effectData.Duration)
             {
-                effectData.Effect.OnTick();
                 _effects[i].Effect.Disable();
                 _effects.RemoveAt(i);
             }
         }
     }
     
-    public void Register(ITikableEffect effect)
+    public void Register(IEffect effect, float duration = 1f)
     {
         _effectsToAdd.Add(new EffectData
         {
             Effect = effect,
-            AccumulatedTime = 0f
+            Duration = duration
         });
     }
     
-    public void RemoveEffect(ITikableEffect effect)
+    public void RemoveEffect(IEffect effect)
     {
         for (int i = _effects.Count - 1; i >= 0; i--)
         {

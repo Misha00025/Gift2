@@ -14,9 +14,8 @@ public interface IOnEffectApplyEffect
     public void OnEffectApply(IEffect effect);
 }
 
-public interface ITikableEffect : IEffect
+public interface ITikableEffect
 {
-    public float Duration { get; }
     public void OnTick();
 }
 
@@ -39,19 +38,26 @@ public class Effect : IEffect
     }
 }
 
-public abstract class TikableEffect : Effect, ITikableEffect
+public class DurationEffect : Effect
 {
     public float Duration { get; private set; }
     
-    public TikableEffect(float duration = 1f)
+    public DurationEffect(float duration)
     {
         Duration = duration;
     }
 
     public override void Apply(Character character)
     {
-        EffectsRegister.Instance?.Register(this);
+        EffectsRegister.Instance?.Register(this, Duration);
         base.Apply(character);
+    }
+}
+
+public abstract class TikableEffect : DurationEffect, ITikableEffect
+{
+    protected TikableEffect(float duration = 1f) : base(duration)
+    {
     }
 
     public abstract void OnTick();
