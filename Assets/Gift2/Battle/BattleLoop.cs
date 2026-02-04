@@ -17,6 +17,9 @@ public class BattleLoop : MonoBehaviour
     
     public bool PauseOnStart = false;
     private bool _paused;
+    private bool _attackInProgress;
+
+    public bool Paused => _paused;
 
     void Awake()
     {
@@ -26,7 +29,7 @@ public class BattleLoop : MonoBehaviour
 
     void Start()
     {    
-        _paused = PauseOnStart;
+        _attackInProgress = PauseOnStart;
         Characters = new(){ Player, Enemy };
         foreach (var character in Characters)
         {
@@ -38,15 +41,18 @@ public class BattleLoop : MonoBehaviour
 
     void Update()
     {
-        _effectsRegister.Update(Time.deltaTime);
         if (_paused) return;
+        
+        _effectsRegister.Update(Time.deltaTime);
+        
+        if (_attackInProgress) return;
         
         foreach (var character in Characters)
         {
             var remainingTime = RemainingTimes[character];
             if (remainingTime < 0)
             {
-                _paused = true;
+                _attackInProgress = true;
                 _currentAttacker = character;
                 RemainingTimes[character] = GetRemaining(character);
                 character.Attack();
@@ -54,7 +60,11 @@ public class BattleLoop : MonoBehaviour
             }
             RemainingTimes[character] -= Time.deltaTime;
         }
-        
+    }
+    
+    public void SetPause(bool pause = true)
+    {
+        _paused = pause;
     }
     
     public void ToggleSpeed()
@@ -77,7 +87,7 @@ public class BattleLoop : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (_paused) return;
+        if (_attackInProgress) return;
         
     }
     
@@ -100,7 +110,7 @@ public class BattleLoop : MonoBehaviour
         if (validCharacter)
         {
             _currentAttacker = null;
-            _paused = false;
+            _attackInProgress = false;
         }
     }
 }
