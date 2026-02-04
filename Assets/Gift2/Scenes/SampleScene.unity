@@ -1125,7 +1125,7 @@ MonoBehaviour:
   Player: {fileID: 727470776}
   Enemy: {fileID: 507292713}
   TickRate: 0.5
-  FastSpeed: 3
+  FastSpeed: 5
   PauseOnStart: 0
 --- !u!114 &1750054613
 MonoBehaviour:
@@ -1140,6 +1140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Character: {fileID: 727470776}
+  BattleLoop: {fileID: 1750054612}
   onHitAdditionalDamageEffectBuilder: {fileID: 11400000, guid: 523bba70cbf22fe22a4e73c0b7674337, type: 2}
   tickableDamageEffectBuilder: {fileID: 11400000, guid: b458cc9a01fa9948581d910ae29426d6, type: 2}
 --- !u!1001 &1173856755382173547
@@ -1352,6 +1353,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3534961662268668001, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 507292713}
+    - target: {fileID: 4816672479228085083, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 727470776}
     - target: {fileID: 5773025480980623829, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

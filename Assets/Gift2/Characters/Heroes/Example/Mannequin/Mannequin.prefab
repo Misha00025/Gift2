@@ -292,6 +292,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterUIBar
       objectReference: {fileID: 0}
+    - target: {fileID: 1422184198238434625, guid: ff282ca2be703188abf8a21462a4b85b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422184198238434625, guid: ff282ca2be703188abf8a21462a4b85b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753708127971291658, guid: ff282ca2be703188abf8a21462a4b85b, type: 3}
       propertyPath: character
       value: 
@@ -330,7 +338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872931612022725219, guid: ff282ca2be703188abf8a21462a4b85b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6872931612022725219, guid: ff282ca2be703188abf8a21462a4b85b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -385,7 +393,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1622428903859704909}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8554996738329458821, guid: ff282ca2be703188abf8a21462a4b85b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff282ca2be703188abf8a21462a4b85b, type: 3}
