@@ -6,6 +6,7 @@ public class BattleLoop : MonoBehaviour
     public Character Player;
     public Character Enemy;
     public float TickRate = 0.5f;
+    public float FastSpeed = 3f;
 
     private List<Character> Characters = new();
     private Dictionary<Character, float> RemainingTimes = new();
@@ -54,6 +55,24 @@ public class BattleLoop : MonoBehaviour
             RemainingTimes[character] -= Time.deltaTime;
         }
         
+    }
+    
+    public void ToggleSpeed()
+    {
+        if (Time.timeScale > 1.1f)
+            SetNormalSpeed();
+        else
+            SetFastSpeed();
+    }
+    
+    public void SetNormalSpeed()
+    {
+        Time.timeScale = 1f;
+    }
+    
+    public void SetFastSpeed()
+    {
+        Time.timeScale = FastSpeed;
     }
     
     void FixedUpdate()

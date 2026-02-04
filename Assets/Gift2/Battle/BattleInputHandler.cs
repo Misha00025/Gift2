@@ -12,13 +12,28 @@ public class BattleInputHandler : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
-            Character.ApplyEffect(onHitAdditionalDamageEffectBuilder?.Build());
+            PlaySpell1();
             
         if (Input.GetKeyDown(KeyCode.Alpha2))
-            for (int i = 0; i < 5; i++)
-                Character.ApplyEffect(onHitAdditionalDamageEffectBuilder?.Build());
+            PlaySpell2();
                 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            Character.ApplyEffect(tickableDamageEffectBuilder?.Build());  
+            PlaySpell3();
+    }
+    
+    public void PlaySpell1()
+    {
+        Character.ApplyEffect(onHitAdditionalDamageEffectBuilder?.Build());
+    }
+    
+    public void PlaySpell2()
+    {
+        for (int i = 0; i < 5; i++)
+                Character.ApplyEffect(onHitAdditionalDamageEffectBuilder?.Build());
+    }
+    
+    public void PlaySpell3()
+    {
+        Character.ApplyEffect(tickableDamageEffectBuilder?.Build());  
     }
 }
