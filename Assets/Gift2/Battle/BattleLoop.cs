@@ -65,6 +65,7 @@ public class BattleLoop : MonoBehaviour
     public void SetPause(bool pause = true)
     {
         _paused = pause;
+        _attackInProgress = false;
     }
     
     public void ToggleSpeed()

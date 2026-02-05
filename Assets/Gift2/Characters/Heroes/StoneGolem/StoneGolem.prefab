@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4943139902072720848}
   - component: {fileID: 3666699634363909218}
+  - component: {fileID: -7309797187659995277}
   - component: {fileID: 1925597671340519740}
   m_Layer: 0
   m_Name: StoneGolem
@@ -152,6 +153,8 @@ MonoBehaviour:
     attackSpeed: 0.5
     damage: 5
   <Elements>k__BackingField: 04000000
+  <MainActiveSkill>k__BackingField: {fileID: 0}
+  <SupportActiveSkill>k__BackingField: {fileID: -7309797187659995277}
   <DamageTaken>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
@@ -159,6 +162,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   Animator: {fileID: 1925597671340519740}
+--- !u!114 &-7309797187659995277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187808607689356874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7738330bdaf782ffa2eb558ed331654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Caster: {fileID: 3666699634363909218}
+  Config: {fileID: 11400000, guid: 15bf789194e08e602b117ddc7e3d9e4d, type: 2}
+  Damage:
+    Value: 20
+    Element: 4
 --- !u!95 &1925597671340519740
 Animator:
   serializedVersion: 7

@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public interface ISkill
 {
+    public UnityEvent Completed { get; }
+    public SkillInfo Info { get; }
     public void Play();
 }
 
@@ -13,8 +16,42 @@ public interface ITargetSkill
 
 public abstract class Skill : MonoBehaviour, ISkill
 {
-    public Character Caster;
+    public UnityEvent Completed {get; private set;} = new();
+    public SkillInfo Info => GetInfo();
+    protected abstract SkillInfo GetInfo();
+    public bool InProgress {get; protected set;} = false;
+    
     public abstract void Play();
+    
+    protected void Complete()
+    {
+        Completed?.Invoke();
+        InProgress = false;
+    }
+}
+
+public abstract class Skill<TCharacter, TConfig> : Skill where TConfig: SkillConfig where TCharacter : Character
+{
+    [SerializeField] protected TCharacter Caster;
+    [SerializeField] protected TConfig Config;
+
+    protected override SkillInfo GetInfo() => Config.GetInfo();
+    
+
+    public override void Play()
+    {
+        if (Caster == null && !TryGetComponent(out Caster)) 
+        {
+            Debug.LogError("Caster is null");
+            return;
+        }
+        if (InProgress) return;
+        InProgress = true;
+        OnPlay();
+    }
+    
+    protected abstract void OnPlay();
+    
 }
 
 public struct SkillInfo 
@@ -25,12 +62,11 @@ public struct SkillInfo
 }
 
 [CreateAssetMenu(fileName = "SkillConfig", menuName = "Skills/SkillConfig")]
-public class SkillConfiguredBuilder : ScriptableObject
+public class SkillConfig : ScriptableObject
 {
     public string Name;
     public string Description;
     public Sprite Icon;
-    public Skill SkillPrefab;
     
     public SkillInfo GetInfo()
     {
@@ -39,18 +75,6 @@ public class SkillConfiguredBuilder : ScriptableObject
         skill.Description = Description;
         skill.Icon = Icon;
         return skill;
-    }
-    
-    public ISkill Build(Character caster)
-    {
-        var skill = ConfigureSkill(caster);
-        skill.Caster = caster;
-        return skill;
-    }
-    
-    protected Skill ConfigureSkill(Character caster)
-    {
-        return GameObject.Instantiate(SkillPrefab, caster.transform);
     }
 }
 

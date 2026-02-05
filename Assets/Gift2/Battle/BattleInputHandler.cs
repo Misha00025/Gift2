@@ -8,6 +8,7 @@ public class BattleInputHandler : MonoBehaviour
 
     public OnHitAdditionalDamageEffectBuilder onHitAdditionalDamageEffectBuilder;
     public OnHitEffectOnTargetEffectBuilder tickableDamageEffectBuilder;
+    private Skill _currentSkill;
 
     void Update()
     {
@@ -28,13 +29,29 @@ public class BattleInputHandler : MonoBehaviour
     
     public void PlaySpell1()
     {
-        Character.ApplyEffect(onHitAdditionalDamageEffectBuilder?.Build());
+        Play(Character.MainActiveSkill);
+    }
+
+    
+    private void Play(Skill skill)
+    {
+        if (skill == null) return;
+        if (_currentSkill != null) return;
+        BattleLoop.SetPause(true);
+        _currentSkill = skill;
+        _currentSkill.Completed.AddListener(OnCompleteSkill);
+        _currentSkill.Play();
+    }    
+    private void OnCompleteSkill()
+    {
+        BattleLoop.SetPause(false);
+        _currentSkill.Completed.RemoveListener(OnCompleteSkill);
+        _currentSkill = null;
     }
     
     public void PlaySpell2()
     {
-        for (int i = 0; i < 5; i++)
-                Character.ApplyEffect(onHitAdditionalDamageEffectBuilder?.Build());
+        Play(Character.SupportActiveSkill);
     }
     
     public void PlaySpell3()

@@ -11,6 +11,8 @@ public abstract class Character : MonoBehaviour
     [field: SerializeField] public Property Shield { get; private set; }    
     [SerializeField]private Stats _stats = new(){attackSpeed = 1f, damage = 1};
     [field: SerializeField] public List<Element> Elements { get; private set; }
+    [field: SerializeField] public Skill MainActiveSkill { get; private set; }
+    [field: SerializeField] public Skill SupportActiveSkill { get; private set; }
     
     
     [Header("Character Events")]
@@ -25,7 +27,7 @@ public abstract class Character : MonoBehaviour
     private Stats _baseStats;
     private List<IEffect> _effects = new();
     private Dictionary<string, EffectView> _effectsViews = new();
-    protected Character Target { get; private set; }
+    public Character Target { get; private set; }
     
     
     public Stats BaseStats => _baseStats;
@@ -79,7 +81,7 @@ public abstract class Character : MonoBehaviour
         
         if (!_effects.Any(e => e.Key == effect.Key) && _effectsViews.ContainsKey(effect.Key))
         {
-            _effectsViews[effect.Key].gameObject.SetActive(false); 
+            _effectsViews[effect.Key].gameObject.SetActive(false);
         }
     }
     

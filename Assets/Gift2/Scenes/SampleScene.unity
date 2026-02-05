@@ -720,6 +720,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d8a632c5a31b117848535bd1ebbddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &727470778 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -7309797187659995277, guid: 74c658bf8dc25bee0919626799751b61, type: 3}
+  m_PrefabInstance: {fileID: 3862807180884137745}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7738330bdaf782ffa2eb558ed331654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &764534221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1154,7 @@ MonoBehaviour:
   BattleLoop: {fileID: 1750054612}
   onHitAdditionalDamageEffectBuilder: {fileID: 11400000, guid: 523bba70cbf22fe22a4e73c0b7674337, type: 2}
   tickableDamageEffectBuilder: {fileID: 11400000, guid: b458cc9a01fa9948581d910ae29426d6, type: 2}
+  skill: {fileID: 727470778}
 --- !u!1001 &1173856755382173547
 PrefabInstance:
   m_ObjectHideFlags: 0

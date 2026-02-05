@@ -1,5 +1,20 @@
+using UnityEngine.Events;
+
 public class StoneGolem : Character
 {
+    public struct JumpEvents
+    {
+        public UnityEvent Upped;
+        public UnityEvent Downed;
+        public enum State
+        {
+            Upped,
+            Downed
+        }
+    }
+
+    public JumpEvents Jump { get; private set; } = new(){Upped = new(), Downed = new()};
+
     public override void Attack()
     {
         Animator?.Play("BaseAttack");
@@ -13,4 +28,11 @@ public class StoneGolem : Character
         hit.Apply();
     }
     
+    public void OnJump(JumpEvents.State state)
+    {
+        if (state == JumpEvents.State.Upped)
+            Jump.Upped.Invoke();
+        else
+            Jump.Downed.Invoke();
+    }
 }
