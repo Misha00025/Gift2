@@ -6,6 +6,10 @@ public class BattleInitializer : MonoBehaviour
 {
     public Character MainSummon;
     public Character Enemy;
+    
+    public CharacterStatusBar PlayerStatusBar;
+    public CharacterStatusBar EnemyStatusBar;
+    
     public List<Character> Supports = new();
 
     void Awake()
@@ -32,5 +36,7 @@ public class BattleInitializer : MonoBehaviour
             
         loop.MainSummon.View.SetOn(map.MainSummonPosition.position);
         loop.Enemy.View.SetOn(map.EnemyPosition.position);
+        PlayerStatusBar?.SetCharacter(loop.MainSummon);
+        EnemyStatusBar?.SetCharacter(loop.Enemy);
     }
 }

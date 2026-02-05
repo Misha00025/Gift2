@@ -1,19 +1,23 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    public Character character;
+    [SerializeField] private Character _character;
     public SlicedFilledImage healthFiller;
     
     private int _maxValue;
     
+    public void SetCharacter(Character character)
+    {
+        _character = character;
+        _maxValue = character.Health.MaxValue;
+        character.Health.Changed.AddListener((e) => ChangeFiller(e.Value));
+    }
     
     public void Start()
     {
-        if (character == null || healthFiller == null) return;
-        _maxValue = character.Health.MaxValue;
-        character.Health.Changed.AddListener((e) => ChangeFiller(e.Value));
+        if (_character == null || healthFiller == null) return;
+        SetCharacter(_character);
     }
     
     private void ChangeFiller(int value)

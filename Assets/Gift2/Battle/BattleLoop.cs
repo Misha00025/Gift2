@@ -39,10 +39,9 @@ public class BattleLoop : MonoBehaviour
 
     void Update()
     {
-        if (_paused) return;
-        
         _effectsRegister.Update(Time.deltaTime);
         
+        if (_paused) return;
         if (_attackInProgress) return;
         
         foreach (var character in Characters)

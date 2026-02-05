@@ -167,7 +167,7 @@ MonoBehaviour:
   <AttackCompleted>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  HealDelay: 2
+  HealDelay: 1
 --- !u!95 &4991820362887141781
 Animator:
   serializedVersion: 7
@@ -202,6 +202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62c98dcc5750cf8eae22ed0b2739349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LeftHand: {fileID: 0}
+  RightHand: {fileID: 0}
   Pivot: {fileID: 6739106487283779573}
 --- !u!1 &4783158495628016496
 GameObject:
