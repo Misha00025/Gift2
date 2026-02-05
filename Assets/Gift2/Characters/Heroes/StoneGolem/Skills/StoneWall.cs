@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class StoneWall : Skill<StoneGolem, SkillConfig>
 {
-    public Damage Damage = new Damage(){Value = 20, Element = Element.Stone};
+    // public Damage Damage = new Damage(){Value = 20, Element = Element.Stone};
+    public EffectConfiguredBuilder EffectBuilder;
     
     private Character Target;
     private Vector2 StartPosition;
@@ -34,7 +35,7 @@ public class StoneWall : Skill<StoneGolem, SkillConfig>
     private void OnDowned()
     {
         Caster.Jump.Grounded.RemoveListener(OnDowned);
-        Target.ApplyDamage(Damage);
+        Target.ApplyEffect(EffectBuilder.Build());
         StartCoroutine(Delay());        
     }
     
@@ -47,7 +48,7 @@ public class StoneWall : Skill<StoneGolem, SkillConfig>
     
     private void OnUppedEnd()
     {
-        Caster.Jump.Upped.RemoveListener(OnDownedEnd);
+        Caster.Jump.Upped.RemoveListener(OnUppedEnd);
         Caster.Jump.Downed.AddListener(OnDownedEnd);
         Caster.transform.position = StartPosition;
         Caster.Animator.Play("JumpDown");

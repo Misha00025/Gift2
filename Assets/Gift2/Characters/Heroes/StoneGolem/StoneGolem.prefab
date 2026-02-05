@@ -154,7 +154,7 @@ MonoBehaviour:
     attackSpeed: 0.5
     damage: 5
   <Elements>k__BackingField: 04000000
-  <MainActiveSkill>k__BackingField: {fileID: -7309797187659995277}
+  <MainActiveSkill>k__BackingField: {fileID: 0}
   <SupportActiveSkill>k__BackingField: {fileID: -7309797187659995277}
   <DamageTaken>k__BackingField:
     m_PersistentCalls:
@@ -178,9 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Caster: {fileID: 3666699634363909218}
   Config: {fileID: 11400000, guid: 15bf789194e08e602b117ddc7e3d9e4d, type: 2}
-  Damage:
-    Value: 20
-    Element: 4
+  EffectBuilder: {fileID: 11400000, guid: c3fca1c7b86fcf8759fa254a87216a1c, type: 2}
 --- !u!95 &1925597671340519740
 Animator:
   serializedVersion: 7

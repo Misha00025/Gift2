@@ -50,6 +50,13 @@ public abstract class Character : MonoBehaviour
     
     public virtual void ApplyDamage(Damage damage)
     {
+        for (var i = _effects.Count - 1; i >= 0; i--)
+        {   
+            var effect = _effects[i];
+            if (effect is IBeforeTakeDamageEffect)
+                ((IBeforeTakeDamageEffect)effect).OnDamageTaking(ref damage);
+        }
+    
         SetHealth(Health.Value - damage.Value);
         DamageTaken.Invoke(damage);
     }

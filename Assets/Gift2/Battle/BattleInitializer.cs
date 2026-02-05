@@ -34,7 +34,7 @@ public class BattleInitializer : MonoBehaviour
             if (summon.Pivot == null)
                 summon.Pivot = summon.transform;
             summon.transform.position = map.GetPosition(point, summon);
-            summon.SetTarget(loop.Enemy);
+            summon.SetTarget(loop.MainSummon);
             inputHandler.Supports.Add(summon);
         }
             

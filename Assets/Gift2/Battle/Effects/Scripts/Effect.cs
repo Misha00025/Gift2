@@ -24,6 +24,11 @@ public interface ITikableEffect
     public void OnTick();
 }
 
+public interface IBeforeTakeDamageEffect
+{
+    public void OnDamageTaking(ref Damage damage);
+}
+
 public class Effect : IEffect
 {
     public string Key { get; set; } = "";

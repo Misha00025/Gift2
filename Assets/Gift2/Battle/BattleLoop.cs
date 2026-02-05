@@ -15,8 +15,7 @@ public class BattleLoop : MonoBehaviour
     private EffectsRegister _effectsRegister;
     private EffectConfigsRegister _effectsConfigRegister;
     
-    public bool PauseOnStart = false;
-    private bool _paused;
+    [SerializeField] private bool _paused;
     private bool _attackInProgress;
 
     public bool Paused => _paused;
@@ -29,7 +28,6 @@ public class BattleLoop : MonoBehaviour
 
     void Start()
     {    
-        _attackInProgress = PauseOnStart;
         Characters = new(){ MainSummon, Enemy };
         foreach (var character in Characters)
         {
