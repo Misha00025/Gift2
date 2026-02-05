@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
+[RequireComponent(typeof(CharacterViewController))]
 public abstract class Character : MonoBehaviour
 {
     
     [field: SerializeField] public Property Health { get; private set; }
-    [field: SerializeField] public Property Shield { get; private set; }    
     [SerializeField]private Stats _stats = new(){attackSpeed = 1f, damage = 1};
     [field: SerializeField] public List<Element> Elements { get; private set; }
     [field: SerializeField] public Skill MainActiveSkill { get; private set; }
@@ -21,8 +21,18 @@ public abstract class Character : MonoBehaviour
     
     
     [Header("View")]
-    public Animator Animator;
-    public Transform Pivot;
+    private CharacterViewController _view;
+    public CharacterViewController View 
+    {
+        get 
+        {
+            if (_view == null)
+                _view = GetComponent<CharacterViewController>();
+            return _view;
+        }
+    }    
+    public Animator Animator => _view.Animator;
+    public Transform Pivot => _view.Pivot;
     
     // Not inspected
     private Stats _baseStats;

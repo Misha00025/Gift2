@@ -28,7 +28,7 @@ public class StoneWall : Skill<StoneGolem, SkillConfig>
         Caster.Jump.Upped.RemoveListener(OnUpped);
         Caster.Jump.Grounded.AddListener(OnDowned);
         var map = BattleMap.Instance;
-        Caster.transform.position = map.GetPosition(map.CenterPosition, Caster);
+        Caster.View.SetOn(map.CenterPosition.position);
         Caster.Animator.Play("JumpDown");
     }
     
