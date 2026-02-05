@@ -154,7 +154,7 @@ MonoBehaviour:
     attackSpeed: 0.5
     damage: 5
   <Elements>k__BackingField: 04000000
-  <MainActiveSkill>k__BackingField: {fileID: 0}
+  <MainActiveSkill>k__BackingField: {fileID: -7309797187659995277}
   <SupportActiveSkill>k__BackingField: {fileID: -7309797187659995277}
   <DamageTaken>k__BackingField:
     m_PersistentCalls:

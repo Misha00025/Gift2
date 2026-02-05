@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BattleInputHandler : MonoBehaviour
 {
     public Character Character;
+    public List<Character> Supports = new(); 
     public BattleLoop BattleLoop;
 
     public OnHitAdditionalDamageEffectBuilder onHitAdditionalDamageEffectBuilder;
@@ -51,11 +53,13 @@ public class BattleInputHandler : MonoBehaviour
     
     public void PlaySpell2()
     {
-        Play(Character.SupportActiveSkill);
+        if (Supports.Count < 1) return;
+        Play(Supports[0].SupportActiveSkill);
     }
     
     public void PlaySpell3()
     {
-        Character.ApplyEffect(tickableDamageEffectBuilder?.Build());  
+        if (Supports.Count < 2) return;
+        Play(Supports[1].SupportActiveSkill);
     }
 }
