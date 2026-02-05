@@ -22,6 +22,7 @@ public abstract class Character : MonoBehaviour
     
     [Header("View")]
     public Animator Animator;
+    public Transform Pivot;
     
     // Not inspected
     private Stats _baseStats;

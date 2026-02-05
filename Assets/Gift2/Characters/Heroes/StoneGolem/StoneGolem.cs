@@ -2,18 +2,20 @@ using UnityEngine.Events;
 
 public class StoneGolem : Character
 {
-    public struct JumpEvents
+    public class JumpEvents
     {
-        public UnityEvent Upped;
-        public UnityEvent Downed;
+        public UnityEvent Upped = new();
+        public UnityEvent Grounded = new();
+        public UnityEvent Downed = new();
         public enum State
         {
             Upped,
+            Grounded,
             Downed
         }
     }
 
-    public JumpEvents Jump { get; private set; } = new(){Upped = new(), Downed = new()};
+    public JumpEvents Jump { get; private set; } = new();
 
     public override void Attack()
     {
@@ -32,6 +34,8 @@ public class StoneGolem : Character
     {
         if (state == JumpEvents.State.Upped)
             Jump.Upped.Invoke();
+        else if (state == JumpEvents.State.Grounded)
+            Jump.Grounded.Invoke();
         else
             Jump.Downed.Invoke();
     }

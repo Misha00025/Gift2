@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 
 
@@ -24,17 +25,24 @@ public class StoneWall : Skill<StoneGolem, SkillConfig>
     private void OnUpped()
     {
         Caster.Jump.Upped.RemoveListener(OnUpped);
-        Caster.Jump.Downed.AddListener(OnDowned);
-        Caster.transform.position = Target.transform.position;
+        Caster.Jump.Grounded.AddListener(OnDowned);
+        var map = BattleMap.Instance;
+        Caster.transform.position = map.GetPosition(map.CenterPosition, Caster);
         Caster.Animator.Play("JumpDown");
     }
     
     private void OnDowned()
     {
-        Caster.Jump.Downed.RemoveListener(OnDowned);
-        Caster.Jump.Upped.AddListener(OnUppedEnd);
+        Caster.Jump.Grounded.RemoveListener(OnDowned);
         Target.ApplyDamage(Damage);
-        Caster.Animator.Play("JumpUp");        
+        StartCoroutine(Delay());        
+    }
+    
+    private IEnumerator Delay(float delay = 0.5f)
+    {
+        yield return new WaitForSeconds(delay);
+        Caster.Jump.Upped.AddListener(OnUppedEnd);
+        Caster.Animator.Play("JumpUp");
     }
     
     private void OnUppedEnd()

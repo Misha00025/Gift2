@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BattleLoop : MonoBehaviour
 {
-    public Character Player;
+    public Character MainSummon;
     public Character Enemy;
     public float TickRate = 0.5f;
     public float FastSpeed = 3f;
@@ -30,7 +30,7 @@ public class BattleLoop : MonoBehaviour
     void Start()
     {    
         _attackInProgress = PauseOnStart;
-        Characters = new(){ Player, Enemy };
+        Characters = new(){ MainSummon, Enemy };
         foreach (var character in Characters)
         {
             character.AttackCompleted.AddListener(OnCharacterAttackCompleted);
@@ -99,10 +99,10 @@ public class BattleLoop : MonoBehaviour
     
     private Character GetTarget(Character attacker)
     {
-        if (attacker == Player)
+        if (attacker == MainSummon)
             return Enemy;
         else
-            return Player;
+            return MainSummon;
     }
     
     private void OnCharacterAttackCompleted(Character character)
