@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BattleInputHandler : MonoBehaviour
 {
+    public SkillsPanel SkillsPanel;
+
     public Character Character;
     public List<Character> Supports = new(); 
     public BattleLoop BattleLoop;
@@ -11,6 +13,17 @@ public class BattleInputHandler : MonoBehaviour
     public OnHitAdditionalDamageEffectBuilder onHitAdditionalDamageEffectBuilder;
     public OnHitEffectOnTargetEffectBuilder tickableDamageEffectBuilder;
     private Skill _currentSkill;
+
+    void Start()
+    {
+        List<Skill> skills = new();
+        skills.Add(Character.MainActiveSkill);
+        foreach (var sup in Supports)
+        {
+            skills.Add(sup.SupportActiveSkill);
+        }
+        SkillsPanel.SetupSkills(skills);
+    }
 
     void Update()
     {

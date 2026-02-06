@@ -1267,6 +1267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e51fdbaefd66e5384a0bcdaa0d3d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SkillsPanel: {fileID: 2051867814}
   Character: {fileID: 0}
   Supports: []
   BattleLoop: {fileID: 1750054612}
@@ -1309,6 +1310,25 @@ MonoBehaviour:
   <SupportSummonPositions>k__BackingField:
   - {fileID: 618327448}
   - {fileID: 1479032338}
+--- !u!1 &2051867811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7041871219168353497, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
+  m_PrefabInstance: {fileID: 5335905486557180978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2051867814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051867811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb05285e5e551bdab35764feebd5ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillPrefab: {fileID: 4710271252628149291, guid: 34f4f48c145d7812aa43d40fc5256c3c, type: 3}
+  Space: 105
 --- !u!1001 &5335905486557180978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1502,9 +1522,15 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 797297186077750676, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
+    - {fileID: 4139373808101882653, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
+    - {fileID: 28371870630717158, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7041871219168353497, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2051867814}
   m_SourcePrefab: {fileID: 100100000, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
 --- !u!114 &5335905486557180979 stripped
 MonoBehaviour:
