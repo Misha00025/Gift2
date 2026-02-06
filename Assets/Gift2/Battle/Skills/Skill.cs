@@ -23,7 +23,7 @@ public abstract class Skill : MonoBehaviour, ISkill
     
     public abstract void Play();
     
-    protected void Complete()
+    public void Complete()
     {
         Completed?.Invoke();
         InProgress = false;

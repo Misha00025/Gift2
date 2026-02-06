@@ -7,7 +7,7 @@ public class FireElemental : Character
 
     public override void Attack()
     {
-        Animator.Play("BaseAttack");
+        Animator.Play("BaseAttack", 1);
     }
     
     public void BaseAttack()
