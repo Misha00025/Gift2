@@ -112,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WaterElemental_0
+      name: WaterElemental_Body
       rect:
         serializedVersion: 2
         x: 170
@@ -120,7 +120,7 @@ TextureImporter:
         width: 601
         height: 905
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,15 +134,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterElemental_1
+      name: WaterElemental_Eyes
       rect:
         serializedVersion: 2
         x: 1254
         y: 1072
-        width: 205
-        height: 239
+        width: 387
+        height: 283
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,29 +156,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterElemental_2
-      rect:
-        serializedVersion: 2
-        x: 1482
-        y: 1091
-        width: 159
-        height: 263
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b4adc234515766f20800000000000000
-      internalID: 3415546101588875851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterElemental_3
+      name: WaterElemental_LeftHand
       rect:
         serializedVersion: 2
         x: 1089
@@ -186,7 +164,7 @@ TextureImporter:
         width: 205
         height: 116
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,7 +178,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterElemental_4
+      name: WaterElemental_RightHand
       rect:
         serializedVersion: 2
         x: 1640
@@ -208,7 +186,7 @@ TextureImporter:
         width: 203
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,7 +203,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8f1b64790c0f09b68af8525ff8310bca
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +213,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WaterElemental_0: 3509304178674261395
-      WaterElemental_1: -572386865216075053
       WaterElemental_2: 3415546101588875851
-      WaterElemental_3: -302086894238040408
-      WaterElemental_4: -2554093158479499647
+      WaterElemental_Body: 3509304178674261395
+      WaterElemental_Eyes: -572386865216075053
+      WaterElemental_LeftHand: -302086894238040408
+      WaterElemental_RightHand: -2554093158479499647
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

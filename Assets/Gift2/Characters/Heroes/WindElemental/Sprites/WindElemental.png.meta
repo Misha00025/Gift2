@@ -1,0 +1,389 @@
+fileFormatVersion: 2
+guid: 451169b979d60666082bfcc4f7f3ba4c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3779420353340960863
+    second: WindElemental_0
+  - first:
+      213: -2947312912425139274
+    second: WindElemental_1
+  - first:
+      213: -6930019323033230780
+    second: WindElemental_2
+  - first:
+      213: -8981798894285675419
+    second: WindElemental_3
+  - first:
+      213: -7307422041974373423
+    second: WindElemental_4
+  - first:
+      213: -8940345344352065698
+    second: WindElemental_5
+  - first:
+      213: -2175010523816091666
+    second: WindElemental_6
+  - first:
+      213: 4721941450448163820
+    second: WindElemental_7
+  - first:
+      213: -831326441792811572
+    second: WindElemental_8
+  - first:
+      213: -3103606099868122133
+    second: WindElemental_9
+  - first:
+      213: -8795974781733761804
+    second: WindElemental_10
+  - first:
+      213: 3959280032708936054
+    second: WindElemental_11
+  - first:
+      213: -78301638532703564
+    second: WindElemental_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WindElemental_TopBody
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 809
+        width: 531
+        height: 594
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af0b3e763dcc8bc0800000000000000
+      internalID: -3779420353340960863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindElemental_Eyes
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 1215
+        width: 292
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b34afc858a0917d0800000000000000
+      internalID: -2947312912425139274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindElemental_LowerBody
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 718
+        width: 192
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5642b164e7d3a5380800000000000000
+      internalID: -8981798894285675419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindElemental_5
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 727
+        width: 641
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57e39cf6438de380800000000000000
+      internalID: -8940345344352065698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindElemental_7
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 579
+        width: 494
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce3d7243bb4b78140800000000000000
+      internalID: 4721941450448163820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindElemental_8
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 381
+        width: 421
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccdcc8871098674f0800000000000000
+      internalID: -831326441792811572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindElemental_9
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 454
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be300ae12b6cde4d0800000000000000
+      internalID: -3103606099868122133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindElemental_LeftHand
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 236
+        width: 156
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc07710a8b6ee580800000000000000
+      internalID: -8795974781733761804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindElemental_RightHand
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 242
+        width: 155
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671c9eb663032f630800000000000000
+      internalID: 3959280032708936054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WindElemental_12
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 256
+        width: 251
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ba5de91311d9eef0800000000000000
+      internalID: -78301638532703564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1509f6de7378c96c298a22f8c1c2d0c7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      WindElemental_12: -78301638532703564
+      WindElemental_2: -6930019323033230780
+      WindElemental_4: -7307422041974373423
+      WindElemental_5: -8940345344352065698
+      WindElemental_6: -2175010523816091666
+      WindElemental_7: 4721941450448163820
+      WindElemental_8: -831326441792811572
+      WindElemental_9: -3103606099868122133
+      WindElemental_Eyes: -2947312912425139274
+      WindElemental_LeftHand: -8795974781733761804
+      WindElemental_LowerBody: -8981798894285675419
+      WindElemental_RightHand: 3959280032708936054
+      WindElemental_TopBody: -3779420353340960863
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
