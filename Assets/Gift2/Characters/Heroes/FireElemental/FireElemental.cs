@@ -1,9 +1,17 @@
 using UnityEngine;
 
+[RequireComponent(typeof(FireElementalCastHandler))]
 public class FireElemental : Character
 {
     public EffectConfiguredBuilder OnAttackEffectBuilder;
     public float ChanceOfFlame = 0.1f;
+    public FireElementalCastHandler CastHandler {get; private set;}
+
+    protected override void Init()
+    {
+        CastHandler = GetComponent<FireElementalCastHandler>();
+        base.Init();
+    }
 
     public override void Attack()
     {
@@ -12,7 +20,10 @@ public class FireElemental : Character
     
     public void BaseAttack()
     {
-        Target?.ApplyDamage(new Damage(){Value = Stats.damage, Element = Element.Fire});
+        if (Target == null) return;
+        
+        var hit = PrepareHit(new Damage(){ Value = Stats.damage, Element = Element.Fire});
+        hit.Apply();
         if (ChanceOfFlame > Random.Range(0f, 1f))
             Target?.ApplyEffect(OnAttackEffectBuilder.Build());
     }

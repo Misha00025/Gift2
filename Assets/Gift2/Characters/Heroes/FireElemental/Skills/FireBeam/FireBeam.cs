@@ -25,11 +25,14 @@ public class FireBeam : Skill<FireElemental, SkillConfig>
         
         _counts = 0;
         _view.Place(Caster.Target.Pivot.transform.position);
+        Caster.CastHandler.Casted.AddListener(OnCastFireBeam);
+        Caster.CastHandler.Ended.AddListener(OnCastAnimationEnd);
         Caster.Animator.Play("Cast");
     }
     
-    public void OnCast()
+    private void OnCastFireBeam()
     {
+        Caster.CastHandler.Casted.RemoveListener(OnCastFireBeam);
         _view.gameObject.SetActive(true);
         _view.Cast(OnEffect);
     }
@@ -42,6 +45,12 @@ public class FireBeam : Skill<FireElemental, SkillConfig>
         {
             Caster.Target.ApplyEffect(EffectBuilder.Build());
         }
+    }
+    
+    private void OnCastAnimationEnd()
+    {
+        Caster.CastHandler.Ended.RemoveListener(OnCastAnimationEnd);
+        OnAnimationEnd();
     }
     
     public void OnAnimationEnd()
