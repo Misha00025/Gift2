@@ -90,6 +90,14 @@ public abstract class Character : MonoBehaviour
         }
     }
     
+    public virtual void BaseAttack()
+    {
+        if (Target == null) return;
+        
+        var hit = PrepareHit(new Damage(){ Value = Stats.damage, Element = Elements.Count > 0 ? Elements[0] : Element.Physical});
+        hit.Apply();
+    }
+    
     public void DisableEffect(IEffect effect)
     {
         if (!_effects.Contains(effect)) return;

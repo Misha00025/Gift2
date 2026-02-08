@@ -18,12 +18,9 @@ public class FireElemental : Character
         Animator.Play("BaseAttack", 1);
     }
     
-    public void BaseAttack()
+    public override void BaseAttack()
     {
-        if (Target == null) return;
-        
-        var hit = PrepareHit(new Damage(){ Value = Stats.damage, Element = Element.Fire});
-        hit.Apply();
+        base.BaseAttack();
         if (ChanceOfFlame > Random.Range(0f, 1f))
             Target?.ApplyEffect(OnAttackEffectBuilder.Build());
     }

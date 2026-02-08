@@ -22,14 +22,6 @@ public class StoneGolem : Character
         Animator?.Play("BaseAttack");
     }
     
-    public void BaseAttack()
-    {
-        if (Target == null) return;
-        
-        var hit = PrepareHit(new Damage(){ Value = Stats.damage, Element = Element.Stone});
-        hit.Apply();
-    }
-    
     public void OnJump(JumpEvents.State state)
     {
         if (state == JumpEvents.State.Upped)
