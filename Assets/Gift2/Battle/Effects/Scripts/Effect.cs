@@ -14,6 +14,11 @@ public interface IOnHitEffect
     public void OnHit(Hit hit);
 }
 
+public interface IOnHitAttemptEffect
+{
+    public void OnHitAttempt(Hit hit);
+}
+
 public interface IOnEffectApplyEffect
 {
     public void OnEffectApply(IEffect effect);

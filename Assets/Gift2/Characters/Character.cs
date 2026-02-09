@@ -60,11 +60,15 @@ public abstract class Character : MonoBehaviour
     
     public virtual void ApplyDamage(Damage damage)
     {
+        var hit = new Hit { Target = this, Damage = damage };
+        
         for (var i = _effects.Count - 1; i >= 0; i--)
         {   
             var effect = _effects[i];
-            if (effect is IBeforeTakeDamageEffect)
-                ((IBeforeTakeDamageEffect)effect).OnDamageTaking(ref damage);
+            if (effect is IBeforeTakeDamageEffect beforeEffect)
+                beforeEffect.OnDamageTaking(ref damage);
+            
+            if (hit.IsCanceled) return;
         }
     
         SetHealth(Health.Value - damage.Value);
@@ -95,7 +99,8 @@ public abstract class Character : MonoBehaviour
         if (Target == null) return;
         
         var hit = PrepareHit(new Damage(){ Value = Stats.damage, Element = Elements.Count > 0 ? Elements[0] : Element.Physical});
-        hit.Apply();
+        if (!hit.IsCanceled)
+            hit.Apply();
     }
     
     public void DisableEffect(IEffect effect)
@@ -114,11 +119,37 @@ public abstract class Character : MonoBehaviour
     protected virtual Hit PrepareHit(Damage damage)
     {
         var hit = new Hit(){ Target = Target, Damage = damage };
+        
         foreach (var effect in _effects)
-        {
-            if (effect is IOnHitEffect)
-                hit.Applied += ((IOnHitEffect)effect).OnHit;
+        {   
+            if (effect is IOnHitAttemptEffect)
+                ((IOnHitAttemptEffect)effect).OnHitAttempt(hit);
         }
+        
+        if (Target != null && !hit.IsCanceled)
+        {
+            foreach (var effect in Target._effects)
+            {   
+                if (effect is IOnHitAttemptEffect)
+                    ((IOnHitAttemptEffect)effect).OnHitAttempt(hit);
+            }
+        }
+        
+        if (!hit.IsCanceled)
+        {
+            foreach (var effect in _effects)
+            {   
+                if (effect is IOnHitEffect)
+                    hit.Applied += ((IOnHitEffect)effect).OnHit;
+            }
+            
+            foreach (var effect in Target._effects)
+            {   
+                if (effect is IOnHitEffect)
+                    hit.Applied += ((IOnHitEffect)effect).OnHit;
+            }
+        }
+        
         return hit;
     }
     
