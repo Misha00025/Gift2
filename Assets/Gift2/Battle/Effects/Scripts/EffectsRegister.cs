@@ -19,8 +19,7 @@ public class EffectsRegister
     
     public EffectsRegister(float tickRate)
     {
-        if (Instance == null)
-            Instance = this;
+        Instance = this;
         _tickRate = tickRate;
     }
     
@@ -82,5 +81,11 @@ public class EffectsRegister
                 break;
             }
         }
+    }
+    
+    public void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
     }
 }

@@ -22,7 +22,7 @@ public class BattleLoop : MonoBehaviour
 
     void Awake()
     {
-        _effectsRegister = new(TickRate);
+        _effectsRegister = new (TickRate);
         _effectsConfigRegister = new EffectConfigsRegister();
     }
 

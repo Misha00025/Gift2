@@ -1,9 +1,37 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BattleLoop), typeof(BattleMap), typeof(BattleInputHandler))]
 public class BattleInitializer : MonoBehaviour
 {
+    public class StartupData
+    {
+        public static StartupData Instance {get; private set;}
+        
+        public CharacterConfig MainSummon {get; private set;}
+        public IReadOnlyList<CharacterConfig> Supports {get; private set;}
+        
+        
+        private StartupData()
+        {
+            Instance = this;
+        }
+        
+        public static void RegisterData(CharacterConfig main, List<CharacterConfig> supports = null)
+        {
+            var data = new StartupData();
+            data.MainSummon = main;
+            data.Supports = supports ?? new List<CharacterConfig>();
+        }
+        
+        public static void Clear()
+        {
+            Instance = null;
+        }
+    }
+
     public Character MainSummon;
     public Character Enemy;
     
@@ -16,7 +44,15 @@ public class BattleInitializer : MonoBehaviour
     {
         var loop = GetComponent<BattleLoop>();       
         var map = GetComponent<BattleMap>();       
-        var inputHandler = GetComponent<BattleInputHandler>();      
+        var inputHandler = GetComponent<BattleInputHandler>();
+        
+        if (StartupData.Instance != null)
+        {
+            var data = StartupData.Instance;
+            MainSummon = data.MainSummon.Prefab;
+            Supports = data.Supports.Select(e => e.Prefab).ToList();
+            StartupData.Clear();
+        } 
         
         loop.MainSummon = Instantiate(MainSummon, map.MainSummonPosition);
         inputHandler.Character = loop.MainSummon;
@@ -38,5 +74,10 @@ public class BattleInitializer : MonoBehaviour
         loop.Enemy.View.SetOn(map.EnemyPosition.position);
         PlayerStatusBar?.SetCharacter(loop.MainSummon);
         EnemyStatusBar?.SetCharacter(loop.Enemy);
+    }
+    
+    public void BackToSelectTeam()
+    {
+        SceneManager.LoadScene("SelectTeamScene");
     }
 }

@@ -28,10 +28,7 @@ public class EffectConfigsRegister
     
     public EffectConfigsRegister()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Debug.LogWarning("EffectConfigsRegister have more that one instance");
+        Instance = this;
     }
     
     
