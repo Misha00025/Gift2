@@ -88,7 +88,7 @@ public abstract class Character : MonoBehaviour
         }
         else
         {
-            var view = EffectConfigsRegister.Instance.CreateView(effect.Key, this);
+            var view = EffectConfigsRegister.Instance.GetView(effect.Key, this);
             if (view != null)
                 _effectsViews.Add(effect.Key, view);
         }

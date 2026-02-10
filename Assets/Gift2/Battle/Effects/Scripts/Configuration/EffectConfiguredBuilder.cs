@@ -40,7 +40,7 @@ public class EffectConfigsRegister
         _effectsPrefabs.Add(effectKey, viewPrefab);
     }
     
-    public EffectView CreateView(string effectKey, Character character)
+    public EffectView GetView(string effectKey, Character character)
     {
         if (_characterViews.ContainsKey(character) && _characterViews[character].ContainsKey(effectKey))
             return _characterViews[character][effectKey];

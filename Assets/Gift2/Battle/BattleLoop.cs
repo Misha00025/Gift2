@@ -41,13 +41,10 @@ public class BattleLoop : MonoBehaviour
     {
         _effectsRegister.Update(Time.deltaTime);
         
-        if (_paused) return;
-        if (_attackInProgress) return;
-        
         foreach (var character in Characters)
         {
             var remainingTime = RemainingTimes[character];
-            if (remainingTime < 0)
+            if (remainingTime < 0 && !(_attackInProgress || _paused))
             {
                 _attackInProgress = true;
                 _currentAttacker = character;

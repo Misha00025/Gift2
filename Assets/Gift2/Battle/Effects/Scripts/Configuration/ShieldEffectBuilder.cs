@@ -16,7 +16,7 @@ public class ShieldEffectsBuilder : EffectConfiguredBuilder
         public override void Apply(Character character)
         {
             base.Apply(character);   
-            _view = EffectConfigsRegister.Instance.CreateView(Key, character);
+            _view = EffectConfigsRegister.Instance.GetView(Key, character);
         }
 
         public void OnHitAttempt(Hit hit)
