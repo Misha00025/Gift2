@@ -2,9 +2,33 @@ using UnityEngine;
 
 public class Mannequin : Character
 {
-    public float HealDelay = 4.0f;
-    private float _remainingHealDelay;
-    private int _startHealth;
+    public int HealDelayByTicks;
+
+    private class HealToFull : Effect, ITikableEffect
+    { 
+        private int _ticksToHeal;
+        private int _ticks = 0;
+
+        public HealToFull(int ticks = 4){_ticksToHeal = ticks;}
+
+        public override void Apply(Character character)
+        {
+            character.DamageTaken.AddListener((e) => {_ticks = 0;});
+            base.Apply(character);
+            EffectsRegister.Instance.Register(this, -1);
+        }
+        
+
+        public void OnTick()
+        {
+            _ticks++;
+            if (_ticks == _ticksToHeal)
+            {
+                _ticks = 0;       
+                Target.Health.Value = Target.Health.MaxValue;
+            }
+        }
+    }
 
     public override void Attack()
     {
@@ -14,34 +38,16 @@ public class Mannequin : Character
 
     protected override void Init()
     {
-        _remainingHealDelay = HealDelay;
-        _startHealth = Health.Value;
+        var effect = new HealToFull();
+        effect.Apply(this);
         base.Init();
     }
-    
-    public void Update()
-    {
-        if (_remainingHealDelay < 0 && Health.Value != _startHealth)
-        {
-            Health.Value = _startHealth;
-        }
-        else
-        {
-            _remainingHealDelay -= Time.deltaTime;
-        }
-    }
+
 
     protected override void SetHealth(int newValue)
     {
         if (newValue <= 0)
             newValue = 1;
         base.SetHealth(newValue);
-    }
-    
-
-    public override void ApplyDamage(Damage damage)
-    {
-        _remainingHealDelay = HealDelay;
-        base.ApplyDamage(damage);
     }
 }

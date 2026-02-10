@@ -34,7 +34,8 @@ public class EffectsRegister
         for (int i = _effects.Count - 1; i >= 0; i--)
         {
             var effectData = _effects[i];
-            effectData.AccumulatedTime += deltaTime;
+            if (effectData.Duration > 0f)
+                effectData.AccumulatedTime += deltaTime;
             effectData.LastTickTime += deltaTime;
             
             if (effectData.Effect is ITikableEffect && (effectData.LastTickTime > _tickRate))
@@ -43,7 +44,7 @@ public class EffectsRegister
                 effectData.LastTickTime = 0f;
             }
             
-            if (effectData.AccumulatedTime >= effectData.Duration)
+            if (effectData.Duration > 0f && effectData.AccumulatedTime >= effectData.Duration)
             {
                 _effects[i].Effect.Disable();
                 _effects.RemoveAt(i);
