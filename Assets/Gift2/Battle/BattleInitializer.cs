@@ -39,13 +39,11 @@ public class BattleInitializer : MonoBehaviour
     public CharacterStatusBar EnemyStatusBar;
     
     public List<Character> Supports = new();
+    
+    private Battle _battle;
 
     void Awake()
-    {
-        var loop = GetComponent<BattleLoop>();       
-        var map = GetComponent<BattleMap>();       
-        var inputHandler = GetComponent<BattleInputHandler>();
-        
+    {    
         if (StartupData.Instance != null)
         {
             var data = StartupData.Instance;
@@ -53,10 +51,22 @@ public class BattleInitializer : MonoBehaviour
             Supports = data.Supports.Select(e => e.Prefab).ToList();
             StartupData.Clear();
         } 
+                
+        InitializeBattle();
+        InitializeView();
+        InitializeInputs();
+    }
+    
+    private void InitializeBattle()
+    {
+        _battle = new();
+        var loop = GetComponent<BattleLoop>();       
+        var map = GetComponent<BattleMap>(); 
         
-        loop.MainSummon = Instantiate(MainSummon, map.MainSummonPosition);
-        inputHandler.Character = loop.MainSummon;
-        loop.Enemy = Instantiate(Enemy, map.EnemyPosition);
+        _battle.mainSummon = Instantiate(MainSummon, map.MainSummonPosition);
+        _battle.enemy = Instantiate(Enemy, map.EnemyPosition);
+        
+        _battle.map = map;
         
         for (var i = 0; i < Supports.Count; i++)
         {
@@ -66,18 +76,36 @@ public class BattleInitializer : MonoBehaviour
             var summon = Instantiate(Supports[i], point);
         
             summon.View.SetOn(point.position);
-            summon.SetTarget(loop.MainSummon);
-            inputHandler.Supports.Add(summon);
+            summon.SetTarget(Battle.MainSummon);
+            _battle.supports.Add(summon);
         }
-            
+        
+        loop.MainSummon = Battle.MainSummon;
+        loop.Enemy = Battle.Enemy;
         loop.MainSummon.View.SetOn(map.MainSummonPosition.position);
         loop.Enemy.View.SetOn(map.EnemyPosition.position);
-        PlayerStatusBar?.SetCharacter(loop.MainSummon);
-        EnemyStatusBar?.SetCharacter(loop.Enemy);
+    }
+    
+    private void InitializeView()
+    {
+        PlayerStatusBar?.SetCharacter(Battle.MainSummon);
+        EnemyStatusBar?.SetCharacter(Battle.Enemy);
+    }
+    
+    private void InitializeInputs()
+    {
+        var inputHandler = GetComponent<BattleInputHandler>();
+        inputHandler.Character = Battle.MainSummon;
+        inputHandler.Supports.AddRange(Battle.Supports);
     }
     
     public void BackToSelectTeam()
     {
         SceneManager.LoadScene("SelectTeamScene");
+    }
+    
+    void OnDestroy()
+    {
+        _battle.Clear();
     }
 }
