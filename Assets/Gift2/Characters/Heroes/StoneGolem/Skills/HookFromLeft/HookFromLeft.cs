@@ -11,10 +11,8 @@ public class HookFromLeft : Skill<StoneGolem, SkillConfig>
     
     public void OnHook()
     {
-        int damageValue = (int)(Caster.Stats.damage * DamageMultiplayer);
-        var damageElement = Caster.Elements.Count > 0 ? Caster.Elements[0] : Element.Physical;
-        var damage = new Damage(){Value = damageValue, Element = damageElement};
-        Caster.Target.ApplyDamage(damage);
+        var hit = Caster.PrepareHit(DamageMultiplayer);
+        hit.Apply();
     }
     
     public void OnHookEnd()

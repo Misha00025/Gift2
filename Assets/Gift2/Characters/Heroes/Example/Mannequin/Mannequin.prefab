@@ -144,7 +144,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   _stats:
-    attackSpeed: 1
+    attackSpeed: 2
     damage: 1
   <Elements>k__BackingField: 
   <MainActiveSkill>k__BackingField: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
   <AttackCompleted>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  HealDelay: 1
+  HealDelayByTicks: 0
 --- !u!95 &4991820362887141781
 Animator:
   serializedVersion: 7

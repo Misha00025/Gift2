@@ -16,8 +16,9 @@ public class OnHitEffectOnTargetEffectBuilder : EffectConfiguredBuilder
         }
 
         public void OnHit(Hit hit)
-        {
-            hit.Target.ApplyEffect(_effectFactory?.Invoke());
+        {   
+            if (hit.Target != Target)
+                hit.Target.ApplyEffect(_effectFactory?.Invoke());
         }
         
     }

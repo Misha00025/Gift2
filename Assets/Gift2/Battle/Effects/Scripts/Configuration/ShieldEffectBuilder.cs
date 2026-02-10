@@ -5,15 +5,25 @@ public class ShieldEffectsBuilder : EffectConfiguredBuilder
 {
     public float Duration = 0.5f;
 
-    private class ShieldEffect : DurationEffect, IBeforeTakeDamageEffect
+    private class ShieldEffect : DurationEffect, IOnHitAttemptEffect
     {
+        private EffectView _view;
+    
         public ShieldEffect(float duration) : base(duration)
         {
         }
 
-        public void OnDamageTaking(ref Damage damage)
+        public override void Apply(Character character)
         {
-            damage.Value = 0;
+            base.Apply(character);   
+            _view = EffectConfigsRegister.Instance.CreateView(Key, character);
+        }
+
+        public void OnHitAttempt(Hit hit)
+        {
+            if (hit.Target != Target) return;
+            hit.Cancel();
+            _view?.Animator?.Play("Block");
         }
     }
     

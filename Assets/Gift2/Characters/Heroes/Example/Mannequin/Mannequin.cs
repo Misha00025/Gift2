@@ -3,6 +3,8 @@ using UnityEngine;
 public class Mannequin : Character
 {
     public int HealDelayByTicks;
+    
+    private HealToFull _onTargetEffect;
 
     private class HealToFull : Effect, ITikableEffect
     { 
@@ -32,7 +34,14 @@ public class Mannequin : Character
 
     public override void Attack()
     {
-        Debug.Log("Mannequin can't attack someone");
+        if (Target != null && _onTargetEffect == null)
+        {
+            var effect = new HealToFull();
+            effect.Apply(Target);
+            _onTargetEffect = effect;
+        }
+    
+        BaseAttack();
         CompleteAttack();
     }
 

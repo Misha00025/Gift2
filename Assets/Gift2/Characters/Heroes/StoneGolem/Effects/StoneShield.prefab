@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5446641802092453719}
   - component: {fileID: 8336520402310609984}
+  - component: {fileID: 4139603198762754438}
   m_Layer: 0
   m_Name: StoneShield
   m_TagString: Untagged
@@ -132,3 +133,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee654d5c0ceb3bcdbd7d959381586fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &4139603198762754438
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3349986448364816850}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83a6affdcfd503c6b9547ed92519571f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

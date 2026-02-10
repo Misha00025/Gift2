@@ -25,6 +25,7 @@ public class EffectConfigsRegister
     public static EffectConfigsRegister Instance {get; private set;}
     
     private Dictionary<string, EffectView> _effectsPrefabs = new();
+    private Dictionary<Character, Dictionary<string, EffectView>> _characterViews = new();
     
     public EffectConfigsRegister()
     {
@@ -41,9 +42,16 @@ public class EffectConfigsRegister
     
     public EffectView CreateView(string effectKey, Character character)
     {
+        if (_characterViews.ContainsKey(character) && _characterViews[character].ContainsKey(effectKey))
+            return _characterViews[character][effectKey];
+    
         if (_effectsPrefabs.ContainsKey(effectKey))
         {
-            var view = GameObject.Instantiate(_effectsPrefabs[effectKey], character.transform);            
+            var view = GameObject.Instantiate(_effectsPrefabs[effectKey], character.transform);
+            
+            if (!_characterViews.ContainsKey(character))
+                _characterViews.Add(character, new());
+            _characterViews[character].Add(effectKey, view);      
             return view;
         }
         
