@@ -18,6 +18,8 @@ public class BattleLoop : MonoBehaviour
     [SerializeField] private bool _paused;
     private bool _attackInProgress;
 
+    private bool CanAttack => !(_attackInProgress || _paused || _currentAttacker != null);
+
     public bool Paused => _paused;
 
     void Awake()
@@ -44,7 +46,7 @@ public class BattleLoop : MonoBehaviour
         foreach (var character in Characters)
         {
             var remainingTime = RemainingTimes[character];
-            if (remainingTime < 0 && !(_attackInProgress || _paused))
+            if (remainingTime < 0 && CanAttack)
             {
                 _attackInProgress = true;
                 _currentAttacker = character;

@@ -41,8 +41,7 @@ public class Mannequin : Character
             _onTargetEffect = effect;
         }
     
-        BaseAttack();
-        CompleteAttack();
+        Animator.Play("Attack");
     }
 
     protected override void Init()
