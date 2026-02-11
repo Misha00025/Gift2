@@ -360,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Caster: {fileID: 7375238146417601004}
   Config: {fileID: 11400000, guid: 05f2c0086a7740ce3baa4318efdcb139, type: 2}
-  EffectBuilder: {fileID: 11400000, guid: b458cc9a01fa9948581d910ae29426d6, type: 2}
+  EffectBuilder: {fileID: 11400000, guid: 0dd80112513207f6193e784e43f3c79d, type: 2}
 --- !u!4 &8952927731428575263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8106200332026139199, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}

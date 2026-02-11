@@ -9,9 +9,6 @@ public class BattleInputHandler : MonoBehaviour
     public Character Character;
     public List<Character> Supports = new(); 
     public BattleLoop BattleLoop;
-
-    public OnHitAdditionalDamageEffectBuilder onHitAdditionalDamageEffectBuilder;
-    public OnHitEffectOnTargetEffectBuilder tickableDamageEffectBuilder;
     private Skill _currentSkill;
 
     void Start()
