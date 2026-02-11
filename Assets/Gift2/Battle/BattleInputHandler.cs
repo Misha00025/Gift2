@@ -15,11 +15,11 @@ public class BattleInputHandler : MonoBehaviour
 
     void Start()
     {
-        List<Skill> skills = new();
-        skills.Add(Character.MainActiveSkill);
+        List<(Skill, Action)> skills = new();
+        skills.Add((Character.MainActiveSkill, () => Play(Character.MainActiveSkill)));
         foreach (var sup in Supports)
         {
-            skills.Add(sup.SupportActiveSkill);
+            skills.Add((sup.SupportActiveSkill, () => Play(sup.SupportActiveSkill)));
         }
         SkillsPanel.SetupSkills(skills);
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,15 +9,15 @@ public class SkillsPanel : MonoBehaviour
     
     private List<SkillUICard> _cards = new();
     
-    public void SetupSkills(List<Skill> skills)
+    public void SetupSkills(List<(Skill skill, Action play)> skills)
     {
         float position = 0f;
-        foreach (var skill in skills)
+        foreach (var e in skills)
         {
-            if (skill == null) continue;
+            if (e.skill == null) continue;
             var card = Instantiate(SkillPrefab, transform);
-            card.Button.onClick.AddListener(skill.Play);
-            card.SetupSkill(skill.Info);
+            card.Button.onClick.AddListener(e.play.Invoke);
+            card.SetupSkill(e.skill.Info);
             var rt = card.GetComponent<RectTransform>();
             rt.anchoredPosition = rt.anchoredPosition + new Vector2(0, position);
             position = rt.anchoredPosition.y - Space;
