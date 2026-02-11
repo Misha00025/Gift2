@@ -324,7 +324,7 @@ MonoBehaviour:
   <AttackCompleted>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  OnAttackEffectBuilder: {fileID: 11400000, guid: 89ce5f9d97a555699803ed7ddf4a7c47, type: 2}
+  OnAttackEffectBuilder: {fileID: 11400000, guid: 285334adbd3150346a48f1449992f57a, type: 2}
   ChanceOfFlame: 0.1
 --- !u!114 &4993597262760398735
 MonoBehaviour:
@@ -344,7 +344,7 @@ MonoBehaviour:
   Damage:
     Value: 20
     Element: 1
-  EffectBuilder: {fileID: 11400000, guid: 89ce5f9d97a555699803ed7ddf4a7c47, type: 2}
+  EffectBuilder: {fileID: 11400000, guid: 285334adbd3150346a48f1449992f57a, type: 2}
   Count: 5
 --- !u!114 &-1234414802302665630
 MonoBehaviour:
