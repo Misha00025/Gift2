@@ -66,31 +66,11 @@ public class CompositeEffectBuilder : EffectConfiguredBuilder
         return effect;
     }
     
-    private Effect CreateOnHitEffect()
-    {
-        Action<Hit> action = (e) => {};
-        switch (Behavior)
-        {
-            case EffectBehavior.ApplyEffect:
-                action = (e) =>
-                {
-                    e.Target.ApplyEffect(ApplyingEffectBuilder.Build());  
-                };
-                break;
-            case EffectBehavior.Damage:
-                action = (e) => 
-                {
-                    e.Target.ApplyDamage(Damage);
-                };
-                break;
-        }
     
-        return new OnHitCompositeEffect(Duration, action, TargetType);
-    }    
-    
-    private Effect CreateTickableEffect()
+    private Action<Character> CreateAction()
     {
         Action<Character> action = (e) => {};
+        
         switch (Behavior)
         {
             case EffectBehavior.ApplyEffect:
@@ -106,6 +86,20 @@ public class CompositeEffectBuilder : EffectConfiguredBuilder
                 };
                 break;
         }
-        return new TikableCompositeEffect(Duration, action);
+        return action;
+    }
+    
+    
+    
+    private Effect CreateOnHitEffect()
+    {
+        var action = CreateAction();
+        return new OnHitCompositeEffect(Duration, (e) => action(e.Target), TargetType);
+    }    
+    
+    private Effect CreateTickableEffect()
+    {
+        
+        return new TikableCompositeEffect(Duration, CreateAction());
     }
 }
