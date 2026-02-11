@@ -5,6 +5,7 @@ public class BattleLoop : MonoBehaviour
 {
     public Character MainSummon;
     public Character Enemy;
+    public Summoner Summoner;
     public TimeScaler TimeScaler;
     public float TickRate = 0.5f;
 
@@ -12,22 +13,22 @@ public class BattleLoop : MonoBehaviour
     private Dictionary<Character, float> RemainingTimes = new();
     
     private Character _currentAttacker;
-    private EffectsRegister _effectsRegister;
+    private EffectsRegister _effectsRegister => EffectsRegister.Instance;
     
     [SerializeField] private bool _paused;
     private bool _attackInProgress;
+
+    private float _accumulatedTime = 0f;
 
     private bool CanAttack => !(_attackInProgress || _paused || _currentAttacker != null);
 
     public bool Paused => _paused;
 
-    void Awake()
+    public void Initialize(Character enemy, Summoner summoner)
     {
-        _effectsRegister = new (TickRate);
-    }
-
-    void Start()
-    {    
+        MainSummon = summoner.MainCharacter;
+        Enemy = enemy;
+        Summoner = summoner;
         Characters = new(){ MainSummon, Enemy };
         foreach (var character in Characters)
         {
@@ -39,8 +40,20 @@ public class BattleLoop : MonoBehaviour
 
     void Update()
     {
+        _accumulatedTime += Time.deltaTime;
+        if (_accumulatedTime > TickRate)
+        {
+            Tick();
+            _accumulatedTime = 0;
+        }
+        
         _effectsRegister.Update(Time.deltaTime);
         
+        ProcessAttacks();
+    }
+    
+    private void ProcessAttacks()
+    {
         foreach (var character in Characters)
         {
             var remainingTime = RemainingTimes[character];
@@ -55,16 +68,16 @@ public class BattleLoop : MonoBehaviour
         }
     }
     
+    private void Tick()
+    {
+        Summoner.Tick(TickRate);
+        _effectsRegister.Tick();
+    }
+    
     public void SetPause(bool pause = true)
     {
         _paused = pause;
         _attackInProgress = false;
-    }
-    
-    void FixedUpdate()
-    {
-        if (_attackInProgress) return;
-        
     }
     
     private float GetRemaining(Character character)

@@ -6,8 +6,10 @@ public class BattleInputHandler : MonoBehaviour
 {
     public SkillsPanel SkillsPanel;
 
-    public Character Character;
-    public List<Character> Supports = new(); 
+    public Summoner Summoner;
+
+    public Character Character => Summoner.MainCharacter;
+    public IReadOnlyList<Character> Supports => Summoner.Supports; 
     public BattleLoop BattleLoop;
     private Skill _currentSkill;
 
@@ -49,10 +51,12 @@ public class BattleInputHandler : MonoBehaviour
     {
         if (skill == null) return;
         if (_currentSkill != null) return;
+        if (Summoner.CanCast() == false) return;
+        
         BattleLoop.SetPause(true);
         _currentSkill = skill;
         _currentSkill.Completed.AddListener(OnCompleteSkill);
-        _currentSkill.Play();
+        Summoner.Cast(skill);
     }    
     private void OnCompleteSkill()
     {

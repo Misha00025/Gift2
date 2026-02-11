@@ -15,6 +15,10 @@ public class Property
         set
         {
             _value = value;
+            if (_value > MaxValue)
+                _value = MaxValue;
+            if (_value < 0)
+                _value = 0;
             Changed.Invoke(this);
         }
     }
@@ -29,4 +33,16 @@ public class Property
     }
     
     public UnityEvent<Property> Changed = new();
+}
+
+public class FloatProperty : Property
+{
+    private float _accumulatedValue = 0f;
+    
+    public void AddFloat(float value)
+    {
+        var sum = value + _accumulatedValue;
+        Value += (int)sum;
+        _accumulatedValue = sum - (int)sum;        
+    }
 }

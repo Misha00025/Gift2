@@ -13,6 +13,7 @@ public class PropertyView : MonoBehaviour
             
         _property = property;
         _property.Changed.AddListener(OnChange);
+        OnChange(_property);
     }
     
     protected virtual void OnChange(Property property)

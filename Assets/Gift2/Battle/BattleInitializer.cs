@@ -35,7 +35,7 @@ public class BattleInitializer : MonoBehaviour
     public Character MainSummon;
     public Character Enemy;
     
-    public CharacterStatusBar PlayerStatusBar;
+    public SummonerStatusBar PlayerStatusBar;
     public CharacterStatusBar EnemyStatusBar;
     
     public List<Character> Supports = new();
@@ -62,11 +62,14 @@ public class BattleInitializer : MonoBehaviour
         _battle = new();
         var loop = GetComponent<BattleLoop>();       
         var map = GetComponent<BattleMap>(); 
+        var effectRegister = new EffectsRegister(loop.TickRate);
         
-        _battle.mainSummon = Instantiate(MainSummon, map.MainSummonPosition);
+        var mainSummon = Instantiate(MainSummon, map.MainSummonPosition);
+        var summoner = new Summoner(mainSummon);
+        _battle.summoner = summoner;
         _battle.enemy = Instantiate(Enemy, map.EnemyPosition);
-        
         _battle.map = map;
+        _battle.loop = loop;
         
         for (var i = 0; i < Supports.Count; i++)
         {
@@ -77,26 +80,24 @@ public class BattleInitializer : MonoBehaviour
         
             summon.View.SetOn(point.position);
             summon.SetTarget(Battle.MainSummon);
-            _battle.supports.Add(summon);
+            summoner.AddSupport(summon);
         }
         
-        loop.MainSummon = Battle.MainSummon;
-        loop.Enemy = Battle.Enemy;
-        loop.MainSummon.View.SetOn(map.MainSummonPosition.position);
-        loop.Enemy.View.SetOn(map.EnemyPosition.position);
+        Battle.MainSummon.View?.SetOn(Battle.Map.MainSummonPosition.position);
+        Battle.Enemy.View?.SetOn(Battle.Map.EnemyPosition.position);
+        loop.Initialize(Battle.Enemy, Battle.Summoner);
     }
     
     private void InitializeView()
     {
-        PlayerStatusBar?.SetCharacter(Battle.MainSummon);
+        PlayerStatusBar?.SetSummoner(Battle.Summoner);
         EnemyStatusBar?.SetCharacter(Battle.Enemy);
     }
     
     private void InitializeInputs()
     {
         var inputHandler = GetComponent<BattleInputHandler>();
-        inputHandler.Character = Battle.MainSummon;
-        inputHandler.Supports.AddRange(Battle.Supports);
+        inputHandler.Summoner = Battle.Summoner;
     }
     
     public void BackToSelectTeam()

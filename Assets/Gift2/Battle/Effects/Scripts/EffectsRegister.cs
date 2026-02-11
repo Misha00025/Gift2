@@ -8,7 +8,6 @@ public class EffectsRegister
     {
         public IEffect Effect;
         public float AccumulatedTime;
-        public float LastTickTime;
         public float Duration;
     }
     
@@ -36,13 +35,6 @@ public class EffectsRegister
             var effectData = _effects[i];
             if (effectData.Duration > 0f)
                 effectData.AccumulatedTime += deltaTime;
-            effectData.LastTickTime += deltaTime;
-            
-            if (effectData.Effect is ITikableEffect && (effectData.LastTickTime > _tickRate))
-            {
-                ((ITikableEffect)effectData.Effect).OnTick();
-                effectData.LastTickTime = 0f;
-            }
             
             if (effectData.Duration > 0f && effectData.AccumulatedTime >= effectData.Duration)
             {
@@ -50,6 +42,19 @@ public class EffectsRegister
                 _effects.RemoveAt(i);
             }
         }
+    }
+    
+    public void Tick()
+    {
+        for (int i = _effects.Count - 1; i >= 0; i--)
+        {
+            var effectData = _effects[i];
+            if (effectData.Effect is ITikableEffect)
+            {
+                ((ITikableEffect)effectData.Effect).OnTick();
+            }
+        }
+    
     }
     
     public void Register(IEffect effect, float duration = 1f)

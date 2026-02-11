@@ -12,15 +12,15 @@ public class Battle
     
     public BattleMap map;
     public BattleLoop loop;
-    public Character mainSummon;
     public Character enemy;
-    public List<Character> supports = new();
+    public Summoner summoner;
     
     public static BattleMap Map => _instance.map;
     public static BattleLoop Loop => _instance.loop;
-    public static Character MainSummon => _instance.mainSummon;
+    public static Summoner Summoner => _instance.summoner;
     public static Character Enemy => _instance.enemy;
-    public static IReadOnlyList<Character> Supports => _instance.supports;
+    public static Character MainSummon => Summoner.MainCharacter;
+    public static IReadOnlyList<Character> Supports => Summoner.Supports;
     
     
     public void Clear()
