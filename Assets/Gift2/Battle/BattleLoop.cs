@@ -5,15 +5,14 @@ public class BattleLoop : MonoBehaviour
 {
     public Character MainSummon;
     public Character Enemy;
+    public TimeScaler TimeScaler;
     public float TickRate = 0.5f;
-    public float FastSpeed = 3f;
 
     private List<Character> Characters = new();
     private Dictionary<Character, float> RemainingTimes = new();
     
     private Character _currentAttacker;
     private EffectsRegister _effectsRegister;
-    private EffectConfigsRegister _effectsConfigRegister;
     
     [SerializeField] private bool _paused;
     private bool _attackInProgress;
@@ -25,7 +24,6 @@ public class BattleLoop : MonoBehaviour
     void Awake()
     {
         _effectsRegister = new (TickRate);
-        _effectsConfigRegister = new EffectConfigsRegister();
     }
 
     void Start()
@@ -50,7 +48,6 @@ public class BattleLoop : MonoBehaviour
             {
                 _attackInProgress = true;
                 _currentAttacker = character;
-                RemainingTimes[character] = GetRemaining(character);
                 character.Attack();
                 return;
             }
@@ -62,24 +59,6 @@ public class BattleLoop : MonoBehaviour
     {
         _paused = pause;
         _attackInProgress = false;
-    }
-    
-    public void ToggleSpeed()
-    {
-        if (Time.timeScale > 1.1f)
-            SetNormalSpeed();
-        else
-            SetFastSpeed();
-    }
-    
-    public void SetNormalSpeed()
-    {
-        Time.timeScale = 1f;
-    }
-    
-    public void SetFastSpeed()
-    {
-        Time.timeScale = FastSpeed;
     }
     
     void FixedUpdate()
@@ -103,6 +82,8 @@ public class BattleLoop : MonoBehaviour
     
     private void OnCharacterAttackCompleted(Character character)
     {
+        if (RemainingTimes.ContainsKey(character))
+        RemainingTimes[character] = GetRemaining(character);
         var validCharacter = _currentAttacker == character;
         if (validCharacter)
         {

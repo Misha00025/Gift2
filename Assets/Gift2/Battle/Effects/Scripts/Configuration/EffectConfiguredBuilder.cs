@@ -13,7 +13,12 @@ public abstract class EffectConfiguredBuilder : ScriptableObject
         effect.Key = name;
         effect.Icon = Icon;
         if (EffectViewPrefab != null)
-            EffectConfigsRegister.Instance.RegisterEffectView(effect.Key, EffectViewPrefab);
+        {
+            var register = EffectConfigsRegister.Instance;
+            if (register == null)
+                register = new EffectConfigsRegister();
+            register.RegisterEffectView(effect.Key, EffectViewPrefab);
+        }
         return effect;
     }
     

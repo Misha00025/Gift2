@@ -37,9 +37,9 @@ public class BattleInputHandler : MonoBehaviour
             PlaySpell3();
             
         if (Input.GetKeyDown(KeyCode.Space))
-            BattleLoop?.SetFastSpeed();
+            BattleLoop?.TimeScaler?.SetFastSpeed();
         if (Input.GetKeyUp(KeyCode.Space))
-            BattleLoop?.SetNormalSpeed();
+            BattleLoop?.TimeScaler?.SetNormalSpeed();
     }
     
     public void PlaySpell1()

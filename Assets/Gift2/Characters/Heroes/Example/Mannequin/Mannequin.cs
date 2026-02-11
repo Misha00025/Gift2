@@ -36,7 +36,7 @@ public class Mannequin : Character
     {
         if (Target != null && _onTargetEffect == null)
         {
-            var effect = new HealToFull();
+            var effect = new HealToFull(HealDelayByTicks);
             effect.Apply(Target);
             _onTargetEffect = effect;
         }
@@ -46,7 +46,7 @@ public class Mannequin : Character
 
     protected override void Init()
     {
-        var effect = new HealToFull();
+        var effect = new HealToFull(HealDelayByTicks);
         effect.Apply(this);
         base.Init();
     }

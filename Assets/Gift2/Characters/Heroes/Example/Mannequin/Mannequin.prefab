@@ -167,7 +167,7 @@ MonoBehaviour:
   <AttackCompleted>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  HealDelayByTicks: 0
+  HealDelayByTicks: 8
 --- !u!95 &4991820362887141781
 Animator:
   serializedVersion: 7

@@ -1347,6 +1347,7 @@ GameObject:
   - component: {fileID: 1750054613}
   - component: {fileID: 1750054615}
   - component: {fileID: 1750054614}
+  - component: {fileID: 1750054616}
   m_Layer: 0
   m_Name: ==Game==
   m_TagString: Untagged
@@ -1385,8 +1386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainSummon: {fileID: 0}
   Enemy: {fileID: 0}
+  TimeScaler: {fileID: 1750054616}
   TickRate: 0.5
-  FastSpeed: 5
   _paused: 0
 --- !u!114 &1750054613
 MonoBehaviour:
@@ -1444,6 +1445,19 @@ MonoBehaviour:
   <SupportSummonPositions>k__BackingField:
   - {fileID: 618327448}
   - {fileID: 1479032338}
+--- !u!114 &1750054616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750054608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e26b0206e84e16ff7b8573e9e31dccc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FastSpeed: 5
 --- !u!1 &1835738629
 GameObject:
   m_ObjectHideFlags: 0
