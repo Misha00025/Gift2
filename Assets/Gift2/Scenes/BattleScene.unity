@@ -383,6 +383,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &411145318 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 379902303638844022, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
+  m_PrefabInstance: {fileID: 5335905486557180978}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06989e8e2f2be9c549d182fb11b98c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458500302
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,6 +901,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 31449545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &902983665 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8544271734047590732, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
+  m_PrefabInstance: {fileID: 5335905486557180978}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06989e8e2f2be9c549d182fb11b98c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1451137867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,8 +1427,6 @@ MonoBehaviour:
   Character: {fileID: 0}
   Supports: []
   BattleLoop: {fileID: 1750054612}
-  onHitAdditionalDamageEffectBuilder: {fileID: 11400000, guid: 523bba70cbf22fe22a4e73c0b7674337, type: 2}
-  tickableDamageEffectBuilder: {fileID: 11400000, guid: b458cc9a01fa9948581d910ae29426d6, type: 2}
 --- !u!114 &1750054614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1710,9 +1730,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3534961662268668001, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
+      propertyPath: Filler
+      value: 
+      objectReference: {fileID: 411145318}
+    - target: {fileID: 3534961662268668001, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
       propertyPath: character
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4816672479228085083, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
+      propertyPath: Filler
+      value: 
+      objectReference: {fileID: 902983665}
     - target: {fileID: 4816672479228085083, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
       propertyPath: character
       value: 
