@@ -15,7 +15,7 @@ public struct SummonerStats
 
 public class Summoner
 {
-    public const int ManaForCast = 100; 
+    public const int ManaForCast = 40; 
 
     private SummonerStats _baseStats;
     private SummonerStats _currentStats;
