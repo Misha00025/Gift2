@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: StunFromHook
   m_EditorClassIdentifier: 
   Icon: {fileID: -3779420353340960863, guid: 451169b979d60666082bfcc4f7f3ba4c, type: 3}
-  EffectViewPrefab: {fileID: 8336520402310609984, guid: 700760390aff22921afee41bb5095185, type: 3}
+  EffectViewPrefab: {fileID: 0}
   Behavior: 0
   Duration: 5

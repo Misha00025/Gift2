@@ -16,7 +16,7 @@ public class HookFromLeft : Skill<StoneGolem, SkillConfig>
         var effect = EffectOnHit.Build();
         hit.Apply();
         if (hit.IsCanceled == false)
-            effect.Apply(hit.Target);
+            hit.Target.ApplyEffect(effect);
     }
     
     public void OnHookEnd()
