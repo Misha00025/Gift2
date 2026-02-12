@@ -56,6 +56,8 @@ public class BattleLoop : MonoBehaviour
     {
         foreach (var character in Characters)
         {
+            if (character.IsStunned) continue;
+            
             var remainingTime = RemainingTimes[character];
             if (remainingTime < 0 && CanAttack)
             {

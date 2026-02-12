@@ -48,7 +48,7 @@ public class Effect : IEffect
         }
     }
     
-    public void Disable()
+    public virtual void Disable()
     {
         Target?.DisableEffect(this);
         Target = null;

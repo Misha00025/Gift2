@@ -33,6 +33,8 @@ public abstract class Character : MonoBehaviour
     }    
     public Animator Animator => _view.Animator;
     public Transform Pivot => _view.Pivot;
+    public bool IsStunned;
+    
     
     // Not inspected
     private Stats _baseStats;

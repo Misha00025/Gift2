@@ -391,6 +391,7 @@ MonoBehaviour:
   <AttackCompleted>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  IsStunned: 0
 --- !u!114 &-733814600785012492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +422,7 @@ MonoBehaviour:
   Caster: {fileID: -2571691766814463540}
   Config: {fileID: 11400000, guid: 108e05b02f90a73d990a42205df50ce0, type: 2}
   DamageMultiplayer: 5
+  EffectOnHit: {fileID: 11400000, guid: 4ba949771bc2428448bd442a1705197e, type: 2}
 --- !u!4 &7378901009970686635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7635852213286481121, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}

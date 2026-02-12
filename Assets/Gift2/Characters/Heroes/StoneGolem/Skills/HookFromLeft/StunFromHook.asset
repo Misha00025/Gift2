@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67dea99e22ebf4f6a87a4deca8515c31, type: 3}
+  m_Name: StunFromHook
+  m_EditorClassIdentifier: 
+  Icon: {fileID: -3779420353340960863, guid: 451169b979d60666082bfcc4f7f3ba4c, type: 3}
+  EffectViewPrefab: {fileID: 8336520402310609984, guid: 700760390aff22921afee41bb5095185, type: 3}
+  Behavior: 0
+  Duration: 5
