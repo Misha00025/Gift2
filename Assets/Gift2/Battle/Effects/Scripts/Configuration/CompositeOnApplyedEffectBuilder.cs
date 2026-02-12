@@ -37,8 +37,8 @@ public class CompositeOnAppliedEffectBuilder : EffectConfiguredBuilder
         {
             var target = Target;
             base.Disable();
-            if (Target != null)
-                _onEnable?.Invoke(Target);
+            if (target != null)
+                _onDisable?.Invoke(target);
         }
     }
 
