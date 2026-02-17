@@ -17,6 +17,8 @@ public class CompositeOnAppliedEffectBuilder : EffectConfiguredBuilder
     {
         private Action<Character> _onEnable;
         private Action<Character> _onDisable;
+        
+        private bool _active = false;
     
         public OnAppliedCompositeEffect(float duration, Action<Character> onEnable, Action<Character> onDisable) : base(duration)
         {
@@ -29,16 +31,18 @@ public class CompositeOnAppliedEffectBuilder : EffectConfiguredBuilder
             var target = Target;
             base.Apply(character);
             
-            if (target == null)
+            if (target == null && _active == false)
                 _onEnable?.Invoke(character);
+            _active = true;
         }
 
         public override void Disable()
         {
             var target = Target;
             base.Disable();
-            if (target != null)
+            if (target != null && _active)
                 _onDisable?.Invoke(target);
+            _active = false;
         }
     }
 
@@ -58,12 +62,11 @@ public class CompositeOnAppliedEffectBuilder : EffectConfiguredBuilder
     {
         Action<Character> onEnable = (e) =>
         {
-            if (e.IsStunned) return;
-            e.IsStunned = true;
+            e.AddStun();
         };
         Action<Character> onDisable = (e) =>
         {
-            e.IsStunned = false;
+            e.RemoveStun();
         };
         var effect = new OnAppliedCompositeEffect(Duration, onEnable, onDisable);
         return effect;        

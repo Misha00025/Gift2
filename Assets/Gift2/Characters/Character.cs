@@ -33,7 +33,10 @@ public abstract class Character : MonoBehaviour
     }    
     public Animator Animator => _view.Animator;
     public Transform Pivot => _view.Pivot;
-    public bool IsStunned;
+    
+    
+    private int _stuns = 0;
+    public bool IsStunned => _stuns > 0;
     
     
     // Not inspected
@@ -161,6 +164,15 @@ public abstract class Character : MonoBehaviour
     {
         Target = target;
     }
+    
+    public void AddStun() => _stuns++;
+    public void RemoveStun()
+    {
+        if (_stuns > 0)
+            _stuns--;
+    }
+    
+    
     
     public abstract void Attack();
 }
