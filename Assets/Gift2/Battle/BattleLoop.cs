@@ -30,6 +30,7 @@ public class BattleLoop : MonoBehaviour
         Enemy = enemy;
         Summoner = summoner;
         Characters = new(){ MainSummon, Enemy };
+        RemainingTimes = new();
         foreach (var character in Characters)
         {
             character.AttackCompleted.AddListener(OnCharacterAttackCompleted);

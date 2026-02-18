@@ -4,8 +4,6 @@ public class HealthBar : PropertyView
 {
     [SerializeField] private Character _character;
     
-    private int _maxValue;
-    
     public void SetCharacter(Character character)
     {
         _character = character;

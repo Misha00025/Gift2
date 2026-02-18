@@ -33,12 +33,12 @@ public class BattleInitializer : MonoBehaviour
     }
 
     public Character MainSummon;
-    public Character Enemy;
     
     public SummonerStatusBar PlayerStatusBar;
     public CharacterStatusBar EnemyStatusBar;
     
     public List<Character> Supports = new();
+    public List<Character> Enemies = new();
     
     private Battle _battle;
 
@@ -66,10 +66,19 @@ public class BattleInitializer : MonoBehaviour
         
         var mainSummon = Instantiate(MainSummon, map.MainSummonPosition);
         var summoner = new Summoner(mainSummon);
+        var queue = new BattleQueue();
+        
+        Debug.Log($"Count of enemies: {Enemies.Count}");
+        
+        for (int i = 0; i < Enemies.Count; i++)
+            queue.Enemies.Enqueue(Enemies[i]);
+        Debug.Log($"Count of enemies queue: {queue.Enemies.Count}");
+        
+        
         _battle.summoner = summoner;
-        _battle.enemy = Instantiate(Enemy, map.EnemyPosition);
         _battle.map = map;
         _battle.loop = loop;
+        _battle.queue = queue;
         
         for (var i = 0; i < Supports.Count; i++)
         {
@@ -84,14 +93,37 @@ public class BattleInitializer : MonoBehaviour
         }
         
         Battle.MainSummon.View?.SetOn(Battle.Map.MainSummonPosition.position);
-        Battle.Enemy.View?.SetOn(Battle.Map.EnemyPosition.position);
-        loop.Initialize(Battle.Enemy, Battle.Summoner);
+        
+        var conditionSystem = new BattleConditionSystem(_battle);
+        _battle.conditionSystem = conditionSystem;
+        conditionSystem.StepEnded.AddListener(SetupEnemy);
+        SetupEnemy();
+    }
+    
+    
+    public void SetupEnemy()
+    {
+        Debug.LogWarning("Start Setup Enemy");
+        Debug.Log($"Count of enemies queue: {_battle.queue.Enemies.Count}");
+        var enemy = Battle.Enemy;
+        if (Battle.Enemies.Count > 0)
+        {
+            var newEnemy = GameObject.Instantiate(Battle.Enemies.Dequeue(), Battle.Map.EnemyPosition);
+            EnemyStatusBar.SetCharacter(newEnemy);
+            _battle.enemy = newEnemy;
+            _battle.conditionSystem.OnEnemyChanged();    
+            Battle.Enemy.View?.SetOn(Battle.Map.EnemyPosition.position);
+            _battle.loop.Initialize(Battle.Enemy, Battle.Summoner);
+        }
+        if (enemy != null)
+            GameObject.Destroy(enemy.gameObject); 
+        Debug.Log($"Count of enemies queue: {_battle.queue.Enemies.Count}");
+        Debug.LogWarning("End Setup Enemy");
     }
     
     private void InitializeView()
     {
         PlayerStatusBar?.SetSummoner(Battle.Summoner);
-        EnemyStatusBar?.SetCharacter(Battle.Enemy);
     }
     
     private void InitializeInputs()

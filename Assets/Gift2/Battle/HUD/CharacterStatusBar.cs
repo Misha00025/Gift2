@@ -9,6 +9,6 @@ public class CharacterStatusBar : MonoBehaviour
     public void SetCharacter(Character character)
     {
         _character = character;
-        HealthBar.SetCharacter(_character);
+        HealthBar.SetProperty(_character.Health);
     }
 }
