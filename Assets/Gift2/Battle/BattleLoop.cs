@@ -41,6 +41,8 @@ public class BattleLoop : MonoBehaviour
 
     void Update()
     {
+        if (_paused) return;
+        
         _accumulatedTime += Time.deltaTime;
         if (_accumulatedTime > TickRate)
         {
@@ -77,10 +79,14 @@ public class BattleLoop : MonoBehaviour
         _effectsRegister.Tick();
     }
     
-    public void SetPause(bool pause = true)
+    public void SetAttackInProgress(bool pause = true)
+    {
+        _attackInProgress = pause;
+    }
+    
+    public void SetPause(bool pause)
     {
         _paused = pause;
-        _attackInProgress = false;
     }
     
     private float GetRemaining(Character character)

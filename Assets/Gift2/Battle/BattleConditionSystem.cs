@@ -54,6 +54,8 @@ public class BattleConditionSystem
             return Battle.Condition.Completed;
         if (enemyDie && Battle.Enemies.Count > 0)
             return Battle.Condition.StepEnded;
+        else if (enemyDie)
+            return Battle.Condition.Completed;
         return Battle.Condition.InProcess;
     }
 }

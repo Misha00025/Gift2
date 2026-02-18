@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -96,10 +97,28 @@ public class BattleInitializer : MonoBehaviour
         
         var conditionSystem = new BattleConditionSystem(_battle);
         _battle.conditionSystem = conditionSystem;
-        conditionSystem.StepEnded.AddListener(SetupEnemy);
+        conditionSystem.StepEnded.AddListener(OnStepEnded);
+        conditionSystem.Completed.AddListener(OnBattleCompleted);
         SetupEnemy();
     }
     
+    private void OnStepEnded()
+    {
+        StartCoroutine(StepChangingProcess());
+    }
+    
+    private IEnumerator StepChangingProcess()
+    {
+        _battle.loop.SetPause(true);
+        yield return new WaitForSeconds(2f);
+        SetupEnemy();
+        _battle.loop.SetPause(false);
+    }
+    
+    private void OnBattleCompleted()
+    {
+        _battle.loop.SetPause(true);
+    }
     
     public void SetupEnemy()
     {

@@ -53,14 +53,14 @@ public class BattleInputHandler : MonoBehaviour
         if (_currentSkill != null) return;
         if (Summoner.CanCast() == false) return;
         
-        BattleLoop.SetPause(true);
+        BattleLoop.SetAttackInProgress(true);
         _currentSkill = skill;
         _currentSkill.Completed.AddListener(OnCompleteSkill);
         Summoner.Cast(skill);
     }    
     private void OnCompleteSkill()
     {
-        BattleLoop.SetPause(false);
+        BattleLoop.SetAttackInProgress(false);
         _currentSkill.Completed.RemoveListener(OnCompleteSkill);
         _currentSkill = null;
     }
