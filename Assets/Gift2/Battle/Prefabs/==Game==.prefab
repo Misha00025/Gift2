@@ -456,7 +456,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 189671000768198010, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
       propertyPath: m_Name
-      value: UIHorisontalPanel
+      value: ==UI==
       objectReference: {fileID: 0}
     - target: {fileID: 2006617379116767547, guid: bc956f97c7a669dee8b6f30d1e77da35, type: 3}
       propertyPath: m_RenderMode
