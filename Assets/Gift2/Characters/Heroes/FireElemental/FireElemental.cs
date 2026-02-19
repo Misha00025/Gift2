@@ -12,11 +12,6 @@ public class FireElemental : Character
         CastHandler = GetComponent<FireElementalCastHandler>();
         base.Init();
     }
-
-    public override void Attack()
-    {
-        Animator.Play("BaseAttack");
-    }
     
     public override void BaseAttack()
     {
