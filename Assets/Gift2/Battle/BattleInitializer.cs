@@ -122,8 +122,8 @@ public class BattleInitializer : MonoBehaviour
     
     public void SetupEnemy()
     {
-        Debug.LogWarning("Start Setup Enemy");
-        Debug.Log($"Count of enemies queue: {_battle.queue.Enemies.Count}");
+        // Debug.LogWarning("Start Setup Enemy");
+        // Debug.Log($"Count of enemies queue: {_battle.queue.Enemies.Count}");
         var enemy = Battle.Enemy;
         if (Battle.Enemies.Count > 0)
         {
@@ -136,8 +136,8 @@ public class BattleInitializer : MonoBehaviour
         }
         if (enemy != null)
             GameObject.Destroy(enemy.gameObject); 
-        Debug.Log($"Count of enemies queue: {_battle.queue.Enemies.Count}");
-        Debug.LogWarning("End Setup Enemy");
+        // Debug.Log($"Count of enemies queue: {_battle.queue.Enemies.Count}");
+        // Debug.LogWarning("End Setup Enemy");
     }
     
     private void InitializeView()

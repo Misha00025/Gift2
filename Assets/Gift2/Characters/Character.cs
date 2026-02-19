@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 
 [RequireComponent(typeof(CharacterViewController))]
-public abstract class Character : MonoBehaviour
+public class Character : MonoBehaviour
 {
     
     [field: SerializeField] public Property Health { get; private set; }
@@ -31,8 +31,9 @@ public abstract class Character : MonoBehaviour
             return _view;
         }
     }    
-    public Animator Animator => _view.Animator;
+    public IPlayable Animator => _view;
     public Transform Pivot => _view.Pivot;
+    public void SetPosition(Vector3 position) => View.SetOn(position);
     
     
     private int _stuns = 0;
@@ -78,6 +79,7 @@ public abstract class Character : MonoBehaviour
     
         SetHealth(Health.Value - damage.Value);
         DamageTaken.Invoke(damage);
+        View.Play(AnimationKey.DamageTaken);
     }
     
     public virtual void ApplyEffect(IEffect effect)
@@ -158,7 +160,12 @@ public abstract class Character : MonoBehaviour
         return hit;
     }
     
-    public virtual void CompleteAttack() => AttackCompleted.Invoke(this);
+    protected virtual void OnCompleteAttack()
+    {
+        View.RemoveListener(AnimationEventKey.Hit, BaseAttack);
+        View.RemoveListener(AnimationEventKey.Completed, OnCompleteAttack);
+        AttackCompleted.Invoke(this);
+    }
     
     public void SetTarget(Character target)
     {
@@ -172,7 +179,10 @@ public abstract class Character : MonoBehaviour
             _stuns--;
     }
     
-    
-    
-    public abstract void Attack();
+    public virtual void Attack()
+    {
+        View.AddListener(AnimationEventKey.Hit, BaseAttack);
+        View.AddListener(AnimationEventKey.Completed, OnCompleteAttack);
+        Animator.Play("BaseAttack");
+    }
 }

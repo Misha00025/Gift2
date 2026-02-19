@@ -16,11 +16,6 @@ public class StoneGolem : Character
     }
 
     public JumpEvents Jump { get; private set; } = new();
-
-    public override void Attack()
-    {
-        Animator?.Play("BaseAttack");
-    }
     
     public Hit PrepareHit(float multiplayer)
     {
