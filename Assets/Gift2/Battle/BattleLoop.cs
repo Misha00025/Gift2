@@ -11,26 +11,24 @@ public class BattleLoop : MonoBehaviour
 
     private List<Character> Characters = new();
     private Dictionary<Character, float> RemainingTimes = new();
-    
     private Character _currentAttacker;
     private EffectsRegister _effectsRegister => EffectsRegister.Instance;
-    
+    private BattleConditionSystem _conditionSystem;
     [SerializeField] private bool _paused;
     private bool _attackInProgress;
-
     private float _accumulatedTime = 0f;
-
+    
     private bool CanAttack => !(_attackInProgress || _paused || _currentAttacker != null);
-
     public bool Paused => _paused;
 
-    public void Initialize(Character enemy, Summoner summoner)
+    public void Initialize(Character enemy, Summoner summoner, BattleConditionSystem conditionSystem)
     {
         MainSummon = summoner.MainCharacter;
         Enemy = enemy;
         Summoner = summoner;
         Characters = new(){ MainSummon, Enemy };
         RemainingTimes = new();
+        _conditionSystem = conditionSystem;
         foreach (var character in Characters)
         {
             character.AttackCompleted.AddListener(OnCharacterAttackCompleted);
@@ -43,6 +41,8 @@ public class BattleLoop : MonoBehaviour
     {
         if (_paused) return;
         
+        _conditionSystem.ProcessCondition();
+              
         _accumulatedTime += Time.deltaTime;
         if (_accumulatedTime > TickRate)
         {

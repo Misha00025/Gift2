@@ -130,9 +130,8 @@ public class BattleInitializer : MonoBehaviour
             var newEnemy = GameObject.Instantiate(Battle.Enemies.Dequeue(), Battle.Map.EnemyPosition);
             EnemyStatusBar.SetCharacter(newEnemy);
             _battle.enemy = newEnemy;
-            _battle.conditionSystem.OnEnemyChanged();    
             Battle.Enemy.View?.SetOn(Battle.Map.EnemyPosition.position);
-            _battle.loop.Initialize(Battle.Enemy, Battle.Summoner);
+            _battle.loop.Initialize(Battle.Enemy, Battle.Summoner, _battle.conditionSystem);
         }
         if (enemy != null)
             GameObject.Destroy(enemy.gameObject); 
