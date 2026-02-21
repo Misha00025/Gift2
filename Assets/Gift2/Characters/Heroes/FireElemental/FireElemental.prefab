@@ -26,11 +26,11 @@ Transform:
   m_GameObject: {fileID: 6301425168708386995}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.079, y: -0.02700001, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8952927731428575263}
+  m_Father: {fileID: 5870220313987222791}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &307845457393513388
 SpriteRenderer:
@@ -254,8 +254,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8106200332026139199, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
-      insertIndex: 1
+    - targetCorrespondingSourceObject: {fileID: 6716842113967101735, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 5740712557480428293}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5398485855697297438, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField:
-    _value: 25
+    _value: 1
     _maxValue: 25
     Changed:
       m_PersistentCalls:
@@ -361,8 +361,8 @@ MonoBehaviour:
   Caster: {fileID: 7375238146417601004}
   Config: {fileID: 11400000, guid: 05f2c0086a7740ce3baa4318efdcb139, type: 2}
   EffectBuilder: {fileID: 11400000, guid: 0dd80112513207f6193e784e43f3c79d, type: 2}
---- !u!4 &8952927731428575263 stripped
+--- !u!4 &5870220313987222791 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8106200332026139199, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6716842113967101735, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
   m_PrefabInstance: {fileID: 882760599972944416}
   m_PrefabAsset: {fileID: 0}

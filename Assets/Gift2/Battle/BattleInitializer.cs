@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -120,7 +121,10 @@ public class BattleInitializer : MonoBehaviour
     private void OnBattleCompleted()
     {
         _battle.loop.SetPause(true);
-        Battle.Enemy.Animator.Play(AnimationKey.Die);
+        if (Battle.Enemy.Health.Value <= 0)
+            Battle.Enemy.Animator.Play(AnimationKey.Die);
+        else
+            Battle.MainSummon.Animator.Play(AnimationKey.Die);
     }
     
     public void SetupEnemy()
