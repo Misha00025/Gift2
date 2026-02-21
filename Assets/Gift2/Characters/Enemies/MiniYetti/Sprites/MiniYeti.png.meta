@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e67b91496608b13e480350b069d60d5b
+guid: f8178036cfaa50920aaf878c660ff0e1
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,11 +106,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Yeti_0
+      name: MiniYeti_0
       rect:
         serializedVersion: 2
         x: 96
-        y: 1152
+        y: 1156
         width: 818
         height: 790
       alignment: 9
@@ -119,38 +119,38 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 58212478a2183c3e0800000000000000
-      internalID: -2034640586983468411
+      spriteID: f71fed79ec78ea6db9ecfdedd29bb747
+      internalID: -676838345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_1
+      name: MiniYeti_2
       rect:
         serializedVersion: 2
-        x: 951
-        y: 1685
-        width: 608
-        height: 323
+        x: 953
+        y: 1722
+        width: 598
+        height: 285
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 16a8fb1ce00fd0f30800000000000000
-      internalID: 4543551545257462369
+      spriteID: 6680f9c5f32a2ce049863312284522c7
+      internalID: -671362761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_3
+      name: MiniYeti_3
       rect:
         serializedVersion: 2
         x: 37
@@ -165,8 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0ab10f6d3a932950b561187da1f32c9
-      internalID: -407474317
+      spriteID: 85fba58d63d2293c8988d5975b545b71
+      internalID: -1140525789
       vertices: []
       indices: 
       edges: []
@@ -185,10 +185,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Yeti_0: -2034640586983468411
-      Yeti_1: 4543551545257462369
-      Yeti_2: 7936095567434068920
-      Yeti_3: -407474317
+      MiniYeti_0: -676838345
+      MiniYeti_1: 1492497354
+      MiniYeti_2: -671362761
+      MiniYeti_3: -1140525789
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -10,7 +10,7 @@ public struct SummonerStats
     public int MaxMana;
     public int MaxSupports;
     
-    public static SummonerStats Default => new (){ManaRegeneration = 5f, MaxMana = 100, MaxSupports = 2};
+    public static SummonerStats Default => new (){ManaRegeneration = 20f, MaxMana = 100, MaxSupports = 2};
 }
 
 public class Summoner
