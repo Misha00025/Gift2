@@ -91,6 +91,8 @@ public static class AnimationKey
     public const string Attack = "BaseAttack";
     public const string DamageTaken = "DamageTaken";
     public const string Idle = "Idle";
+    public const string Cast = "Cast";
+    public const string Die = "Die";
 }
 
 public static class AnimationEventKey

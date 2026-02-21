@@ -110,14 +110,17 @@ public class BattleInitializer : MonoBehaviour
     private IEnumerator StepChangingProcess()
     {
         _battle.loop.SetPause(true);
-        yield return new WaitForSeconds(2f);
+        Battle.Enemy.Animator.Play(AnimationKey.Die);
+        yield return new WaitForSeconds(1.2f);
         SetupEnemy();
+        yield return new WaitForSeconds(1f);
         _battle.loop.SetPause(false);
     }
     
     private void OnBattleCompleted()
     {
         _battle.loop.SetPause(true);
+        Battle.Enemy.Animator.Play(AnimationKey.Die);
     }
     
     public void SetupEnemy()
