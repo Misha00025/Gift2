@@ -63,6 +63,7 @@ public class Summoner
     public void Cast(Skill skill)
     {
         Mana.Value -= ManaForCast;
+        MainCharacter.CancelAttack();
         skill.Play();
     }
 }

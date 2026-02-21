@@ -186,6 +186,11 @@ public class Character : MonoBehaviour
         Animator.Play("BaseAttack");
     }
     
+    public virtual void CancelAttack()
+    {
+        OnCompleteAttack();
+    }
+    
     void OnDestroy()
     {
         for (int i = _effects.Count-1; i >= 0; i--)
