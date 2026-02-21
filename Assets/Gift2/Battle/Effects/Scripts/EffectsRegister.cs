@@ -9,10 +9,12 @@ public class EffectsRegister
         public IEffect Effect;
         public float AccumulatedTime;
         public float Duration;
+        public bool IsRemoved;
     }
     
     private List<EffectData> _effects = new List<EffectData>();
     private List<EffectData> _effectsToAdd = new List<EffectData>();
+    private Dictionary<IEffect, EffectData> _effectsData = new();
     
     private float _tickRate;
     
@@ -33,6 +35,10 @@ public class EffectsRegister
         for (int i = _effects.Count - 1; i >= 0; i--)
         {
             var effectData = _effects[i];
+            if (effectData.IsRemoved) {
+                _effects.Remove(effectData);
+                continue;
+            }
             if (effectData.Duration > 0f)
                 effectData.AccumulatedTime += deltaTime;
             
@@ -49,6 +55,10 @@ public class EffectsRegister
         for (int i = _effects.Count - 1; i >= 0; i--)
         {
             var effectData = _effects[i];
+            if (effectData.IsRemoved) {
+                _effects.Remove(effectData);
+                continue;
+            }
             if (effectData.Effect is ITikableEffect)
             {
                 ((ITikableEffect)effectData.Effect).OnTick();
@@ -59,34 +69,23 @@ public class EffectsRegister
     
     public void Register(IEffect effect, float duration = 1f)
     {
-        _effectsToAdd.Add(new EffectData
+        var data = new EffectData
         {
             Effect = effect,
             Duration = duration
-        });
+        };
+        _effectsToAdd.Add(data);
+        if (_effectsData.ContainsKey(effect) == false)
+            _effectsData.Add(effect, data);
     }
     
     public void RemoveEffect(IEffect effect)
     {
-        for (int i = _effects.Count - 1; i >= 0; i--)
-        {
-            if (_effects[i].Effect == effect)
-            {
-                _effects.RemoveAt(i);
-                _effects[i].Effect.Disable();
-                break;
-            }
-        }
+        if (_effectsData.ContainsKey(effect) == false) return;
         
-        for (int i = _effectsToAdd.Count - 1; i >= 0; i--)
-        {
-            if (_effectsToAdd[i].Effect == effect)
-            {
-                _effectsToAdd.RemoveAt(i);
-                _effects[i].Effect.Disable();
-                break;
-            }
-        }
+        var data = _effectsData[effect];
+        data.IsRemoved = true;
+        _effectsData.Remove(effect);
     }
     
     public void OnDestroy()

@@ -14,6 +14,13 @@ public class DurationEffect : Effect
         EffectsRegister.Instance?.Register(this, Duration);
         base.Apply(character);
     }
+
+    public override void Disable()
+    {
+        EffectsRegister.Instance?.RemoveEffect(this);
+        base.Disable();
+    }
+    
 }
 
 public abstract class TikableEffect : DurationEffect, ITikableEffect

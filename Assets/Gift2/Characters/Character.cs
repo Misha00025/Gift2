@@ -185,4 +185,12 @@ public class Character : MonoBehaviour
         View.AddListener(AnimationEventKey.Completed, OnCompleteAttack);
         Animator.Play("BaseAttack");
     }
+    
+    void OnDestroy()
+    {
+        for (int i = _effects.Count-1; i >= 0; i--)
+        {
+            DisableEffect(_effects[i]);
+        }
+    }
 }
