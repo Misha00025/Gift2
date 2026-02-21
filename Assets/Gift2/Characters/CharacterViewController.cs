@@ -97,6 +97,7 @@ public static class AnimationKey
 
 public static class AnimationEventKey
 {
+    public const string Cast = "Cast";
     public const string Hit = "Hit";
     public const string Completed = "Completed";
 }

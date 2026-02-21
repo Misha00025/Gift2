@@ -8,6 +8,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1003684024640300622, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: d5623969511445480bf2a8115803c438, type: 2}
+    - target: {fileID: 1815275975662977959, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
+      propertyPath: _character
+      value: 
+      objectReference: {fileID: -2783029153284630111}
+    - target: {fileID: 3150864976554597141, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150864976554597141, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150864976554597141, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150864976554597141, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150864976554597141, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 5398485855697297438, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
       propertyPath: m_Name
       value: Anivia
@@ -26,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8106200332026139199, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8106200332026139199, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
       propertyPath: m_LocalRotation.x
@@ -34,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8106200332026139199, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8106200332026139199, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
       propertyPath: m_LocalRotation.z
@@ -46,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8106200332026139199, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8106200332026139199, guid: 12b6f8d78c312597cba727f9b7feed93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -84,8 +112,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   _stats:
-    attackSpeed: 0.4
-    damage: 10
+    attackSpeed: 0.6
+    damage: 3
   <Elements>k__BackingField: 02000000
   <MainActiveSkill>k__BackingField: {fileID: 0}
   <SupportActiveSkill>k__BackingField: {fileID: 0}
@@ -95,3 +123,12 @@ MonoBehaviour:
   <AttackCompleted>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  IceStormDamage:
+    Value: 1
+    Element: 2
+  Rage:
+    _value: 3
+    _maxValue: 4
+    Changed:
+      m_PersistentCalls:
+        m_Calls: []
