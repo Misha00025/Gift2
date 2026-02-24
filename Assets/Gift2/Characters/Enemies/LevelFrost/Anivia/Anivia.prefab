@@ -4967,8 +4967,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Health>k__BackingField:
-    _value: 100
-    _maxValue: 100
+    _value: 150
+    _maxValue: 150
     Changed:
       m_PersistentCalls:
         m_Calls: []
