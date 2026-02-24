@@ -484,6 +484,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7375238146417601004, guid: f2860144303df9befb640192521cd930, type: 3}
     - target: {fileID: 8866907416034959027, guid: 48c0b09698cbda435a085cce1acf816c, type: 3}
+      propertyPath: SummonerConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 354152c6908d1bd7db5b66dedf7b1e05, type: 2}
+    - target: {fileID: 8866907416034959027, guid: 48c0b09698cbda435a085cce1acf816c, type: 3}
       propertyPath: Supports.Array.size
       value: 1
       objectReference: {fileID: 0}

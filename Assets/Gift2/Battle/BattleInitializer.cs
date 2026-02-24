@@ -34,6 +34,8 @@ public class BattleInitializer : MonoBehaviour
         }
     }
 
+    public SummonerConfig SummonerConfig;
+
     public Character MainSummon;
     
     public SummonerStatusBar PlayerStatusBar;
@@ -67,7 +69,7 @@ public class BattleInitializer : MonoBehaviour
         var effectRegister = new EffectsRegister(loop.TickRate);
         
         var mainSummon = Instantiate(MainSummon, map.MainSummonPosition);
-        var summoner = new Summoner(mainSummon);
+        var summoner = new Summoner(SummonerConfig.Stats, mainSummon);
         var queue = new BattleQueue();
         
         Debug.Log($"Count of enemies: {Enemies.Count}");

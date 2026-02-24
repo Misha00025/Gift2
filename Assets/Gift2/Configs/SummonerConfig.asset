@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb40929bd4f87866093002651bd860d9, type: 3}
-  m_Name: StoneShieldConfig
+  m_Script: {fileID: 11500000, guid: 3b5171b3e9a294672ac18f94f9ad82e8, type: 3}
+  m_Name: SummonerConfig
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 57f8befb92b364ca1bcae0f34c27e2d3, type: 3}
-  EffectViewPrefab: {fileID: 8336520402310609984, guid: 700760390aff22921afee41bb5095185, type: 3}
-  Duration: 4
+  Stats:
+    ManaRegeneration: 6
+    MaxMana: 35
+    MaxSupports: 2
+    ManaForCast: 20
