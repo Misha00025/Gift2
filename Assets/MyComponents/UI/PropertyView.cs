@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class PropertyView : MonoBehaviour
 {
     public SlicedFilledImage Filler;
+    public TextMeshProUGUI Text;
     
     private Property _property;
     
@@ -20,5 +22,9 @@ public class PropertyView : MonoBehaviour
     protected virtual void OnChange(Property property)
     {
         Filler.fillAmount = ((float)property.Value)/(float)property.MaxValue;
+        if (Text != null)
+        {
+            Text.SetText($"{_property.Value}/{_property.MaxValue}");
+        }
     }
 }
