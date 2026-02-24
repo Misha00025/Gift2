@@ -9,13 +9,19 @@ public struct SummonerStats
     public float ManaRegeneration;
     public int MaxMana;
     public int MaxSupports;
+    public int ManaForCast;
     
-    public static SummonerStats Default => new (){ManaRegeneration = 20f, MaxMana = 100, MaxSupports = 2};
+    public static SummonerStats Default => new (){
+        ManaRegeneration = 20f, 
+        ManaForCast= 40, 
+        MaxMana = 100, 
+        MaxSupports = 2
+    };
 }
 
 public class Summoner
 {
-    public const int ManaForCast = 40; 
+    public int ManaForCast => Stats.ManaForCast; 
 
     private SummonerStats _baseStats;
     private SummonerStats _currentStats;
@@ -47,7 +53,7 @@ public class Summoner
     public void AddSupport(Character character)
     {
         if (_supports.Count >= Stats.MaxSupports) return;
-        _supports.Add(character);
+            _supports.Add(character);
     }
     
     public virtual void Tick(float deltaTime)
@@ -59,9 +65,16 @@ public class Summoner
     }
     
     public bool CanCast() => Mana.Value >= (ManaForCast <= Mana.MaxValue ? ManaForCast : Mana.MaxValue) && Battle.Loop.Paused == false;
+    public bool CanCast(Skill skill)
+    {
+        return CanCast() && skill.InProgress == false;
+    }
+    
     
     public void Cast(Skill skill)
     {
+        if (skill.InProgress) return;
+        
         Mana.Value -= ManaForCast;
         skill.Play();
     }
