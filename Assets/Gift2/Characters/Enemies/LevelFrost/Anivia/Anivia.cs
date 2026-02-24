@@ -37,4 +37,10 @@ public class Anivia : Character
         var hit = PrepareHit(IceStormDamage);
         hit.Apply();
     }
+
+    protected override void OnCompleteAttack()
+    {
+        View.RemoveListener(AnimationEventKey.Hit, IceStormTick);
+        base.OnCompleteAttack();
+    }
 }
