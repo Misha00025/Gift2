@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: c1a1f91cc8da7f179bcfdd962b162271, type: 3}
   m_Name: SkillConfig
   m_EditorClassIdentifier: Assembly-CSharp::SkillConfig
-  Name: StoneWall
-  Description: This is Stone Wall
-  Icon: {fileID: 21300000, guid: 57f8befb92b364ca1bcae0f34c27e2d3, type: 3}
+  Name: Stone Wall
+  Description: 
+  Icon: {fileID: -3498258982837050487, guid: add51b07c3ac8360e881fd1af0703661, type: 3}

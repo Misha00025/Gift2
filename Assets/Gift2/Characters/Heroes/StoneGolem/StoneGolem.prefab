@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7738330bdaf782ffa2eb558ed331654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Caster: {fileID: -2571691766814463540}
+  _caster: {fileID: -2571691766814463540}
   Config: {fileID: 11400000, guid: 15bf789194e08e602b117ddc7e3d9e4d, type: 2}
   EffectBuilder: {fileID: 11400000, guid: c3fca1c7b86fcf8759fa254a87216a1c, type: 2}
 --- !u!114 &-6494422897580176788
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e4dd1d0ef3e40f73bf5de185f213f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Caster: {fileID: -2571691766814463540}
+  _caster: {fileID: -2571691766814463540}
   Config: {fileID: 11400000, guid: 108e05b02f90a73d990a42205df50ce0, type: 2}
   DamageMultiplayer: 5
   EffectOnHit: {fileID: 11400000, guid: 4ba949771bc2428448bd442a1705197e, type: 2}

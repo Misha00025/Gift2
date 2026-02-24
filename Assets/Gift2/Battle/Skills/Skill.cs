@@ -20,7 +20,9 @@ public abstract class Skill : MonoBehaviour, ISkill
     public SkillInfo Info => GetInfo();
     protected abstract SkillInfo GetInfo();
     public bool InProgress {get; protected set;} = false;
+    public Character Caster => GetCaster();     
     
+    protected abstract Character GetCaster();
     public abstract void Play();
     
     public void Complete()
@@ -32,21 +34,21 @@ public abstract class Skill : MonoBehaviour, ISkill
 
 public abstract class Skill<TCharacter, TConfig> : Skill where TConfig: SkillConfig where TCharacter : Character
 {
-    [SerializeField] protected TCharacter Caster;
+    [SerializeField] protected TCharacter _caster;
     [SerializeField] protected TConfig Config;
 
     protected override SkillInfo GetInfo() => Config.GetInfo();
-    
+    protected override Character GetCaster() => _caster;
 
     public override void Play()
     {
-        if (Caster == null && !TryGetComponent(out Caster)) 
+        if (_caster == null && !TryGetComponent(out _caster)) 
         {
             Debug.LogError("Caster is null");
             return;
         }
         if (InProgress) return;
-        Caster.View.CancelAnimation();
+        _caster.View.CancelAnimation();
         InProgress = true;
         OnPlay();
     }

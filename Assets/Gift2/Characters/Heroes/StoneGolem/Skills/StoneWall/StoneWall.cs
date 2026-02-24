@@ -13,28 +13,28 @@ public class StoneWall : Skill<StoneGolem, SkillConfig>
     
     void Start()
     {
-        StartPosition = Caster.transform.position;
+        StartPosition = _caster.transform.position;
     }
 
     protected override void OnPlay()
     {
-        Target = Caster.Target;
-        Caster.Animator.Play("JumpUp");
-        Caster.Jump.Upped.AddListener(OnUpped);
+        Target = _caster.Target;
+        _caster.Animator.Play("JumpUp");
+        _caster.View.AddListener("JumpUp", OnUpped);
     }
     
     private void OnUpped()
     {
-        Caster.Jump.Upped.RemoveListener(OnUpped);
-        Caster.Jump.Grounded.AddListener(OnDowned);
+        _caster.View.RemoveListener("JumpUp", OnUpped);
+        _caster.View.AddListener("Grounded", OnDowned);
         var map = BattleMap.Instance;
-        Caster.View.SetOn(map.CenterPosition.position);
-        Caster.Animator.Play("JumpDown");
+        _caster.View.SetOn(map.CenterPosition.position);
+        _caster.Animator.Play("JumpDown");
     }
     
     private void OnDowned()
     {
-        Caster.Jump.Grounded.RemoveListener(OnDowned);
+        _caster.View.RemoveListener("Grounded", OnDowned);
         Target.ApplyEffect(EffectBuilder.Build());
         StartCoroutine(Delay());        
     }
@@ -42,21 +42,21 @@ public class StoneWall : Skill<StoneGolem, SkillConfig>
     private IEnumerator Delay(float delay = 0.5f)
     {
         yield return new WaitForSeconds(delay);
-        Caster.Jump.Upped.AddListener(OnUppedEnd);
-        Caster.Animator.Play("JumpUp");
+        _caster.View.AddListener("JumpUp",OnUppedEnd);
+        _caster.Animator.Play("JumpUp");
     }
     
     private void OnUppedEnd()
     {
-        Caster.Jump.Upped.RemoveListener(OnUppedEnd);
-        Caster.Jump.Downed.AddListener(OnDownedEnd);
-        Caster.transform.position = StartPosition;
-        Caster.Animator.Play("JumpDown");
+        _caster.View.RemoveListener("JumpUp", OnUppedEnd);
+        _caster.View.AddListener("Completed", OnDownedEnd);
+        _caster.transform.position = StartPosition;
+        _caster.Animator.Play("JumpDown");
     }
     
     private void OnDownedEnd()
     {
-        Caster.Jump.Downed.RemoveListener(OnDownedEnd);
+        _caster.View.RemoveListener("Completed", OnDownedEnd);
         Complete();
     }
 }

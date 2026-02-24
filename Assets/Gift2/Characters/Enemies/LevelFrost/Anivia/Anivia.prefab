@@ -127,7 +127,7 @@ MonoBehaviour:
     Value: 1
     Element: 2
   Rage:
-    _value: 3
+    _value: 4
     _maxValue: 4
     Changed:
       m_PersistentCalls:

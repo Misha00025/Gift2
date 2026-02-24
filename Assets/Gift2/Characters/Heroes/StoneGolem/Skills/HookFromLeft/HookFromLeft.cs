@@ -7,12 +7,12 @@ public class HookFromLeft : Skill<StoneGolem, SkillConfig>
 
     protected override void OnPlay()
     {
-        Caster.Animator.Play("HookFromLeft");
+        _caster.Animator.Play("HookFromLeft");
     }
     
     public void OnHook()
     {
-        var hit = Caster.PrepareHit(DamageMultiplayer);
+        var hit = _caster.PrepareHit(DamageMultiplayer);
         var effect = EffectOnHit.Build();
         hit.Apply();
         if (hit.IsCanceled == false)

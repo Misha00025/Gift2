@@ -12,7 +12,7 @@ public class FireBeam : Skill<FireElemental, SkillConfig>
 
     private FireBeamView CreateView()
     {
-        var view = Instantiate(ViewPrefab, Caster.transform);
+        var view = Instantiate(ViewPrefab, _caster.transform);
         view.gameObject.SetActive(false);
         view.Completed.AddListener(OnAnimationEnd);
         return view;
@@ -24,15 +24,15 @@ public class FireBeam : Skill<FireElemental, SkillConfig>
             _view = CreateView();
         
         _counts = 0;
-        _view.Place(Caster.Target.Pivot.transform.position);
-        Caster.CastHandler.Casted.AddListener(OnCastFireBeam);
-        Caster.CastHandler.Ended.AddListener(OnCastAnimationEnd);
-        Caster.Animator.Play("Cast");
+        _view.Place(_caster.Target.Pivot.transform.position);
+        _caster.CastHandler.Casted.AddListener(OnCastFireBeam);
+        _caster.CastHandler.Ended.AddListener(OnCastAnimationEnd);
+        _caster.Animator.Play("Cast");
     }
     
     private void OnCastFireBeam()
     {
-        Caster.CastHandler.Casted.RemoveListener(OnCastFireBeam);
+        _caster.CastHandler.Casted.RemoveListener(OnCastFireBeam);
         _view.gameObject.SetActive(true);
         _view.Cast(OnEffect);
     }
@@ -40,16 +40,16 @@ public class FireBeam : Skill<FireElemental, SkillConfig>
     
     private void OnEffect()
     {
-        Caster.Target.ApplyDamage(Damage);
+        _caster.Target.ApplyDamage(Damage);
         for (int i = 0; i < Count; i++)
         {
-            Caster.Target.ApplyEffect(EffectBuilder.Build());
+            _caster.Target.ApplyEffect(EffectBuilder.Build());
         }
     }
     
     private void OnCastAnimationEnd()
     {
-        Caster.CastHandler.Ended.RemoveListener(OnCastAnimationEnd);
+        _caster.CastHandler.Ended.RemoveListener(OnCastAnimationEnd);
         OnAnimationEnd();
     }
     

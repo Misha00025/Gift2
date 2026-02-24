@@ -12,9 +12,11 @@ public class Anivia : Character
         {
             IceStorm();
             Rage.Value = 0;
-            return;
         }
-        base.Attack();
+        else
+        {
+            base.Attack();        
+        }
     }
 
     public override void BaseAttack()

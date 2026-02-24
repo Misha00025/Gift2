@@ -66,6 +66,7 @@ public class CharacterViewController : MonoBehaviour, IPlayable
     
     public void AnimationEvent(string key)
     {
+        Debug.Log($"AnimationEvent: {key} on {gameObject.name}");
         if (_animationEvents.ContainsKey(key))
             _animationEvents[key].Invoke();
     }

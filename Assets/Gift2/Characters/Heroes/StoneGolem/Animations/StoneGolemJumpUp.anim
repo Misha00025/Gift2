@@ -888,8 +888,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.5
-    functionName: OnJump
-    data: 
+    functionName: AnimationEvent
+    data: JumpUp
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

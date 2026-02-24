@@ -58,12 +58,11 @@ public class Summoner
             CastReady.Invoke();
     }
     
-    public bool CanCast() => Mana.Value >= (ManaForCast <= Mana.MaxValue ? ManaForCast : Mana.MaxValue);
+    public bool CanCast() => Mana.Value >= (ManaForCast <= Mana.MaxValue ? ManaForCast : Mana.MaxValue) && Battle.Loop.Paused == false;
     
     public void Cast(Skill skill)
     {
         Mana.Value -= ManaForCast;
-        MainCharacter.CancelAttack();
         skill.Play();
     }
 }
