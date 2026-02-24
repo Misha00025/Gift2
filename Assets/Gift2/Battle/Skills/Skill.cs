@@ -48,7 +48,8 @@ public abstract class Skill<TCharacter, TConfig> : Skill where TConfig: SkillCon
             return;
         }
         if (InProgress) return;
-        _caster.View.CancelAnimation();
+        
+        _caster.CancelAttack();
         InProgress = true;
         OnPlay();
     }

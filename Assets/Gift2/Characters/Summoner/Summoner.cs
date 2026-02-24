@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 
@@ -73,6 +74,8 @@ public class Summoner
     
     public void Cast(Skill skill)
     {
+        Debug.Log($"Try Cast: {skill.name}");
+    
         if (skill.InProgress) return;
         
         Mana.Value -= ManaForCast;

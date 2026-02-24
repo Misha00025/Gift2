@@ -189,6 +189,7 @@ public class Character : MonoBehaviour
     public virtual void CancelAttack()
     {
         OnCompleteAttack();
+        View.CancelAnimation();
     }
     
     void OnDestroy()

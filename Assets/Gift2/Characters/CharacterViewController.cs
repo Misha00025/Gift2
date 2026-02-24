@@ -16,6 +16,8 @@ public class CharacterViewController : MonoBehaviour, IPlayable
     
     public Transform Pivot;
     
+    private string CurrentAnimation = "";
+    
     void Awake()
     {
         if (Pivot == null)
