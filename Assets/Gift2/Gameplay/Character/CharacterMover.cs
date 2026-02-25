@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class CharacterMover : MonoBehaviour
 {
-    public float Speed = 5f;
+    private Character _character;
+
+    public float Speed => _character.Stats.MoveSpeed;
+
+    public void Initialize(Character character)
+    {
+        _character = character;
+    }
 
 
     public void Move(Vector2 direction)
