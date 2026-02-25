@@ -76,6 +76,15 @@ namespace Gift2.Core
             return Count(key) >= requiredAmount;
         }
         
+        public bool IsFull(Item item) => IsFull(item.Key);
+        public bool IsFull(string key)
+        {
+            if (string.IsNullOrEmpty(key) || !_indexByKey.TryGetValue(key, out int index))
+                return false;
+                
+            return Count(key) == Slots[index].Item.MaxStack;
+        }
+        
         public void Clear()
         {
             for (int i = 0; i < _resources.Length; i++)

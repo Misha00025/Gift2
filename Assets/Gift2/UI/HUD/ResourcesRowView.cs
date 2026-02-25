@@ -17,6 +17,9 @@ namespace Gift2.Core
         [Header("Colors")]
         [SerializeField] private Color increaseColor = Color.green;
         [SerializeField] private Color decreaseColor = Color.red;
+        
+        [Header("Buffer")]
+        [SerializeField] private float _timeToDelete = 1f;
 
         private Dictionary<string, ResourceItemUI> resourceItems = new Dictionary<string, ResourceItemUI>();
 
@@ -68,36 +71,66 @@ namespace Gift2.Core
                 }
             }
         }
+        
+        
+        
         private void ShowFloatingText(string key, int delta)
         {
             if (floatingTextPrefab == null || !resourceItems.TryGetValue(key, out ResourceItemUI itemUI))
                 return;
 
-            Color color = delta > 0 ? increaseColor : decreaseColor;
-            string sign = delta > 0 ? "+" : "";
 
-            GameObject floatGO = Instantiate(floatingTextPrefab, itemUI.Container);
-            TextMeshProUGUI tmp = floatGO.GetComponent<TextMeshProUGUI>();
+            if (_buffer.ContainsKey(key) == false)
+            {
+                GameObject floatGO = Instantiate(floatingTextPrefab, itemUI.Container);
+                TextMeshProUGUI view = floatGO.GetComponent<TextMeshProUGUI>();
+                _buffer.Add(key, new()
+                {
+                   Amount = 0,
+                   AccumulatedTime = 0f,
+                   View = view
+                });
+            }
+            var buffer = _buffer[key];
+            var tmp = buffer.View;
+            buffer.Amount += delta;
+            buffer.AccumulatedTime = 0f;
+            Color color = buffer.Amount > 0 ? increaseColor : decreaseColor;
+            string sign = buffer.Amount > 0 ? "+" : "";
+            
             if (tmp != null)
             {
-                tmp.text = $"{sign}{delta}";
+                tmp.text = $"{sign}{buffer.Amount}";
                 tmp.color = color;
             }
-            else
-            {
-                Text text = floatGO.GetComponent<Text>();
-                if (text != null)
-                {
-                    text.text = $"{sign}{delta}";
-                    text.color = color;
-                }
-            }
-
-            
-            Destroy(floatGO, 1f);
+        }
+        
+        private class ItemBuffer
+        {
+            public int Amount;
+            public float AccumulatedTime;
+            public TextMeshProUGUI View;
         }
 
+        private Dictionary<string, ItemBuffer> _buffer = new();
         
-        
+        void LateUpdate()
+        {
+            var toRemove = new List<string>();
+            
+            foreach (var key in _buffer.Keys)
+            {
+                var buffer = _buffer[key];
+                buffer.AccumulatedTime += Time.deltaTime;
+                if (buffer.AccumulatedTime > _timeToDelete)
+                {
+                    Destroy(buffer.View.gameObject);
+                    toRemove.Add(key);
+                }
+            }
+            
+            foreach (var key in toRemove)
+                _buffer.Remove(key);
+        }
     }
 }
