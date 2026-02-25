@@ -1,3 +1,6 @@
 ﻿<Solution>
+  <Project Path="AutoBattler.csproj" />
+  <Project Path="Core.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="MyComponents.csproj" />
 </Solution>
