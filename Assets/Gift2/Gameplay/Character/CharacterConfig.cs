@@ -4,8 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CharacterConfig", menuName = "Character/CharacterConfig")]
 public class CharacterConfig : ScriptableObject
 {
-    [field: SerializeField] public CharacterInfo Info { get; set; }
-    [field: SerializeField] public CharacterStats Stats { get; set; } = CharacterStats.Default;
+    [field: SerializeField] public CharacterInfo Info { get; private set; }
+    [field: SerializeField] public CharacterStats Stats { get; private set; } = CharacterStats.Default;
 }
 
 [Serializable]
