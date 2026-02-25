@@ -618,14 +618,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 587117330}
     m_Modifications:
-    - target: {fileID: -7933023938481148123, guid: 859e04c516e731be29fbce59fa819641, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7933023938481148123, guid: 859e04c516e731be29fbce59fa819641, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 266452288059606241, guid: 859e04c516e731be29fbce59fa819641, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
@@ -685,10 +677,6 @@ PrefabInstance:
     - target: {fileID: 5742741877376568027, guid: 859e04c516e731be29fbce59fa819641, type: 3}
       propertyPath: m_Name
       value: CircleCollector
-      objectReference: {fileID: 0}
-    - target: {fileID: 7572622014249443199, guid: 859e04c516e731be29fbce59fa819641, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
