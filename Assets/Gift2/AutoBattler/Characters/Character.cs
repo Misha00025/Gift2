@@ -3,200 +3,202 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-
-[RequireComponent(typeof(CharacterViewController))]
-public class Character : MonoBehaviour
+namespace Gift2.AutoBattler
 {
-    
-    [field: SerializeField] public Property Health { get; private set; }
-    [SerializeField]private Stats _stats = new(){attackSpeed = 1f, damage = 1};
-    [field: SerializeField] public List<Element> Elements { get; private set; }
-    [field: SerializeField] public Skill MainActiveSkill { get; private set; }
-    [field: SerializeField] public Skill SupportActiveSkill { get; private set; }
-    
-    
-    [Header("Character Events")]
-    [field: SerializeField] public UnityEvent<Damage> DamageTaken { get; private set; } = new();
-    [field: SerializeField] public UnityEvent<Character> AttackCompleted { get; private set; } = new();
-    
-    
-    [Header("View")]
-    private CharacterViewController _view;
-    public CharacterViewController View 
+    [RequireComponent(typeof(CharacterViewController))]
+    public class Character : MonoBehaviour
     {
-        get 
-        {
-            if (_view == null)
-                _view = GetComponent<CharacterViewController>();
-            return _view;
-        }
-    }    
-    public IPlayable Animator => _view;
-    public Transform Pivot => _view.Pivot;
-    public void SetPosition(Vector3 position) => View.SetOn(position);
-    
-    
-    private int _stuns = 0;
-    public bool IsStunned => _stuns > 0;
-    
-    
-    // Not inspected
-    private Stats _baseStats;
-    private List<IEffect> _effects = new();
-    private Dictionary<string, EffectView> _effectsViews = new();
-    public Character Target { get; private set; }
-    
-    
-    public Stats BaseStats => _baseStats;
-    public Stats Stats => _stats;
-    public IReadOnlyList<IEffect> Effects => _effects;
-    
-    
-    void Awake() { Init(); }
-    
-    protected virtual void Init()
-    {
-        _baseStats = _stats;
-    }
-    
-    protected virtual void SetHealth(int newValue)
-    {
-        Health.Value = newValue;
-    }
-    
-    public virtual void ApplyDamage(Damage damage)
-    {
-        var hit = new Hit { Target = this, Damage = damage };
         
-        for (var i = _effects.Count - 1; i >= 0; i--)
-        {   
-            var effect = _effects[i];
-            if (effect is IBeforeTakeDamageEffect beforeEffect)
-                beforeEffect.OnDamageTaking(ref damage);
+        [field: SerializeField] public Property Health { get; private set; }
+        [SerializeField]private Stats _stats = new(){attackSpeed = 1f, damage = 1};
+        [field: SerializeField] public List<Element> Elements { get; private set; }
+        [field: SerializeField] public Skill MainActiveSkill { get; private set; }
+        [field: SerializeField] public Skill SupportActiveSkill { get; private set; }
+        
+        
+        [Header("Character Events")]
+        [field: SerializeField] public UnityEvent<Damage> DamageTaken { get; private set; } = new();
+        [field: SerializeField] public UnityEvent<Character> AttackCompleted { get; private set; } = new();
+        
+        
+        [Header("View")]
+        private CharacterViewController _view;
+        public CharacterViewController View 
+        {
+            get 
+            {
+                if (_view == null)
+                    _view = GetComponent<CharacterViewController>();
+                return _view;
+            }
+        }    
+        public IPlayable Animator => _view;
+        public Transform Pivot => _view.Pivot;
+        public void SetPosition(Vector3 position) => View.SetOn(position);
+        
+        
+        private int _stuns = 0;
+        public bool IsStunned => _stuns > 0;
+        
+        
+        // Not inspected
+        private Stats _baseStats;
+        private List<IEffect> _effects = new();
+        private Dictionary<string, EffectView> _effectsViews = new();
+        public Character Target { get; private set; }
+        
+        
+        public Stats BaseStats => _baseStats;
+        public Stats Stats => _stats;
+        public IReadOnlyList<IEffect> Effects => _effects;
+        
+        
+        void Awake() { Init(); }
+        
+        protected virtual void Init()
+        {
+            _baseStats = _stats;
+        }
+        
+        protected virtual void SetHealth(int newValue)
+        {
+            Health.Value = newValue;
+        }
+        
+        public virtual void ApplyDamage(Damage damage)
+        {
+            var hit = new Hit { Target = this, Damage = damage };
             
-            if (hit.IsCanceled) return;
+            for (var i = _effects.Count - 1; i >= 0; i--)
+            {   
+                var effect = _effects[i];
+                if (effect is IBeforeTakeDamageEffect beforeEffect)
+                    beforeEffect.OnDamageTaking(ref damage);
+                
+                if (hit.IsCanceled) return;
+            }
+        
+            SetHealth(Health.Value - damage.Value);
+            DamageTaken.Invoke(damage);
+            View.Play(AnimationKey.DamageTaken);
         }
-    
-        SetHealth(Health.Value - damage.Value);
-        DamageTaken.Invoke(damage);
-        View.Play(AnimationKey.DamageTaken);
-    }
-    
-    public virtual void ApplyEffect(IEffect effect)
-    {
-        if (_effects.Contains(effect)) return;
         
-        _effects.Add(effect);
-        effect.Apply(this);
-        
-        if (_effectsViews.ContainsKey(effect.Key))
+        public virtual void ApplyEffect(IEffect effect)
         {
-            _effectsViews[effect.Key].gameObject.SetActive(true);
+            if (_effects.Contains(effect)) return;
+            
+            _effects.Add(effect);
+            effect.Apply(this);
+            
+            if (_effectsViews.ContainsKey(effect.Key))
+            {
+                _effectsViews[effect.Key].gameObject.SetActive(true);
+            }
+            else
+            {
+                var view = EffectConfigsRegister.Instance?.GetView(effect.Key, this);
+                if (view != null)
+                    _effectsViews.Add(effect.Key, view);
+            }
         }
-        else
+        
+        public virtual void BaseAttack()
         {
-            var view = EffectConfigsRegister.Instance?.GetView(effect.Key, this);
-            if (view != null)
-                _effectsViews.Add(effect.Key, view);
+            if (Target == null) return;
+            
+            var hit = PrepareHit(new Damage(){ Value = Stats.damage, Element = Elements.Count > 0 ? Elements[0] : Element.Physical});
+            if (!hit.IsCanceled)
+                hit.Apply();
         }
-    }
-    
-    public virtual void BaseAttack()
-    {
-        if (Target == null) return;
         
-        var hit = PrepareHit(new Damage(){ Value = Stats.damage, Element = Elements.Count > 0 ? Elements[0] : Element.Physical});
-        if (!hit.IsCanceled)
-            hit.Apply();
-    }
-    
-    public void DisableEffect(IEffect effect)
-    {
-        if (!_effects.Contains(effect)) return;
-        
-        _effects.Remove(effect);
-        effect.Disable();
-        
-        if (!_effects.Any(e => e.Key == effect.Key) && _effectsViews.ContainsKey(effect.Key))
+        public void DisableEffect(IEffect effect)
         {
-            _effectsViews[effect.Key].gameObject.SetActive(false);
-        }
-    }
-    
-    protected virtual Hit PrepareHit(Damage damage)
-    {
-        var hit = new Hit(){ Target = Target, Damage = damage };
-        
-        foreach (var effect in _effects)
-        {   
-            if (effect is IOnHitAttemptEffect)
-                ((IOnHitAttemptEffect)effect).OnHitAttempt(hit);
+            if (!_effects.Contains(effect)) return;
+            
+            _effects.Remove(effect);
+            effect.Disable();
+            
+            if (!_effects.Any(e => e.Key == effect.Key) && _effectsViews.ContainsKey(effect.Key))
+            {
+                _effectsViews[effect.Key].gameObject.SetActive(false);
+            }
         }
         
-        if (Target != null && !hit.IsCanceled)
+        protected virtual Hit PrepareHit(Damage damage)
         {
-            foreach (var effect in Target._effects)
+            var hit = new Hit(){ Target = Target, Damage = damage };
+            
+            foreach (var effect in _effects)
             {   
                 if (effect is IOnHitAttemptEffect)
                     ((IOnHitAttemptEffect)effect).OnHitAttempt(hit);
             }
-        }
-        
-        if (!hit.IsCanceled)
-        {
-            foreach (var effect in _effects)
-            {   
-                if (effect is IOnHitEffect)
-                    hit.Applied += ((IOnHitEffect)effect).OnHit;
+            
+            if (Target != null && !hit.IsCanceled)
+            {
+                foreach (var effect in Target._effects)
+                {   
+                    if (effect is IOnHitAttemptEffect)
+                        ((IOnHitAttemptEffect)effect).OnHitAttempt(hit);
+                }
             }
             
-            foreach (var effect in Target._effects)
-            {   
-                if (effect is IOnHitEffect)
-                    hit.Applied += ((IOnHitEffect)effect).OnHit;
+            if (!hit.IsCanceled)
+            {
+                foreach (var effect in _effects)
+                {   
+                    if (effect is IOnHitEffect)
+                        hit.Applied += ((IOnHitEffect)effect).OnHit;
+                }
+                
+                foreach (var effect in Target._effects)
+                {   
+                    if (effect is IOnHitEffect)
+                        hit.Applied += ((IOnHitEffect)effect).OnHit;
+                }
             }
+            
+            return hit;
         }
         
-        return hit;
-    }
-    
-    protected virtual void OnCompleteAttack()
-    {
-        View.RemoveListener(AnimationEventKey.Hit, BaseAttack);
-        View.RemoveListener(AnimationEventKey.Completed, OnCompleteAttack);
-        AttackCompleted.Invoke(this);
-    }
-    
-    public void SetTarget(Character target)
-    {
-        Target = target;
-    }
-    
-    public void AddStun() => _stuns++;
-    public void RemoveStun()
-    {
-        if (_stuns > 0)
-            _stuns--;
-    }
-    
-    public virtual void Attack()
-    {
-        View.AddListener(AnimationEventKey.Hit, BaseAttack);
-        View.AddListener(AnimationEventKey.Completed, OnCompleteAttack);
-        Animator.Play("BaseAttack");
-    }
-    
-    public virtual void CancelAttack()
-    {
-        OnCompleteAttack();
-        View.CancelAnimation();
-    }
-    
-    void OnDestroy()
-    {
-        for (int i = _effects.Count-1; i >= 0; i--)
+        protected virtual void OnCompleteAttack()
         {
-            DisableEffect(_effects[i]);
+            View.RemoveListener(AnimationEventKey.Hit, BaseAttack);
+            View.RemoveListener(AnimationEventKey.Completed, OnCompleteAttack);
+            AttackCompleted.Invoke(this);
+        }
+        
+        public void SetTarget(Character target)
+        {
+            Target = target;
+        }
+        
+        public void AddStun() => _stuns++;
+        public void RemoveStun()
+        {
+            if (_stuns > 0)
+                _stuns--;
+        }
+        
+        public virtual void Attack()
+        {
+            View.AddListener(AnimationEventKey.Hit, BaseAttack);
+            View.AddListener(AnimationEventKey.Completed, OnCompleteAttack);
+            Animator.Play("BaseAttack");
+        }
+        
+        public virtual void CancelAttack()
+        {
+            OnCompleteAttack();
+            View.CancelAnimation();
+        }
+        
+        void OnDestroy()
+        {
+            for (int i = _effects.Count-1; i >= 0; i--)
+            {
+                DisableEffect(_effects[i]);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Gift2.AutoBattler;
 using UnityEngine;
 
 public class BattleLoop : MonoBehaviour

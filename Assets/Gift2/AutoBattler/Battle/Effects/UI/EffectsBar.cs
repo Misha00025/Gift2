@@ -1,6 +1,7 @@
 // EffectsBar.cs
 using System;
 using System.Collections.Generic;
+using Gift2.AutoBattler;
 using UnityEngine;
 
 public class EffectsBar : MonoBehaviour

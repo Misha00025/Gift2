@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Gift2.AutoBattler;
 
 [RequireComponent(typeof(RectTransform), typeof(Image))]
 public class EffectIcon : MonoBehaviour

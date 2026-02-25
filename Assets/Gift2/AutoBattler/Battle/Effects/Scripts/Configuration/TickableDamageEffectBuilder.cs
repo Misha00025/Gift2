@@ -1,27 +1,31 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "TickableEffectConfig", menuName = "Effects/TickableEffectConfig")]
-public class TickableDamageEffectBuilder : EffectConfiguredBuilder
+
+namespace Gift2.AutoBattler
 {
-    public float Duration = 1f;
-    public Damage DamageOnTick = new(){Value = 1, Element = Element.Fire};
-
-    private class DamageByTickEffect : TikableEffect
+    [CreateAssetMenu(fileName = "TickableEffectConfig", menuName = "Effects/TickableEffectConfig")]
+    public class TickableDamageEffectBuilder : EffectConfiguredBuilder
     {
-        private Damage _damage;
-    
-        public DamageByTickEffect(Damage damage, float duration) : base(duration)
-        {
-            _damage = damage;
-        }
-        public override void OnTick()
-        {
-            Target.ApplyDamage(_damage);
-        }
-    }
+        public float Duration = 1f;
+        public Damage DamageOnTick = new(){Value = 1, Element = Element.Fire};
 
-    protected override Effect ConfigureEffect()
-    {
-        return new DamageByTickEffect(DamageOnTick, Duration);
+        private class DamageByTickEffect : TikableEffect
+        {
+            private Damage _damage;
+        
+            public DamageByTickEffect(Damage damage, float duration) : base(duration)
+            {
+                _damage = damage;
+            }
+            public override void OnTick()
+            {
+                Target.ApplyDamage(_damage);
+            }
+        }
+
+        protected override Effect ConfigureEffect()
+        {
+            return new DamageByTickEffect(DamageOnTick, Duration);
+        }
     }
 }

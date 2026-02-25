@@ -1,3 +1,4 @@
+using Gift2.AutoBattler;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CharacterConfig", menuName = "Characters/CharacterConfig")]

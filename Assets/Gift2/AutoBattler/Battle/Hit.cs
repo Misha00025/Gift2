@@ -1,4 +1,5 @@
 using System;
+using Gift2.AutoBattler;
 
 public class Hit
 {

@@ -1,3 +1,4 @@
+using Gift2.AutoBattler;
 using UnityEngine;
 
 public class Anivia : Character
