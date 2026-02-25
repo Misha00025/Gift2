@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Gift2/Scenes/SelectTeamScene.unity
+    path: Assets/Gift2/AutoBattler/Scenes/SelectTeamScene.unity
     guid: 5d609f5ce9bc4609a9a0b5c5f0d3be13
   - enabled: 1
-    path: Assets/Gift2/Scenes/BattleScene.unity
+    path: Assets/Gift2/AutoBattler/Scenes/BattleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

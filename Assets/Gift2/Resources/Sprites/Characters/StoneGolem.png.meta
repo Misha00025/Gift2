@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: e67b91496608b13e480350b069d60d5b
+guid: add51b07c3ac8360e881fd1af0703661
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2034640586983468411
-    second: Yeti_0
+      213: 4646101929521763914
+    second: StoneGolem_0
   - first:
-      213: 4543551545257462369
-    second: Yeti_1
+      213: -3498258982837050487
+    second: StoneGolem_1
   - first:
-      213: 7936095567434068920
-    second: Yeti_2
+      213: 6163868444214863916
+    second: StoneGolem_2
+  - first:
+      213: 930274223998822859
+    second: StoneGolem_3
+  - first:
+      213: -1852683859724129569
+    second: StoneGolem_4
+  - first:
+      213: -367416958135983251
+    second: StoneGolem_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,39 +111,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Yeti_0
+      name: StoneGolem_Body
       rect:
         serializedVersion: 2
-        x: 96
-        y: 1152
-        width: 818
-        height: 790
-      alignment: 9
-      pivot: {x: 0.4, y: 0.2}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 58212478a2183c3e0800000000000000
-      internalID: -2034640586983468411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Yeti_1
-      rect:
-        serializedVersion: 2
-        x: 951
-        y: 1685
-        width: 608
-        height: 323
+        x: 209
+        y: 858
+        width: 634
+        height: 604
       alignment: 9
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,30 +143,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 16a8fb1ce00fd0f30800000000000000
-      internalID: 4543551545257462369
+      spriteID: a46d66bb6154a7040800000000000000
+      internalID: 4646101929521763914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Yeti_3
+      name: StoneGolem_Jaw
       rect:
         serializedVersion: 2
-        x: 37
-        y: 133
-        width: 564
-        height: 454
+        x: 1188
+        y: 1170
+        width: 527
+        height: 234
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 983adab5dffa37fc0800000000000000
+      internalID: -3498258982837050487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolem_2
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 632
+        width: 501
+        height: 307
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f0ab10f6d3a932950b561187da1f32c9
-      internalID: -407474317
+      spriteID: c28aaa341b57a8550800000000000000
+      internalID: 6163868444214863916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolem_LeftHand
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 247
+        width: 223
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fda2b0478d1f946e0800000000000000
+      internalID: -1852683859724129569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StoneGolem_RightHand
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 270
+        width: 221
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63a9d5293ca6eaf0800000000000000
+      internalID: -367416958135983251
       vertices: []
       indices: 
       edges: []
@@ -175,7 +241,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fca0b213ba6dc9ce4a01d43cb44dcda4
+    spriteID: 2df9ca103e5b7ea3eb1522797c3484b0
     internalID: 0
     vertices: []
     indices: 
@@ -185,10 +251,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Yeti_0: -2034640586983468411
-      Yeti_1: 4543551545257462369
-      Yeti_2: 7936095567434068920
-      Yeti_3: -407474317
+      StoneGolem_2: 6163868444214863916
+      StoneGolem_3: 930274223998822859
+      StoneGolem_Body: 4646101929521763914
+      StoneGolem_Jaw: -3498258982837050487
+      StoneGolem_LeftHand: -1852683859724129569
+      StoneGolem_RightHand: -367416958135983251
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

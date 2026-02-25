@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: add51b07c3ac8360e881fd1af0703661
+guid: a659169e3db7dff2da0e2fee7aa724d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4646101929521763914
-    second: StoneGolem_0
+      213: 3509304178674261395
+    second: WaterElemental_0
   - first:
-      213: -3498258982837050487
-    second: StoneGolem_1
+      213: -572386865216075053
+    second: WaterElemental_1
   - first:
-      213: 6163868444214863916
-    second: StoneGolem_2
+      213: 3415546101588875851
+    second: WaterElemental_2
   - first:
-      213: 930274223998822859
-    second: StoneGolem_3
+      213: -302086894238040408
+    second: WaterElemental_3
   - first:
-      213: -1852683859724129569
-    second: StoneGolem_4
-  - first:
-      213: -367416958135983251
-    second: StoneGolem_5
+      213: -2554093158479499647
+    second: WaterElemental_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -111,61 +108,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StoneGolem_Body
+      name: WaterElemental_Body
       rect:
         serializedVersion: 2
-        x: 209
-        y: 858
-        width: 634
-        height: 604
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a46d66bb6154a7040800000000000000
-      internalID: 4646101929521763914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: StoneGolem_Jaw
-      rect:
-        serializedVersion: 2
-        x: 1188
-        y: 1170
-        width: 527
-        height: 234
-      alignment: 9
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 983adab5dffa37fc0800000000000000
-      internalID: -3498258982837050487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: StoneGolem_2
-      rect:
-        serializedVersion: 2
-        x: 1205
-        y: 632
-        width: 501
-        height: 307
+        x: 170
+        y: 640
+        width: 601
+        height: 905
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c28aaa341b57a8550800000000000000
-      internalID: 6163868444214863916
+      spriteID: 39d5ca2be8d83b030800000000000000
+      internalID: 3509304178674261395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: StoneGolem_LeftHand
+      name: WaterElemental_Eyes
       rect:
         serializedVersion: 2
-        x: 1072
-        y: 247
-        width: 223
-        height: 139
+        x: 1254
+        y: 1072
+        width: 387
+        height: 283
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fda2b0478d1f946e0800000000000000
-      internalID: -1852683859724129569
+      spriteID: 3da42b0cd297e08f0800000000000000
+      internalID: -572386865216075053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: StoneGolem_RightHand
+      name: WaterElemental_LeftHand
       rect:
         serializedVersion: 2
-        x: 1675
-        y: 270
-        width: 221
-        height: 140
+        x: 1089
+        y: 417
+        width: 205
+        height: 116
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,8 +184,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d63a9d5293ca6eaf0800000000000000
-      internalID: -367416958135983251
+      spriteID: 8aef3a9f195cecbf0800000000000000
+      internalID: -302086894238040408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WaterElemental_RightHand
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 451
+        width: 203
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ee295fdc90e8cd0800000000000000
+      internalID: -2554093158479499647
       vertices: []
       indices: 
       edges: []
@@ -228,7 +216,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2df9ca103e5b7ea3eb1522797c3484b0
+    spriteID: 8f1b64790c0f09b68af8525ff8310bca
     internalID: 0
     vertices: []
     indices: 
@@ -238,12 +226,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      StoneGolem_2: 6163868444214863916
-      StoneGolem_3: 930274223998822859
-      StoneGolem_Body: 4646101929521763914
-      StoneGolem_Jaw: -3498258982837050487
-      StoneGolem_LeftHand: -1852683859724129569
-      StoneGolem_RightHand: -367416958135983251
+      WaterElemental_2: 3415546101588875851
+      WaterElemental_Body: 3509304178674261395
+      WaterElemental_Eyes: -572386865216075053
+      WaterElemental_LeftHand: -302086894238040408
+      WaterElemental_RightHand: -2554093158479499647
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

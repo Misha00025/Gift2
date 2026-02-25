@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: a659169e3db7dff2da0e2fee7aa724d0
+guid: e745d57fe4a27aed59be9731e485d7c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3509304178674261395
-    second: WaterElemental_0
+      213: 5270528129628455424
+    second: FireElemental_0
   - first:
-      213: -572386865216075053
-    second: WaterElemental_1
+      213: 6549566284200848012
+    second: FireElemental_1
   - first:
-      213: 3415546101588875851
-    second: WaterElemental_2
+      213: 5171788801180238705
+    second: FireElemental_2
   - first:
-      213: -302086894238040408
-    second: WaterElemental_3
+      213: -5644755087758772062
+    second: FireElemental_3
   - first:
-      213: -2554093158479499647
-    second: WaterElemental_4
+      213: 5933758432232820331
+    second: FireElemental_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -108,17 +108,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WaterElemental_Body
+      name: FireElemental_Body
       rect:
         serializedVersion: 2
-        x: 170
-        y: 640
-        width: 601
-        height: 905
+        x: 135
+        y: 1455
+        width: 1099
+        height: 1864
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39d5ca2be8d83b030800000000000000
-      internalID: 3509304178674261395
+      spriteID: 0024531d86da42940800000000000000
+      internalID: 5270528129628455424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterElemental_Eyes
+      name: FireElemental_Eyes
       rect:
         serializedVersion: 2
-        x: 1254
-        y: 1072
-        width: 387
-        height: 283
+        x: 1608
+        y: 2789
+        width: 724
+        height: 524
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3da42b0cd297e08f0800000000000000
-      internalID: -572386865216075053
+      spriteID: c8aaaaa95dbb4ea50800000000000000
+      internalID: 6549566284200848012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterElemental_LeftHand
+      name: FireElemental_LH
       rect:
         serializedVersion: 2
-        x: 1089
-        y: 417
-        width: 205
-        height: 116
+        x: 1084
+        y: 1001
+        width: 360
+        height: 223
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8aef3a9f195cecbf0800000000000000
-      internalID: -302086894238040408
+      spriteID: 2a83f06a72dc9a1b0800000000000000
+      internalID: -5644755087758772062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterElemental_RightHand
+      name: FireElemental_RH
       rect:
         serializedVersion: 2
-        x: 1640
-        y: 451
-        width: 203
-        height: 118
+        x: 1978
+        y: 1015
+        width: 360
+        height: 224
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18ee295fdc90e8cd0800000000000000
-      internalID: -2554093158479499647
+      spriteID: b6e47301bd1f85250800000000000000
+      internalID: 5933758432232820331
       vertices: []
       indices: 
       edges: []
@@ -203,7 +216,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8f1b64790c0f09b68af8525ff8310bca
+    spriteID: c061f544e43c097acb4e794c9c74ec18
     internalID: 0
     vertices: []
     indices: 
@@ -213,11 +226,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WaterElemental_2: 3415546101588875851
-      WaterElemental_Body: 3509304178674261395
-      WaterElemental_Eyes: -572386865216075053
-      WaterElemental_LeftHand: -302086894238040408
-      WaterElemental_RightHand: -2554093158479499647
+      FireElemental_2: 5171788801180238705
+      FireElemental_Body: 5270528129628455424
+      FireElemental_Eyes: 6549566284200848012
+      FireElemental_LH: -5644755087758772062
+      FireElemental_RH: 5933758432232820331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
