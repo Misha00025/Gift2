@@ -3,7 +3,7 @@
   <Project Path="AutoBattler.csproj" />
   <Project Path="PauseManager-Editor.csproj" />
   <Project Path="PauseManager.csproj" />
-  <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="DOTween.Modules.csproj" />
   <Project Path="Core.csproj" />
   <Project Path="MyComponents.csproj" />
 </Solution>
