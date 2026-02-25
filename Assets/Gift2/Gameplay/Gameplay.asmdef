@@ -1,7 +1,9 @@
 {
-    "name": "Gift2.Core",
-    "rootNamespace": "Gift2.Core",
-    "references": [],
+    "name": "Gift2.Gameplay",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ade5787fdcada07198e2124c2a5c17c2"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
