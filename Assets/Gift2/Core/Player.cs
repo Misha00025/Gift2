@@ -1,0 +1,33 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Gift2.Core
+{
+    public class Player : MonoBehaviour
+    {
+        [SerializeField] private InventoryConfig DefaultInventory;
+        [SerializeField] private ResourcesStorageConfig DefaultResources;
+    
+        private Inventory _inventory;
+        private ResourcesStorage _resourcesStorage;
+        
+        void Awake()
+        {
+            if (DefaultInventory != null)
+                _inventory = DefaultInventory.Build();
+            if (DefaultResources != null)
+                _resourcesStorage = DefaultResources.Build();
+        }
+    
+        public void Initialize(Inventory inventory, ResourcesStorage resourcesStorage)
+        {
+            _inventory = inventory;
+            _resourcesStorage = resourcesStorage;
+        }
+        
+        
+        public ResourcesStorage ResourcesStorage => _resourcesStorage;
+        public IReadOnlyList<IInventorySlot> Items => _inventory.Slots;
+        public IReadOnlyList<IInventorySlot> Resources => _resourcesStorage.Slots;
+    }
+}
