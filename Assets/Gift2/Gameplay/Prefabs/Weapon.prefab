@@ -138,7 +138,8 @@ MonoBehaviour:
   OnThresholdReached:
     m_PersistentCalls:
       m_Calls: []
-  Ignore: []
+  Ignore:
+  - {fileID: 7782309405578709177}
 --- !u!50 &1859583799267450056
 Rigidbody2D:
   serializedVersion: 5
