@@ -17,5 +17,8 @@ MonoBehaviour:
     Description: 
     Icon: {fileID: 0}
   <Stats>k__BackingField:
+    CollectingRadiusScale: 0.3
     Strength: 1
+    RotationSpeed: 250
+    RotationRadius: 2
     MoveSpeed: 5

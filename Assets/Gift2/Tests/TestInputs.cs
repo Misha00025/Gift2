@@ -17,7 +17,7 @@ public class TestInputs : MonoBehaviour
     void Start()
     {
         var collector = FindAnyObjectByType<ItemsCollector>();
-        collector?.Initialize(Player.ResourcesStorage);
+        collector?.SetStorage(Player.ResourcesStorage);
     }
     
     void Update()

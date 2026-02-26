@@ -19,13 +19,22 @@ public struct CharacterInfo
 [Serializable]
 public struct CharacterStats 
 {
+    public float CollectingRadiusScale;
+
     public float Strength;
+    
+    public float RotationSpeed;
+    public float RotationRadius;
+    
     public float MoveSpeed;
     
     
     public static CharacterStats Default => new()
     {
+        CollectingRadiusScale = 1f, 
         Strength = 1f,
+        RotationSpeed = 60f,
+        RotationRadius = 2f,
         MoveSpeed = 5f  
     };
 }

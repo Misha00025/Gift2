@@ -4,6 +4,8 @@ using UnityEngine;
 public class CharacterInitializer : MonoBehaviour
 {
     [SerializeField] private CharacterConfig Config;
+    [SerializeField] private ItemsCollector Collector;
+    [SerializeField] private RotateAroundCenter Rotator;
 
     void Awake()
     {
@@ -11,5 +13,7 @@ public class CharacterInitializer : MonoBehaviour
         var mover = GetComponent<CharacterMover>();
         character.Initialize(Config, mover);
         mover.Initialize(character);
+        Collector.Initialize(character);
+        Rotator.Initialize(character);
     }
 }
