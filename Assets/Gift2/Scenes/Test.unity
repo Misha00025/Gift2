@@ -566,8 +566,12 @@ MonoBehaviour:
   Player: {fileID: 587117329}
   CharacterMover: {fileID: 1731135034}
   Resources:
-  - {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-  - {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+  - Key: 49
+    Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
+  - Key: 50
+    Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+  - Key: 51
+    Item: {fileID: 11400000, guid: d6802f7a9ea24077c91b37f84a296ce9, type: 2}
   Count: 100
   ItemToSpawn: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
   DraggableObject: {fileID: 0}
@@ -578,7 +582,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587117328}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35d3eb04c8b4a165a8baa2630d9ad42a, type: 3}
   m_Name: 

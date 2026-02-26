@@ -1,12 +1,20 @@
+using System;
 using System.Collections.Generic;
 using Gift2.Core;
 using UnityEngine;
 
 public class TestInputs : MonoBehaviour
 {
+    [Serializable]
+    public struct KeyItem
+    {
+        public KeyCode Key;
+        public ItemConfig Item;
+    }
+
     public Player Player;
     public CharacterMover CharacterMover;
-    public List<ItemConfig> Resources;
+    public List<KeyItem> Resources;
     public int Count = 100;
     
     public CollectableItem ItemToSpawn;
@@ -22,10 +30,10 @@ public class TestInputs : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            _currentResource = Resources[0].Build();
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            _currentResource = Resources[1].Build();
+        foreach (var keyItem in Resources)
+            if (Input.GetKeyDown(keyItem.Key))
+                _currentResource = keyItem.Item.Build();
+
             
         if (Input.GetKeyDown(KeyCode.Q))
             Player.ResourcesStorage.Add(_currentResource, Count);
