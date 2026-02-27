@@ -49,11 +49,12 @@ public class DistanceTrigger2D : MonoBehaviour
     private void Update()
     {
         List<GameObject> toRemove = null;
+        List<GameObject> toInvoke = null;
 
-        foreach (var kvp in _trackedObjects)
+        foreach (var key in _trackedObjects.Keys)
         {
-            GameObject obj = kvp.Key;
-            TrackedObject data = kvp.Value;
+            GameObject obj = key;
+            TrackedObject data = _trackedObjects[key];
 
             if (obj == null || !obj.activeInHierarchy)
             {
@@ -68,20 +69,21 @@ public class DistanceTrigger2D : MonoBehaviour
 
             while (data.accumulatedDistance >= ThresholdDistance)
             {
-                OnThresholdReached?.Invoke(obj);
+                if (toInvoke == null) toInvoke = new List<GameObject>();
+                toInvoke.Add(obj);
                 data.accumulatedDistance -= ThresholdDistance;
             }
 
             data.previousLocalPosition = currentLocalPosition;
         }
 
+        if (toInvoke != null)
+            foreach (var obj in toInvoke)
+                OnThresholdReached?.Invoke(obj);
+
         if (toRemove != null)
-        {
             foreach (var obj in toRemove)
-            {
                 _trackedObjects.Remove(obj);
-            }
-        }
     }
 
     private void OnDrawGizmosSelected()

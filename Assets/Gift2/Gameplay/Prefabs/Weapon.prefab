@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 219907011629174858}
   - component: {fileID: 6059158581101528371}
+  - component: {fileID: 7644038515823341362}
   - component: {fileID: 1859583799267450056}
   - component: {fileID: 8964682367959717053}
   m_Layer: 0
@@ -137,9 +138,36 @@ MonoBehaviour:
   ThresholdDistance: 0.7
   OnThresholdReached:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7644038515823341362}
+        m_TargetAssemblyTypeName: Weapon, Gift2.Gameplay
+        m_MethodName: OnTriggerEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Ignore:
   - {fileID: 7782309405578709177}
+--- !u!114 &7644038515823341362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782309405578709177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96cbd942c431d1f30b12dde1e6a930e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultDamage:
+    Value: 1
+    Element: 0
 --- !u!50 &1859583799267450056
 Rigidbody2D:
   serializedVersion: 5

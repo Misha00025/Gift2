@@ -24,7 +24,7 @@ public class PropertyView : MonoBehaviour
         Filler.fillAmount = ((float)property.Value)/(float)property.MaxValue;
         if (Text != null)
         {
-            Text.SetText($"{_property.Value}/{_property.MaxValue}");
+            Text.SetText($"{property.Value}/{property.MaxValue}");
         }
     }
 }

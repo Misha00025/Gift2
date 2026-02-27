@@ -85,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1151005577941612241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,8 +307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a352839b63324373a95a3bbc8da52478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Filler: {fileID: 0}
+  Text: {fileID: 0}
   _character: {fileID: 0}
-  healthFiller: {fileID: 9192644855358108370}
 --- !u!1001 &3133873863682382126
 PrefabInstance:
   m_ObjectHideFlags: 0

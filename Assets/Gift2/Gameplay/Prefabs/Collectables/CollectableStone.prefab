@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8536290870333415488}
   - component: {fileID: 75125225124113250}
   m_Layer: 0
-  m_Name: Wood
+  m_Name: CollectableStone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74bf3f705d8e3280d9af7e592e5bc257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemConfig: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
+  ItemConfig: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
   Amount: 1
 --- !u!212 &-6906561775931712188
 SpriteRenderer:
@@ -93,7 +93,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1004859705335493844, guid: 9a634c207caf2ec119790afd22483aae, type: 3}
+  m_Sprite: {fileID: 3609561742546842538, guid: 17ea47923a9c99ff9910f64c744b1fef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -150,7 +150,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

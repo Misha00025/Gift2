@@ -2,7 +2,8 @@
     "name": "Gift2.Gameplay",
     "rootNamespace": "",
     "references": [
-        "GUID:ade5787fdcada07198e2124c2a5c17c2"
+        "GUID:ade5787fdcada07198e2124c2a5c17c2",
+        "GUID:650394345c119b078aea1b73c8f7a0e0"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 
 public class RotateAroundCenter : MonoBehaviour
@@ -7,7 +9,7 @@ public class RotateAroundCenter : MonoBehaviour
     public float Radius = 5f;
 
     [Tooltip("Массив объектов для вращения. Если не заполнен, будут использованы дочерние объекты.")]
-    public Transform[] Objects;
+    public List<Transform> Objects;
 
     [Header("Настройки вращения")]
     [Tooltip("Скорость вращения всей группы (градусов в секунду)")]
@@ -21,27 +23,20 @@ public class RotateAroundCenter : MonoBehaviour
 
     void Start()
     {
-        if (Objects == null || Objects.Length == 0)
-        {
-            Transform[] children = GetComponentsInChildren<Transform>();
-            Objects = System.Array.FindAll(children, child => child != transform && child.parent == transform);
-        }
-
-        if (Objects.Length == 0)
-        {
-            Debug.LogWarning("Нет объектов для вращения!");
-            enabled = false;
-            return;
-        }
-
-        _angleStep = 360f / Objects.Length;
-
+        _angleStep = 360f / Objects.Count;
         PositionObjects();
     }
 
     public void Initialize(Character character)
     {
         _character = character;
+    }
+
+    public void AddObject(Transform transform)
+    {
+        Objects.Add(transform);
+        _angleStep = 360f / Objects.Count;
+        PositionObjects();
     }
 
     private void UseStats()
@@ -62,7 +57,7 @@ public class RotateAroundCenter : MonoBehaviour
     {
         Vector3 center = transform.position;
 
-        for (int i = 0; i < Objects.Length; i++)
+        for (int i = 0; i < Objects.Count; i++)
         {
             if (Objects[i] == null) continue;
 
