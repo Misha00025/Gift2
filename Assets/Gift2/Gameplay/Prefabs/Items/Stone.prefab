@@ -158,19 +158,19 @@ MonoBehaviour:
         m_Calls: []
   Thresholds:
   - Health: 0
-    Count: 50
+    Count: 25
     Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
   - Health: 100
-    Count: 40
-    Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
-  - Health: 200
-    Count: 30
-    Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
-  - Health: 300
     Count: 20
     Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
-  - Health: 350
+  - Health: 200
+    Count: 15
+    Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
+  - Health: 300
     Count: 10
+    Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
+  - Health: 350
+    Count: 5
     Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
 --- !u!212 &2832590475754129812
 SpriteRenderer:

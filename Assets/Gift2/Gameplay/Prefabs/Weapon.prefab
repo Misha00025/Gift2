@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 6059158581101528371}
   - component: {fileID: 7644038515823341362}
   - component: {fileID: 1859583799267450056}
-  - component: {fileID: 8964682367959717053}
+  - component: {fileID: 2037981324624204816}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -195,8 +195,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &8964682367959717053
-CircleCollider2D:
+--- !u!60 &2037981324624204816
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -230,4 +230,18 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.6
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.2801937, y: 0.49565136}
+      - {x: -0.5787992, y: 0.00080388784}
+      - {x: 0.29051554, y: -0.5035212}
+  m_UseDelaunayMesh: 0
