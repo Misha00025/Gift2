@@ -582,13 +582,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587117328}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35d3eb04c8b4a165a8baa2630d9ad42a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chunkPrefab: {fileID: 0}
-  chunkSize: 16
+  chunkPrefab: {fileID: 989872245220666753, guid: c23be2e7a70ef50b99b7bf8597118132, type: 3}
+  chunkSize: 8
   viewRadius: 3
   player: {fileID: 1731135035}
 --- !u!1001 &724515408
