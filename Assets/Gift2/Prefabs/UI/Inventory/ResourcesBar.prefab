@@ -86,7 +86,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2596266390593598920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   container: {fileID: 7647399601595173495}
   increaseColor: {r: 0, g: 1, b: 0, a: 1}
   decreaseColor: {r: 1, g: 0, b: 0, a: 1}
+  _timeToDelete: 1
 --- !u!1 &1821604272321285194
 GameObject:
   m_ObjectHideFlags: 0

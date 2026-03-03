@@ -1,8 +1,9 @@
 {
-    "name": "Gift2.Gameplay",
-    "rootNamespace": "Gift2.Gameplay",
+    "name": "Gift2.Meta",
+    "rootNamespace": "Gift2.Meta",
     "references": [
         "GUID:ade5787fdcada07198e2124c2a5c17c2",
+        "GUID:a98dd34928c380f479bc0d45b0233a8b",
         "GUID:650394345c119b078aea1b73c8f7a0e0"
     ],
     "includePlatforms": [],
