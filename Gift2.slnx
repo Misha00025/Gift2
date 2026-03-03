@@ -1,5 +1,6 @@
 ﻿<Solution>
   <Project Path="Gift2.Gameplay.csproj" />
+  <Project Path="Gift2.Meta.csproj" />
   <Project Path="AutoBattler.csproj" />
   <Project Path="PauseManager-Editor.csproj" />
   <Project Path="PauseManager.csproj" />
@@ -7,5 +8,4 @@
   <Project Path="Gift2.Core.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="MyComponents.csproj" />
-  <Project Path="Gift2.Meta.csproj" />
 </Solution>
