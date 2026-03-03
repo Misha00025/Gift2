@@ -11,7 +11,6 @@ namespace Gift2.Core
             
             public bool IsReached => CheckCondition();
             
-            protected abstract bool CheckCondition();
             protected Quest Quest => _quest;
             
             public QuestGoal(Quest quest)
@@ -21,6 +20,7 @@ namespace Gift2.Core
             }
             
             public abstract void Initialize();
+            protected abstract bool CheckCondition();
         }
     
         public abstract class QuestReward 
