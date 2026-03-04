@@ -39,8 +39,7 @@ namespace Gift2.Meta
 
         protected override bool CheckCondition()
         {
-            var count = Quest.Player.ResourcesStorage.Count(_data.Item);
-            return count > _data.Amount;
+            return Current >= _data.Amount;
         }
     }
 }

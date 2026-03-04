@@ -46,7 +46,7 @@ namespace Gift2.Core
         public Player Player => _player;
         public IReadOnlyList<QuestGoal> Goals => _goals;
         public IReadOnlyList<QuestReward> Rewards => _rewards;
-        public bool IsCanBeCompleted => CheckGoals();
+        public bool IsCanBeCompleted => GoalsIsReached();
         
         public UnityEvent<Quest> Completed { get; private set; } = new();
         
@@ -76,7 +76,7 @@ namespace Gift2.Core
             _rewards.Add(reward);
         }
         
-        public bool CheckGoals()
+        public bool GoalsIsReached()
         {
             bool ok = true;
             foreach (var goal in _goals)

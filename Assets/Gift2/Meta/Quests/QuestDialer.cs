@@ -1,16 +1,37 @@
+using System;
+using Gift2.Core;
+using Gift2.Meta;
 using UnityEngine;
 
 public class QuestDialer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [field: SerializeField] public string Key { get; private set; }
+    
+    public QuestConfig QuestConfig;
+    
+    void Awake()
     {
-        
+        if (String.IsNullOrEmpty(Key))
+            Key = name;
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public Quest AcceptQuest(Player player)
     {
+        if (QuestConfig == null) return null;
         
+        var quest = QuestConfig.Build();
+        quest.Accept(player);
+        QuestsManager.Instance.AddQuest(quest, this);
+        return quest;
+    }
+    
+    public bool CompleteQuest(Quest quest)
+    {
+        if (QuestsManager.Instance.GetDealerKey(quest) != Key) return false;
+        
+        var status = quest.GoalsIsReached() == true;
+        if (status)
+            quest.Complete();
+        return status;
     }
 }

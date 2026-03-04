@@ -13,6 +13,7 @@ public class TestInputs : MonoBehaviour
     }
 
     public Player Player;
+    public QuestDialer QuestDialer;
     public CharacterMover CharacterMover;
     public List<KeyItem> Resources;
     public int Count = 100;
@@ -21,11 +22,13 @@ public class TestInputs : MonoBehaviour
     public Transform DraggableObject;
     
     private Item _currentResource;
+    private Quest _currentQuest;
     
     void Start()
     {
         var collector = FindAnyObjectByType<ItemsCollector>();
         collector?.SetStorage(Player.ResourcesStorage);
+        AcceptQuest();
     }
     
     void Update()
@@ -41,7 +44,9 @@ public class TestInputs : MonoBehaviour
             Player.ResourcesStorage.Remove(_currentResource, Count);
             
         if (Input.GetKey(KeyCode.Space))
-            TrySpawn();
+            AcceptQuest();
+        if (Input.GetKey(KeyCode.Return))
+            TryCompleteQuest();
         if (Input.GetKey(KeyCode.LeftShift))
             DragObject();
             
@@ -70,5 +75,21 @@ public class TestInputs : MonoBehaviour
         var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         position.z = 0;
         item.transform.position = position;
+    }
+    
+    private void AcceptQuest()
+    {
+        if (_currentQuest != null) return;
+    
+        _currentQuest = QuestDialer.AcceptQuest(Player);
+    }
+    
+    private void TryCompleteQuest()
+    {
+        if (_currentQuest == null) return;
+        
+        var status = QuestDialer.CompleteQuest(_currentQuest);
+        if (status == true)
+            _currentQuest = null;
     }
 }

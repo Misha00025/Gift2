@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a74455267312a468a3a5b28a6713e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ViewPrefab: {fileID: 0}
+  ViewPrefab: {fileID: 1946316137662354884, guid: 5e7bc79f50481fdef8788b67e2d20a0d, type: 3}
 --- !u!114 &6870735913085651444
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Gift2.Core;
+using Gift2.Meta;
 using UnityEngine;
 
 namespace Gift2
@@ -10,6 +11,24 @@ namespace Gift2
     
         private List<Quest> _quests = new();
         private Dictionary<Quest, QuestView> _views = new();
+    
+        void Start()
+        {
+            foreach (var quest in QuestsManager.Instance.Quests)
+                AddQuest(quest);
+        }
+    
+        void OnEnable()
+        {
+            QuestsManager.Instance?.QuestAdded.AddListener(AddQuest);
+            QuestsManager.Instance?.QuestRemoved.AddListener(RemoveQuest);
+        }
+        
+        void OnDisable()
+        {
+            QuestsManager.Instance?.QuestAdded.RemoveListener(AddQuest);
+            QuestsManager.Instance?.QuestRemoved.RemoveListener(RemoveQuest);
+        }
     
         public void AddQuest(Quest quest)
         {
