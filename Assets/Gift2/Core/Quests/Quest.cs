@@ -11,7 +11,7 @@ namespace Gift2.Core
             
             public bool IsReached => CheckCondition();
             
-            protected Quest Quest => _quest;
+            public Quest Quest => _quest;
             
             public QuestGoal(Quest quest)
             {

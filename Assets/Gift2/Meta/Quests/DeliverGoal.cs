@@ -25,6 +25,7 @@ namespace Gift2.Meta
 
         public Item Item => _data.Item;
         public int Amount => _data.Amount;
+        public int Current => Quest.Player?.ResourcesStorage?.Count(Item) ?? 0;
 
         public override void Initialize()
         {

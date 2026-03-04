@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: QuestGoalViewBuilder
   m_EditorClassIdentifier: 
   <DefaultGoalView>k__BackingField: {fileID: 8103028312243475634, guid: d1a868faf4699e9519ed5a53e6e341a9, type: 3}
-  <DeliverGoalView>k__BackingField: {fileID: 0}
+  <DeliverGoalView>k__BackingField: {fileID: 3033554031682835212, guid: fb75e65aeaab2a980baedb6f28d6a522, type: 3}

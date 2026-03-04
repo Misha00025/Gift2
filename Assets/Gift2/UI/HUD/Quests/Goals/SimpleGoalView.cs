@@ -9,7 +9,12 @@ namespace Gift2
         
         public override void Instantiate(Quest.QuestGoal goal)
         {
-            TextField.SetText(goal.GetType().Name);
+            TextField.SetText(GetText(goal));
+        }
+        
+        protected virtual string GetText(Quest.QuestGoal goal)
+        {
+            return goal.GetType().Name;
         }
     }
 }
