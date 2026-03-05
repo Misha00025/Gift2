@@ -25,13 +25,15 @@ namespace Gift2.Core
     
         public abstract class QuestReward 
         {
-            private Quest _quest;
+            protected Quest _quest;
         
             public QuestReward(Quest quest)
             {
                 _quest = quest;
                 _quest.AddReward(this);
             }
+            
+            public Quest Quest => _quest;
         
             public abstract void Give();
         }

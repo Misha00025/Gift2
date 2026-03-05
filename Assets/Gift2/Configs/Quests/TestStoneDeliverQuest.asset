@@ -18,5 +18,7 @@ MonoBehaviour:
     \u0417\u0430\u0447\u0435\u043C? \u0414\u0430 \u0431\u0435\u0437 \u043F\u043E\u043D\u044F\u0442\u0438\u044F!"
   goals:
   - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-    Amount: 500
-  rewards: []
+    Amount: 100
+  rewards:
+  - Item: {fileID: 11400000, guid: eb28260b18ae84de6b16487259eba08c, type: 2}
+    Amount: 1

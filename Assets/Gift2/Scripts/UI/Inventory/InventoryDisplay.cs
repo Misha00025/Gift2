@@ -21,7 +21,7 @@ public class InventoryDisplay : MonoBehaviour
     private RectTransform _rectTransform;
     
     private void Awake()
-    {
+    {    
         _rectTransform = GetComponent<RectTransform>();
         _gridLayout = GetComponent<GridLayoutGroup>();
         if (_gridLayout == null)
@@ -33,15 +33,15 @@ public class InventoryDisplay : MonoBehaviour
         _gridLayout.constraintCount = Columns;
         _gridLayout.startAxis = GridLayoutGroup.Axis.Horizontal;
         _gridLayout.childAlignment = TextAnchor.UpperLeft;
+        if (_testConfig == null) return;
         Initialize(_testConfig.Build());
-        UpdateLayout();
     }
     
     private void OnDestroy()
     {
         if (_inventory != null)
         {
-            _inventory.OnSlotChanged -= UpdateSlot;
+            _inventory.SlotChanged -= UpdateSlot;
             _inventory.OnInventoryChanged -= RefreshAllSlots;
         }
     }
@@ -49,7 +49,7 @@ public class InventoryDisplay : MonoBehaviour
     {
         if (_inventory != null)
         {
-            _inventory.OnSlotChanged -= UpdateSlot;
+            _inventory.SlotChanged -= UpdateSlot;
             _inventory.OnInventoryChanged -= RefreshAllSlots;
         }
         
@@ -57,12 +57,13 @@ public class InventoryDisplay : MonoBehaviour
         
         if (_inventory == null) return;
         
-        _inventory.OnSlotChanged += UpdateSlot;
+        _inventory.SlotChanged += UpdateSlot;
         _inventory.OnInventoryChanged += RefreshAllSlots;
         
         CreateSlots(_inventory.Slots.Count);
         
         RefreshAllSlots();
+        UpdateLayout();
     }
     
     private void CreateSlots(int slotCount)

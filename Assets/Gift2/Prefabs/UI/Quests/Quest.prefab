@@ -409,6 +409,8 @@ MonoBehaviour:
   DescriptionField: {fileID: 0}
   GoalsContainer: {fileID: 4470419107834277422}
   TestQuestConfig: {fileID: 0}
+  Image: {fileID: 3650860064670338634}
+  OnReachedColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!114 &1940433637578005099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,7 +479,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5016345975578619645, guid: ff918ea19689a7658b58bf7a2ff9c1b2, type: 3}
+  m_Sprite: {fileID: 1492314839085384544, guid: 1ae9fa4aae7da29969c3ecc59f186460, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

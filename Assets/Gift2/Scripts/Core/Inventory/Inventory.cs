@@ -30,7 +30,7 @@ namespace Gift2.Core
             this.Amount = amount;
         }
 
-        public bool IsEmpty => Item.Config == null || Amount == 0;
+        public bool IsEmpty => Item?.Config == null || Amount == 0;
         public bool IsFull => !IsEmpty && Amount >= Item.MaxStack;
 
         public void Clear()
@@ -43,17 +43,17 @@ namespace Gift2.Core
     public class Inventory
     {
         private int _slotCount;
-        private InventorySlot[] _slots;
+        private List<InventorySlot> _slots;
 
-        public event Action<InventorySlot> OnSlotChanged;
+        public event Action<InventorySlot> SlotChanged;
         public event Action OnInventoryChanged;
 
         public Inventory(int slotCount)
         {
             _slotCount = slotCount;
-            _slots = new InventorySlot[_slotCount];
-            for (int i = 0; i < _slots.Length; i++)
-                _slots[i] = new InventorySlot();
+            _slots = new();
+            for (int i = 0; i < slotCount; i++)
+                _slots.Add(new InventorySlot());
         }
 
         public IReadOnlyList<InventorySlot> Slots => _slots;
@@ -66,7 +66,7 @@ namespace Gift2.Core
 
             if (item.Stackable)
             {
-                for (int i = 0; i < _slots.Length && remaining > 0; i++)
+                for (int i = 0; i < _slots.Count && remaining > 0; i++)
                 {
                     if (!_slots[i].IsEmpty && _slots[i].Item.Key == item.Key && !_slots[i].IsFull)
                     {
@@ -81,7 +81,7 @@ namespace Gift2.Core
 
             if (remaining > 0)
             {
-                for (int i = 0; i < _slots.Length && remaining > 0; i++)
+                for (int i = 0; i < _slots.Count && remaining > 0; i++)
                 {
                     if (_slots[i].IsEmpty)
                     {
@@ -105,7 +105,7 @@ namespace Gift2.Core
 
             int remaining = amount;
 
-            for (int i = _slots.Length - 1; i >= 0 && remaining > 0; i--)
+            for (int i = _slots.Count - 1; i >= 0 && remaining > 0; i--)
             {
                 if (!_slots[i].IsEmpty && _slots[i].Item.Key == key)
                 {
@@ -125,7 +125,7 @@ namespace Gift2.Core
 
         public bool RemoveFromSlot(int index, int amount = 1)
         {
-            if (index < 0 || index >= _slots.Length) return false;
+            if (index < 0 || index >= _slots.Count) return false;
             if (_slots[index].IsEmpty) return false;
 
             int toRemove = Mathf.Min(_slots[index].Amount, amount);
@@ -152,7 +152,7 @@ namespace Gift2.Core
         // Обмен слотов
         public void SwapSlots(int indexA, int indexB)
         {
-            if (indexA < 0 || indexA >= _slots.Length || indexB < 0 || indexB >= _slots.Length)
+            if (indexA < 0 || indexA >= _slots.Count || indexB < 0 || indexB >= _slots.Count)
                 return;
 
             InventorySlot temp = new InventorySlot(_slots[indexA].Item, _slots[indexA].Amount);
@@ -169,7 +169,7 @@ namespace Gift2.Core
         // Очистка
         public void Clear()
         {
-            for (int i = 0; i < _slots.Length; i++)
+            for (int i = 0; i < _slots.Count; i++)
             {
                 _slots[i].Clear();
                 NotifySlotChanged(i);
@@ -179,7 +179,7 @@ namespace Gift2.Core
 
         private void NotifySlotChanged(int index)
         {
-            OnSlotChanged?.Invoke(_slots[index]);
+            SlotChanged?.Invoke(_slots[index]);
         }
 
         private void NotifyInventoryChanged()

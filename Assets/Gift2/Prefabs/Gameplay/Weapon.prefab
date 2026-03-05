@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultDamage:
-    Value: 5
+    Value: 1
     Element: 0
 --- !u!50 &1859583799267450056
 Rigidbody2D:

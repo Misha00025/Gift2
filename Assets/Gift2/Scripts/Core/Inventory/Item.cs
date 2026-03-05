@@ -11,7 +11,7 @@ namespace Gift2.Core
     }
 
 
-    public struct Item
+    public class Item
     {
         public string Key { get; private set; }
         public IItemConfig Config { get; private set; }

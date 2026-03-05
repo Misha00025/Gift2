@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using Gift2.Core;
 using UnityEngine;
 
 [RequireComponent(typeof(Character), typeof(CharacterMover))]
 public class CharacterInitializer : MonoBehaviour
 {
+    [SerializeField] private Player Player;
     [SerializeField] private CharacterConfig Config;
     [SerializeField] private Weapon StartWeaponPrefab => Config.StartWeaponPrefab;
     
@@ -14,7 +16,7 @@ public class CharacterInitializer : MonoBehaviour
     {
         var character = GetComponent<Character>();
         var mover = GetComponent<CharacterMover>();
-        character.Initialize(Config, mover);
+        character.Initialize(Config, mover, Player);
         mover.Initialize(character);
         Collector.Initialize(character);
         Rotator.Initialize(character);

@@ -10,7 +10,7 @@ namespace Gift2.Core
         [field: SerializeField, TextArea] public string Description { get; set; } = "";
         [field: SerializeField] public int MaxStack { get; set; } = 1;
         
-        public Item Build()
+        public virtual Item Build()
         {
             return new (name, this);
         }

@@ -19,8 +19,8 @@ MonoBehaviour:
     Icon: {fileID: 0}
   <Stats>k__BackingField:
     CollectingRadiusScale: 1.2
-    Strength: 1
-    StartWeapons: 5
-    RotationSpeed: 500
+    Strength: 1.6
+    StartWeapons: 4
+    RotationSpeed: 200
     RotationRadius: 2
     MoveSpeed: 5

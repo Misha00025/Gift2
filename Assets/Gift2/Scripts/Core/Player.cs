@@ -25,9 +25,9 @@ namespace Gift2.Core
             _resourcesStorage = resourcesStorage;
         }
         
-        
+        public Inventory Inventory => _inventory;
         public ResourcesStorage ResourcesStorage => _resourcesStorage;
-        public IReadOnlyList<IInventorySlot> Items => _inventory.Slots;
-        public IReadOnlyList<IInventorySlot> Resources => _resourcesStorage.Slots;
+        public IReadOnlyList<IInventorySlot> Items => _inventory?.Slots;
+        public IReadOnlyList<IInventorySlot> Resources => _resourcesStorage?.Slots;
     }
 }

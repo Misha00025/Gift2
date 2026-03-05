@@ -27,9 +27,12 @@ namespace Gift2.Meta
     [Serializable]
     public class ItemRewardConfig : QuestRewardConfig
     {
+        public ItemConfig Item;
+        public int Amount = 1;
+    
         public override Quest.QuestReward CreateReward(Quest quest)
         {
-            throw new System.NotImplementedException();
+            return new ItemQuestReward(quest, Item.Build(), Amount);
         }
     }
 }

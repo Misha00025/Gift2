@@ -55,10 +55,10 @@ MonoBehaviour:
         m_Calls: []
   Thresholds:
   - Health: 0
-    Count: 25
+    Count: 10
     Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
   - Health: 50
-    Count: 10
+    Count: 5
     Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
 --- !u!212 &1824831859938823320
 SpriteRenderer:

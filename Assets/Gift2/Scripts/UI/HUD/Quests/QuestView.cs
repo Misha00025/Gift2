@@ -1,6 +1,7 @@
 using Gift2.Core;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gift2
 {
@@ -12,7 +13,11 @@ namespace Gift2
         public Transform GoalsContainer;
         public QuestConfig TestQuestConfig;
         
+        public Image Image;
+        public Color OnReachedColor = Color.green;
+        
         private Quest _quest;
+        private Color _defaultColor;
     
         void Start()
         {
@@ -22,6 +27,8 @@ namespace Gift2
                 quest.Accept(FindAnyObjectByType<Player>());
                 Initialize(quest);
             }
+            if (Image != null)
+                _defaultColor = Image.color;
         }
     
     
@@ -36,6 +43,14 @@ namespace Gift2
             }
         }
         
+        void LateUpdate()
+        {
+            if (Image == null) return;
         
+            if (_quest.GoalsIsReached())
+                Image.color = OnReachedColor;
+            else
+                Image.color = _defaultColor;
+        }
     }
 }
