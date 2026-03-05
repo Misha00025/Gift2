@@ -2422,6 +2422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultInventory: {fileID: 11400000, guid: 958538262916bf0fda813a4e17984eb7, type: 2}
   DefaultResources: {fileID: 11400000, guid: c4dae474452f41b3880c563970c95bc4, type: 2}
+  Character: {fileID: 0}
 --- !u!4 &587117330
 Transform:
   m_ObjectHideFlags: 0
@@ -6806,6 +6807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 929739320}
+  - component: {fileID: 929739321}
   m_Layer: 0
   m_Name: Trees
   m_TagString: Untagged
@@ -6908,6 +6910,18 @@ Transform:
   - {fileID: 1136208719}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &929739321
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929739319}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_SortAtRoot: 0
 --- !u!4 &933877074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1868198157552236907, guid: 59b96e18065a7e660b0c569165524686, type: 3}

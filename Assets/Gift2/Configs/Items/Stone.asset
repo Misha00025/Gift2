@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   <Name>k__BackingField: "\u041A\u0430\u043C\u0435\u043D\u044C"
-  <Icon>k__BackingField: {fileID: 5401597102808966699, guid: 7f9a22065a176b5639289d7fa19dc6c5, type: 3}
+  <Icon>k__BackingField: {fileID: -330301928137699692, guid: 9cb8ed948f2a1826ca8628f50dfe4584, type: 3}
   <Description>k__BackingField: 
   <MaxStack>k__BackingField: 10000

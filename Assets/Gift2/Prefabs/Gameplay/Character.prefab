@@ -327,6 +327,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32f975aa98adad4e97f5f2f7778298b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showStats:
+    CollectingRadiusScale: 0
+    Strength: 0
+    StartWeapons: 0
+    RotationSpeed: 0
+    RotationRadius: 0
+    MoveSpeed: 0
 --- !u!114 &4396600015903741605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c15e270c1fb7f0d8c8704536ac0eadcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   Config: {fileID: 11400000, guid: eada83421b29bc37c8f84d6839fc507e, type: 2}
   Collector: {fileID: 1726100967923088893}
   Rotator: {fileID: 3129605536171504982}
@@ -561,7 +569,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: -3498258982837050487, guid: add51b07c3ac8360e881fd1af0703661, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_fontSizeMin: 5
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -153,7 +153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5561723549924542655
 RectTransform:
   m_ObjectHideFlags: 0
@@ -169,8 +169,8 @@ RectTransform:
   - {fileID: 9144924322606095460}
   m_Father: {fileID: 3607889128608092788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 1, y: 0.25}
+  m_AnchorMin: {x: 0.25, y: 0}
+  m_AnchorMax: {x: 0.75, y: 0.25}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5401597102808966699, guid: 7f9a22065a176b5639289d7fa19dc6c5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -415,4 +415,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconImage: {fileID: 4564438209896756431}
   amountText: {fileID: 7547522387521780176}
+  _disableIfSingle: {fileID: 3399808988960497398}
   Index: 0

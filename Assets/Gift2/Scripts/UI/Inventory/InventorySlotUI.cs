@@ -8,6 +8,7 @@ public class InventorySlotUI : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private Image iconImage;      // для иконки предмета
     [SerializeField] private TextMeshProUGUI amountText;      // или TMP_Text для количества
+    [SerializeField] private GameObject _disableIfSingle;
     
     // Скрытые поля
     [HideInInspector] public int Index;            // индекс слота в инвентаре
@@ -42,6 +43,7 @@ public class InventorySlotUI : MonoBehaviour
             if (amountText != null)
             {
                 amountText.SetText(slot.Amount > 1 ? slot.Amount.ToString() : "");
+                _disableIfSingle?.SetActive(slot.Amount > 1);
             }
         }
     }
