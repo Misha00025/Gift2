@@ -12,6 +12,8 @@ namespace Gift2.Core
         private Inventory _inventory;
         private ResourcesStorage _resourcesStorage;
         
+        public Character Character;
+        
         void Awake()
         {
             if (DefaultInventory != null)

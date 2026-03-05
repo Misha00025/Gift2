@@ -34,18 +34,24 @@ namespace Gift2.Meta
         }
 
         public ItemRewardType RewardType;
+        public Weapon WeaponOnAdd;
         public ItemConfig Item;
         public int Amount = 1;
 
         private class WeaponQuestReward : Quest.QuestReward
         {
-            public WeaponQuestReward(Quest quest) : base(quest)
+            private Weapon _prefab;
+            private int _amount;
+            public WeaponQuestReward(Quest quest, int amount, Weapon weapon) : base(quest)
             {
+                _prefab = weapon;
+                _amount = amount;
             }
 
             public override void Give()
             {
-                throw new NotImplementedException();
+                for (int i = 0; i < _amount; i++)
+                    Quest.Player.Character.AddWeapon(_prefab);
             }
         }
 
@@ -53,7 +59,8 @@ namespace Gift2.Meta
         {
             switch (RewardType)
             {
-            
+                case ItemRewardType.Weapon:
+                    return new WeaponQuestReward(quest, Amount, WeaponOnAdd);
                 case ItemRewardType.Item:
                 default:
                     return new ItemQuestReward(quest, Item.Build(), Amount);

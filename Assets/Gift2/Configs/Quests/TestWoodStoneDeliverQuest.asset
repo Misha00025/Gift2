@@ -22,6 +22,7 @@ MonoBehaviour:
   - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
     Amount: 100
   rewards:
-  - RewardType: 0
+  - RewardType: 1
+    WeaponOnAdd: {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
     Item: {fileID: 0}
-    Amount: 0
+    Amount: 1

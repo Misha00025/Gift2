@@ -7,12 +7,14 @@ public class Character : MonoBehaviour
     private CharacterMover _mover;
     private CharacterConfig _config;
     private Player _player;
+    private RotateAroundCenter _rotator;
 
-    public void Initialize(CharacterConfig config, CharacterMover mover, Player player)
+    public void Initialize(CharacterConfig config, CharacterMover mover, Player player, RotateAroundCenter rotator)
     {
         _config = config;
         _mover = mover;
         _player = player;
+        _rotator = rotator;
     }
     
     public CharacterStats BaseStats => _config.Stats;
@@ -40,5 +42,18 @@ public class Character : MonoBehaviour
         }
         
         return stats;
+    }
+    
+    public void AddWeapon(Weapon prefab)
+    {
+        var weapon = Instantiate(prefab, _rotator.transform);
+            var dt = weapon.GetComponent<DistanceTrigger2D>();
+            if (dt != null)
+            {
+                dt.Ignore.Add(this.gameObject);
+                // dt.Ignore.Add(Collector.gameObject);
+            }
+            weapon.SetOwner(this);
+            _rotator.AddObject(weapon.transform);
     }
 }

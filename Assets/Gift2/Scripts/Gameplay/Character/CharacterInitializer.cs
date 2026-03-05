@@ -16,22 +16,16 @@ public class CharacterInitializer : MonoBehaviour
     {
         var character = GetComponent<Character>();
         var mover = GetComponent<CharacterMover>();
-        character.Initialize(Config, mover, Player);
+        character.Initialize(Config, mover, Player, Rotator);
         mover.Initialize(character);
         Collector.Initialize(character);
         Rotator.Initialize(character);
         
+        Player.Character = character;
+        
         for (int i = 0; i < character.Stats.StartWeapons; i++)
         {
-            var weapon = Instantiate(StartWeaponPrefab, Rotator.transform);
-            var dt = weapon.GetComponent<DistanceTrigger2D>();
-            if (dt != null)
-            {
-                dt.Ignore.Add(character.gameObject);
-                dt.Ignore.Add(Collector.gameObject);
-            }
-            weapon.SetOwner(character);
-            Rotator.AddObject(weapon.transform);   
+            character.AddWeapon(StartWeaponPrefab);
         }
     }
 }

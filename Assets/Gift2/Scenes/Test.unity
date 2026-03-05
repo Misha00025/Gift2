@@ -32086,7 +32086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Key>k__BackingField: Fin
-  QuestConfig: {fileID: 11400000, guid: e4934a75fea0bf14cbd61351512e4147, type: 2}
+  QuestConfig: {fileID: 11400000, guid: 0a27840f1191335a7be417b682deb483, type: 2}
 --- !u!4 &1556034824
 Transform:
   m_ObjectHideFlags: 0
