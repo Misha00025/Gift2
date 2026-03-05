@@ -27,12 +27,37 @@ namespace Gift2.Meta
     [Serializable]
     public class ItemRewardConfig : QuestRewardConfig
     {
+        public enum ItemRewardType
+        {
+            Item,
+            Weapon
+        }
+
+        public ItemRewardType RewardType;
         public ItemConfig Item;
         public int Amount = 1;
-    
+
+        private class WeaponQuestReward : Quest.QuestReward
+        {
+            public WeaponQuestReward(Quest quest) : base(quest)
+            {
+            }
+
+            public override void Give()
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public override Quest.QuestReward CreateReward(Quest quest)
         {
-            return new ItemQuestReward(quest, Item.Build(), Amount);
+            switch (RewardType)
+            {
+            
+                case ItemRewardType.Item:
+                default:
+                    return new ItemQuestReward(quest, Item.Build(), Amount);
+            }
         }
     }
 }

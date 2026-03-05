@@ -1,11 +1,7 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp.csproj" />
-  <Project Path="Gift2.Core.csproj" />
-  <Project Path="Gift2.Meta.csproj" />
-  <Project Path="AutoBattler.csproj" />
   <Project Path="PauseManager-Editor.csproj" />
   <Project Path="PauseManager.csproj" />
   <Project Path="DOTween.Modules.csproj" />
-  <Project Path="Gift2.Gameplay.csproj" />
   <Project Path="MyComponents.csproj" />
 </Solution>

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Gift2.Core;
 using UnityEngine;
 
 namespace Gift2.Core

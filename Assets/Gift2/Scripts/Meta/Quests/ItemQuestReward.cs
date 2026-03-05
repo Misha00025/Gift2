@@ -1,10 +1,11 @@
+using System.Globalization;
 using Gift2.Core;
 using UnityEngine;
 
 namespace Gift2.Meta
 {
     public class ItemQuestReward : Quest.QuestReward
-    {
+    {    
         private Item _item;
         private int _amount;
     
