@@ -23,7 +23,7 @@ public class ResourceContainer : MonoBehaviour, IDamageable
 
     void Start()
     {
-        HealthView.SetProperty(Health);
+        HealthView?.SetProperty(Health);
         _lastHealth = Health.Value;
         foreach (var threshold in Thresholds)
         {

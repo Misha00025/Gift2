@@ -13,8 +13,4 @@ MonoBehaviour:
   m_Name: TestInventory
   m_EditorClassIdentifier: 
   SlotsCount: 4
-  Items:
-  - Config: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-    Amount: 900
-  - Config: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-    Amount: 1200
+  Items: []
