@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Gift2;
 using Gift2.Core;
 using UnityEngine;
 
@@ -23,12 +24,14 @@ public class TestInputs : MonoBehaviour
     
     private Item _currentResource;
     private Quest _currentQuest;
+    private Interactor _interactor;
     
     void Start()
     {
         var collector = FindAnyObjectByType<ItemsCollector>();
         collector?.SetStorage(Player.ResourcesStorage);
-        AcceptQuest();
+        _interactor = FindAnyObjectByType<Interactor>();
+        // AcceptQuest();
     }
     
     void Update()
@@ -43,10 +46,11 @@ public class TestInputs : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
             Player.ResourcesStorage.Remove(_currentResource, Count);
             
-        if (Input.GetKey(KeyCode.Space))
-            AcceptQuest();
-        if (Input.GetKey(KeyCode.Return))
-            TryCompleteQuest();
+        if (Input.GetKeyDown(KeyCode.Space))
+            Use();
+            // AcceptQuest();
+        // if (Input.GetKey(KeyCode.Return))
+        //     TryCompleteQuest();
         if (Input.GetKey(KeyCode.LeftShift))
             DragObject();
             
@@ -91,5 +95,12 @@ public class TestInputs : MonoBehaviour
         var status = QuestDialer.CompleteQuest(_currentQuest);
         if (status == true)
             _currentQuest = null;
+    }
+    
+    private void Use()
+    {
+        var obj = _interactor.GetSelectedObject();
+        
+        obj?.Use();
     }
 }

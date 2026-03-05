@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da8f1f84488c6659af47c709aa52068, type: 3}
   m_Name: TestInventory
   m_EditorClassIdentifier: 
-  SlotsCount: 9
+  SlotsCount: 4
   Items:
   - Config: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
     Amount: 900

@@ -19,6 +19,7 @@ namespace Gift2.Meta
         
         private List<Quest> _quests = new();
         private Dictionary<Quest, string> _dialerKeys = new();
+        private Dictionary<string, List<Quest>> _dialerQuests = new();
         
         public IReadOnlyList<Quest> Quests => _quests;
         
@@ -30,7 +31,11 @@ namespace Gift2.Meta
             if (_quests.Contains(quest)) return;
 
             _quests.Add(quest);
-            _dialerKeys.Add(quest, dialer.Key);
+            var key = dialer.Key;
+            _dialerKeys.Add(quest, key);
+            if (_dialerQuests.ContainsKey(key) == false)
+                _dialerQuests.Add(key, new());
+            _dialerQuests[key].Add(quest);
             quest.Completed.AddListener(RemoveQuest);
             QuestAdded.Invoke(quest);
         }
@@ -42,12 +47,22 @@ namespace Gift2.Meta
             return _dialerKeys[quest];
         }
         
+        public IReadOnlyList<Quest> GetDealerQuests(string key)
+        {
+            if (_dialerQuests.ContainsKey(key) == false) return null;
+            
+            return _dialerQuests[key];
+        }
+        
         public void RemoveQuest(Quest quest)
         {
             var ok = _quests.Remove(quest);
             if (ok == false) return;
             
+            var key = _dialerKeys[quest];
             _dialerKeys.Remove(quest);
+            _dialerQuests[key].Remove(quest);
+            
             QuestRemoved.Invoke(quest);
         }
         
