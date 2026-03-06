@@ -6,17 +6,18 @@ public class Character : MonoBehaviour
 {
     private CharacterMover _mover;
     private CharacterConfig _config;
-    private Player _player;
     private RotateAroundCenter _rotator;
 
     public void Initialize(CharacterConfig config, CharacterMover mover, Player player, RotateAroundCenter rotator)
     {
         _config = config;
         _mover = mover;
-        _player = player;
         _rotator = rotator;
     }
     
+    private CharacterStats _multipliers = CharacterStats.One;
+    
+    public CharacterStats Multipliers => _multipliers;
     public CharacterStats BaseStats => _config.Stats;
     public CharacterStats Stats => GetStats();
     public CharacterStats showStats;
@@ -27,20 +28,8 @@ public class Character : MonoBehaviour
     
     private CharacterStats GetStats()
     {
-        if (_player?.Items == null) 
-            return BaseStats;
-        
         var stats = BaseStats;
-        
-        var items = _player.Items;
-        foreach(var item in items)
-        {
-            if (item.Item is IBuff)
-                for (int i = 0; i < item.Amount; i++)
-                    stats = ((IBuff)item.Item).Apply(stats);
-            showStats = stats;
-        }
-        
+        stats = stats * _multipliers;
         return stats;
     }
     
@@ -51,9 +40,13 @@ public class Character : MonoBehaviour
             if (dt != null)
             {
                 dt.Ignore.Add(this.gameObject);
-                // dt.Ignore.Add(Collector.gameObject);
             }
             weapon.SetOwner(this);
             _rotator.AddObject(weapon.transform);
+    }
+    
+    public void AddUpdate(CharacterStats update)
+    {
+        _multipliers = _multipliers + update;
     }
 }

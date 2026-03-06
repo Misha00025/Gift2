@@ -39,4 +39,39 @@ public struct CharacterStats
         RotationRadius = 2f,
         MoveSpeed = 5f  
     };
+    
+    public static CharacterStats One => new()
+    {
+        CollectingRadiusScale = 1f, 
+        Strength = 1f,
+        RotationSpeed = 1f,
+        RotationRadius = 1f,
+        MoveSpeed = 1f  
+    };
+    
+    public static CharacterStats operator *(CharacterStats left, CharacterStats right)
+    {
+        var result = left;
+        
+        result.CollectingRadiusScale *= right.CollectingRadiusScale;
+        result.Strength *= right.Strength;
+        result.RotationSpeed *= right.RotationSpeed;
+        result.RotationRadius *= right.RotationRadius;
+        result.MoveSpeed *= right.MoveSpeed;
+        
+        return result;
+    }
+    
+    public static CharacterStats operator +(CharacterStats left, CharacterStats right)
+    {
+        var result = left;
+        
+        result.CollectingRadiusScale += right.CollectingRadiusScale;
+        result.Strength += right.Strength;
+        result.RotationSpeed += right.RotationSpeed;
+        result.RotationRadius += right.RotationRadius;
+        result.MoveSpeed += right.MoveSpeed;
+        
+        return result;
+    }
 }

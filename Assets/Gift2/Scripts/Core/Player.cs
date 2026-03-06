@@ -32,5 +32,7 @@ namespace Gift2.Core
         public ResourcesStorage ResourcesStorage => _resourcesStorage;
         public IReadOnlyList<IInventorySlot> Items => _inventory?.Slots;
         public IReadOnlyList<IInventorySlot> Resources => _resourcesStorage?.Slots;
+        
+        public void AddUpdate(CharacterStats update) => Character?.AddUpdate(update);
     }
 }
