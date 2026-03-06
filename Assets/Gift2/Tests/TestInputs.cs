@@ -18,6 +18,7 @@ public class TestInputs : MonoBehaviour
     public CharacterMover CharacterMover;
     public List<KeyItem> Resources;
     public int Count = 100;
+    public ShopView Shop;
     
     public CollectableItem ItemToSpawn;
     public Transform DraggableObject;
@@ -51,6 +52,8 @@ public class TestInputs : MonoBehaviour
             // AcceptQuest();
         // if (Input.GetKey(KeyCode.Return))
         //     TryCompleteQuest();
+        if (Input.GetKeyDown(KeyCode.Tab))
+            OpenShop();
         if (Input.GetKey(KeyCode.LeftShift))
             DragObject();
             
@@ -95,6 +98,11 @@ public class TestInputs : MonoBehaviour
         var status = QuestDialer.CompleteQuest(_currentQuest);
         if (status == true)
             _currentQuest = null;
+    }
+    
+    public void OpenShop()
+    {
+        Shop.gameObject.SetActive(!Shop.gameObject.activeSelf);
     }
     
     private void Use()

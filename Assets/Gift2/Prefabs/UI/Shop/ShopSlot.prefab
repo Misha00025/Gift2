@@ -230,7 +230,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -813,6 +813,7 @@ GameObject:
   - component: {fileID: 3901013781874706979}
   - component: {fileID: 1297257165483097121}
   - component: {fileID: 3239803512620917754}
+  - component: {fileID: 7173672545378994034}
   m_Layer: 0
   m_Name: ShopSlot
   m_TagString: Untagged
@@ -882,3 +883,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.8
+--- !u!114 &7173672545378994034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211233324407963984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cff365e6517bc5198ad1d958434571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 8331518735564041291}
+  NameField: {fileID: 6177832681430572582}
+  DescriptionField: {fileID: 4934513709372161860}
+  CostsContainer: {fileID: 3619843883222551497}
+  BuyButton: {fileID: 355098156921377751}

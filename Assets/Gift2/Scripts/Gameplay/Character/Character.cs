@@ -15,7 +15,7 @@ public class Character : MonoBehaviour
         _rotator = rotator;
     }
     
-    private CharacterStats _multipliers = CharacterStats.One;
+    [SerializeField] private CharacterStats _multipliers = CharacterStats.One;
     
     public CharacterStats Multipliers => _multipliers;
     public CharacterStats BaseStats => _config.Stats;
@@ -30,6 +30,7 @@ public class Character : MonoBehaviour
     {
         var stats = BaseStats;
         stats = stats * _multipliers;
+        showStats = stats;
         return stats;
     }
     
