@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333c452ba14acf6c095aa26b152bbbc8, type: 3}
   m_Name: TestCharacter
   m_EditorClassIdentifier: 
-  <StartWeaponPrefab>k__BackingField: {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
+  <StartWeapons>k__BackingField:
+  - {fileID: 7644038515823341362, guid: c50458550406b02799e10039e3493c65, type: 3}
+  - {fileID: 7644038515823341362, guid: 782755823eb2c320fa36fdf8eba95310, type: 3}
   <Info>k__BackingField:
     Name: 
     Description: 
     Icon: {fileID: 0}
   <Stats>k__BackingField:
     CollectingRadiusScale: 1
-    Strength: 1.6
-    StartWeapons: 4
+    Strength: 1
     RotationSpeed: 200
     RotationRadius: 2
     MoveSpeed: 5

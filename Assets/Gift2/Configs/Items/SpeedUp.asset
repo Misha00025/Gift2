@@ -19,9 +19,9 @@ MonoBehaviour:
     \u043E\u0440\u0443\u0436\u0438\u044F"
   <MaxStack>k__BackingField: 10
   Multipliers:
-    CollectingRadiusScale: 0.1
+    CollectingRadiusScale: 0
     Strength: 0
     StartWeapons: 0
-    RotationSpeed: 100
+    RotationSpeed: 50
     RotationRadius: 0
-    MoveSpeed: 0.2
+    MoveSpeed: 0.1

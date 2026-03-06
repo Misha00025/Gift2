@@ -1,10 +1,11 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CharacterConfig", menuName = "Character/CharacterConfig")]
 public class CharacterConfig : ScriptableObject
 {
-    [field: SerializeField] public Weapon StartWeaponPrefab { get; private set; }
+    [field: SerializeField] public List<Weapon> StartWeapons { get; private set; }
     [field: SerializeField] public CharacterInfo Info { get; private set; }
     [field: SerializeField] public CharacterStats Stats { get; private set; } = CharacterStats.Default;
 }
@@ -24,8 +25,6 @@ public struct CharacterStats
 
     public float Strength;
     
-    public int StartWeapons;
-    
     public float RotationSpeed;
     public float RotationRadius;
     
@@ -36,7 +35,6 @@ public struct CharacterStats
     {
         CollectingRadiusScale = 1f, 
         Strength = 1f,
-        StartWeapons = 1,
         RotationSpeed = 60f,
         RotationRadius = 2f,
         MoveSpeed = 5f  

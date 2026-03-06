@@ -7,7 +7,7 @@ public class CharacterInitializer : MonoBehaviour
 {
     [SerializeField] private Player Player;
     [SerializeField] private CharacterConfig Config;
-    [SerializeField] private Weapon StartWeaponPrefab => Config.StartWeaponPrefab;
+    [SerializeField] private List<Weapon> StartWeapons => Config.StartWeapons;
     
     [SerializeField] private ItemsCollector Collector;
     [SerializeField] private RotateAroundCenter Rotator;
@@ -23,9 +23,9 @@ public class CharacterInitializer : MonoBehaviour
         
         Player.Character = character;
         
-        for (int i = 0; i < character.Stats.StartWeapons; i++)
+        foreach( var weapon in StartWeapons)
         {
-            character.AddWeapon(StartWeaponPrefab);
+            character.AddWeapon(weapon);
         }
     }
 }

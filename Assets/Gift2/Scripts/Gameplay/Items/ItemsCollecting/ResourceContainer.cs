@@ -15,7 +15,8 @@ public class ResourceContainer : MonoBehaviour, IDamageable
 
     public PropertyView HealthView;
 
-
+    public List<Element> Weaknesses = new();
+    public List<Element> Resists = new();
     public Property Health;
     public List<Threshold> Thresholds = new();
     
@@ -24,14 +25,16 @@ public class ResourceContainer : MonoBehaviour, IDamageable
     void Start()
     {
         HealthView?.SetProperty(Health);
+        HealthView?.gameObject.SetActive(false);
         _lastHealth = Health.Value;
         foreach (var threshold in Thresholds)
         {
             Health.Changed.AddListener((health) => 
             {
-               if (threshold.Health >= _lastHealth || threshold.Health < health.Value) return;
+                HealthView?.gameObject.SetActive(true);
+                if (threshold.Health >= _lastHealth || threshold.Health < health.Value) return;
                
-               DropItems(threshold.Item, threshold.Count);
+                DropItems(threshold.Item, threshold.Count);
             });
         }
     }
@@ -45,13 +48,24 @@ public class ResourceContainer : MonoBehaviour, IDamageable
         }
     }
 
+    private int CalculateDamage(Damage damage)
+    {
+        if (Weaknesses.Contains(damage.Element))
+            return damage.Value * 2;
+        if (Resists.Contains(damage.Element))
+            return Mathf.FloorToInt((float)damage.Value / 2f);
+        return damage.Value;
+    }
+
     public void TakeDamage(Damage damage)
     {
         _lastHealth = Health.Value;
-        Health.Value -= damage.Value;
+        
+        Health.Value -= CalculateDamage(damage);
         
         if (Health.Value == 0)
             Destroy(gameObject);
+        
     }
     
     
