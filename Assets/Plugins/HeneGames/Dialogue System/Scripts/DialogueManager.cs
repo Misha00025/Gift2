@@ -7,6 +7,7 @@ namespace HeneGames.DialogueSystem
 {
     public class DialogueManager : MonoBehaviour
     {
+        public string Name = "DialogueManager";
         private int currentSentence;
         private float coolDownTimer;
         private bool dialogueIsOn;

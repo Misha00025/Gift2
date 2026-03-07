@@ -101,14 +101,11 @@ namespace HeneGames.DialogueSystem
         /// </summary>
         public void NextSentenceHard()
         {
-            //Continue only if we have dialogue
             if (currentDialogueManager == null)
                 return;
 
-            //Tell the current dialogue manager to display the next sentence. This function also gives information if we are at the last sentence
             currentDialogueManager.NextSentence(out bool lastSentence);
 
-            //If last sentence remove current dialogue manager
             if (lastSentence)
             {
                 currentDialogueManager = null;

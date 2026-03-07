@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Gift2;
 using Gift2.Core;
+using HeneGames.DialogueSystem;
 using UnityEngine;
 
 public class TestInputs : MonoBehaviour
@@ -37,6 +38,8 @@ public class TestInputs : MonoBehaviour
     
     void Update()
     {
+        if (DialogueUI.instance.gameObject.activeSelf) return;
+    
         foreach (var keyItem in Resources)
             if (Input.GetKeyDown(keyItem.Key))
                 _currentResource = keyItem.Item.Build();
