@@ -15,6 +15,7 @@ namespace Gift2
                 var view = Instantiate(SlotViewPrefab, Content);
                 view.Initialize(ShopController, i);
             }
+            gameObject.SetActive(false);
         }
     }
 }

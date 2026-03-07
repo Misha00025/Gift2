@@ -12,6 +12,7 @@ namespace Gift2
         public TextMeshProUGUI DescriptionField;
         public Transform CostsContainer;
         public Button BuyButton;
+        public TextMeshProUGUI BuyButtonText;
         public CostView CostViewPrefab;
         
         private ShopController _controller;
@@ -49,6 +50,14 @@ namespace Gift2
         private void ReloadCosts()
         {
             var slot = _controller.Slots[_index];
+            _costViews.ForEach(e => e.gameObject.SetActive(false));
+            
+            if (slot.CurrentBuy >= slot.MaxBuy)
+            {
+                BuyButton.interactable = false;
+                BuyButtonText?.SetText("Куплено");
+                return;
+            }
             
             for (int i = 0; i < slot.Costs.Count; i++)
             {
@@ -58,7 +67,8 @@ namespace Gift2
                 var cost = slot.Costs[i];
                 var view = _costViews[i];
                 view.Amount.SetText(cost.Amount.ToString());
-                view.Icon.sprite = cost.Item.Icon;
+                view.Icon.sprite = cost.Icon;
+                view.gameObject.SetActive(true);
             }
         }
     }

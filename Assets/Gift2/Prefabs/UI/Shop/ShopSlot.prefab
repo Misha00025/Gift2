@@ -230,7 +230,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -927,4 +927,5 @@ MonoBehaviour:
   DescriptionField: {fileID: 4934513709372161860}
   CostsContainer: {fileID: 3619843883222551497}
   BuyButton: {fileID: 355098156921377751}
+  BuyButtonText: {fileID: 6520132106050509481}
   CostViewPrefab: {fileID: 6149591685947305871, guid: 5fa5c7c84e9a1ac7692155f751e12f5a, type: 3}
