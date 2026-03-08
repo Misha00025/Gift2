@@ -18,12 +18,7 @@ public class TestInputs : MonoBehaviour
     public QuestDialer QuestDialer;
     public CharacterMover CharacterMover;
     public List<KeyItem> Resources;
-    public ShopView Shop;
     public Joystick Joystick;
-    
-    
-    private Item _currentResource;
-    private Quest _currentQuest;
     private Interactor _interactor;
     
     private bool BlockReadInputs => DialogueUI.instance.gameObject.activeSelf;
@@ -38,15 +33,9 @@ public class TestInputs : MonoBehaviour
     void Update()
     {
         if (BlockReadInputs) return;
-    
-        foreach (var keyItem in Resources)
-            if (Input.GetKeyDown(keyItem.Key))
-                _currentResource = keyItem.Item.Build();
 
         if (Input.GetKeyDown(KeyCode.Space))
             Use();
-        if (Input.GetKeyDown(KeyCode.Tab))
-            Shop.OpenShop();
             
         HandleMoving();
     }
