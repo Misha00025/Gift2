@@ -18,98 +18,65 @@ public class TestInputs : MonoBehaviour
     public QuestDialer QuestDialer;
     public CharacterMover CharacterMover;
     public List<KeyItem> Resources;
-    public int Count = 100;
     public ShopView Shop;
+    public Joystick Joystick;
     
-    public CollectableItem ItemToSpawn;
-    public Transform DraggableObject;
     
     private Item _currentResource;
     private Quest _currentQuest;
     private Interactor _interactor;
+    
+    private bool BlockReadInputs => DialogueUI.instance.gameObject.activeSelf;
     
     void Start()
     {
         var collector = FindAnyObjectByType<ItemsCollector>();
         collector?.SetStorage(Player.ResourcesStorage);
         _interactor = FindAnyObjectByType<Interactor>();
-        // AcceptQuest();
     }
     
     void Update()
     {
-        if (DialogueUI.instance.gameObject.activeSelf) return;
+        if (BlockReadInputs) return;
     
         foreach (var keyItem in Resources)
             if (Input.GetKeyDown(keyItem.Key))
                 _currentResource = keyItem.Item.Build();
 
-            
-        if (Input.GetKeyDown(KeyCode.Q))
-            Player.ResourcesStorage.Add(_currentResource, Count);
-        if (Input.GetKeyDown(KeyCode.E))
-            Player.ResourcesStorage.Remove(_currentResource, Count);
-            
         if (Input.GetKeyDown(KeyCode.Space))
             Use();
-            // AcceptQuest();
-        // if (Input.GetKey(KeyCode.Return))
-        //     TryCompleteQuest();
         if (Input.GetKeyDown(KeyCode.Tab))
-            OpenShop();
-        if (Input.GetKey(KeyCode.LeftShift))
-            DragObject();
+            Shop.OpenShop();
             
         HandleMoving();
     }
     
     private void HandleMoving()
     {
+        if (BlockReadInputs) return;
+        
         var xDirection = Input.GetAxisRaw("Horizontal");
         var yDirection = Input.GetAxisRaw("Vertical");
+        if (Joystick != null)
+        {
+            xDirection += Joystick.Horizontal;
+            yDirection += Joystick.Vertical;
+        }
         var direction = new Vector2(xDirection, yDirection);
         
         CharacterMover.Move(direction);
     }
     
-    private void DragObject()
+    public void Use()
     {
-        var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        position.z = 0;
-        DraggableObject.transform.position = position;
-    }
+        if (DialogueUI.instance.gameObject.activeSelf)
+        {
+            DialogueUI.instance.NextSentenceSoft();
+            return;
+        }
     
-    private void TrySpawn()
-    {
-        var item = Instantiate(ItemToSpawn);
-        var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        position.z = 0;
-        item.transform.position = position;
-    }
-    
-    private void AcceptQuest()
-    {
-        if (_currentQuest != null) return;
-    
-        _currentQuest = QuestDialer.AcceptQuest(Player);
-    }
-    
-    private void TryCompleteQuest()
-    {
-        if (_currentQuest == null) return;
+        if (BlockReadInputs) return;
         
-        var status = QuestDialer.CompleteQuest(_currentQuest);
-        if (status == true)
-            _currentQuest = null;
-    }
-    
-    public void OpenShop()
-    {
-        Shop.gameObject.SetActive(!Shop.gameObject.activeSelf);
-    }
-    
-    private void Use()
-    {
         var obj = _interactor.GetSelectedObject();
         
         obj?.Use();

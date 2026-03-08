@@ -14,25 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u043A\u0443\u0447\u0443 \u0440\u0435\u0441\u043E\u0432"
   Description: "\u041D\u0430\u0441 \u043F\u043E\u043F\u0440\u043E\u0441\u0438\u043B\u0438
-    \u0441\u043E\u0431\u0440\u0430\u0442\u044C \u043A\u0443\u0447\u0443 \u043A\u0430\u043C\u043D\u0435\u0439.
+    \u0441\u043E\u0431\u0440\u0430\u0442\u044C \u043A\u0443\u0447\u0443 \u0440\u0435\u0441\u0443\u0440\u0441\u043E\u0432.
     \u0417\u0430\u0447\u0435\u043C? \u0414\u0430 \u0431\u0435\u0437 \u043F\u043E\u043D\u044F\u0442\u0438\u044F!"
   goals:
   - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-    Amount: 100
+    Amount: 10000
   - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-    Amount: 50
+    Amount: 10000
   - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
-    Amount: 5
-  rewards:
-  - RewardType: 1
-    WeaponOnAdd: {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
-    Item: {fileID: 0}
-    Amount: 1
-  - RewardType: 0
-    WeaponOnAdd: {fileID: 0}
-    Item: {fileID: 11400000, guid: eb28260b18ae84de6b16487259eba08c, type: 2}
-    Amount: 1
-  - RewardType: 0
-    WeaponOnAdd: {fileID: 0}
-    Item: {fileID: 11400000, guid: ea767bcdc81bd0c079fcef5160d9f022, type: 2}
-    Amount: 1
+    Amount: 500
+  rewards: []

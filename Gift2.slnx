@@ -4,5 +4,6 @@
   <Project Path="PauseManager.csproj" />
   <Project Path="DOTween.Modules.csproj" />
   <Project Path="MyComponents.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
 </Solution>

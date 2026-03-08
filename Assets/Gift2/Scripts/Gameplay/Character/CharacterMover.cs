@@ -15,7 +15,8 @@ public class CharacterMover : MonoBehaviour
     public void Move(Vector2 direction)
     {
         var speed = Speed * Time.deltaTime;
-        direction = direction.normalized;
+        if ((direction.x + direction.y) > 1f)
+            direction = direction.normalized;
         Vector3 delta = direction * speed;
         transform.position += delta;
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 869787044614103180}
   - component: {fileID: 440674448933600560}
   - component: {fileID: 3653481831919492719}
+  - component: {fileID: 8713916048650851992}
   m_Layer: 0
   m_Name: DialogueUI
   m_TagString: Untagged
@@ -80,6 +81,29 @@ MonoBehaviour:
   animateText: 1
   textAnimationSpeed: 1
   actionInput: 32
+--- !u!114 &8713916048650851992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811567384079896648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 2400, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!1 &4236638664403736757
 GameObject:
   m_ObjectHideFlags: 0

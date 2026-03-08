@@ -13,7 +13,7 @@ namespace Gift2
         
         public IReadOnlyList<ShopSlot> Slots => _slots;
         
-        void Start()
+        void Awake()
         {
             _player = FindAnyObjectByType<Player>();
             InitializeSlots();

@@ -324,10 +324,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3699776485467037636}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 3542768731619988939}
+        m_TargetAssemblyTypeName: Gift2.ShopView, Assembly-CSharp
+        m_MethodName: CloseShop
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -631,6 +631,12 @@ MonoBehaviour:
   ShopController: {fileID: 6190579240319182123}
   SlotViewPrefab: {fileID: 7173672545378994034, guid: 22b1cf6bd910f19229017f485215aebb, type: 3}
   Content: {fileID: 7305029509220555853}
+  Opened:
+    m_PersistentCalls:
+      m_Calls: []
+  Closed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6190579240319182123
 MonoBehaviour:
   m_ObjectHideFlags: 0
