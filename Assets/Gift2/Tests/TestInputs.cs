@@ -4,6 +4,7 @@ using Gift2;
 using Gift2.Core;
 using HeneGames.DialogueSystem;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TestInputs : MonoBehaviour
 {
@@ -23,19 +24,23 @@ public class TestInputs : MonoBehaviour
     
     private bool BlockReadInputs => DialogueUI.instance.gameObject.activeSelf;
     
+    private InputAction _moveAction;
+    private InputAction _interactAction;
+    
     void Start()
     {
         var collector = FindAnyObjectByType<ItemsCollector>();
         collector?.SetStorage(Player.ResourcesStorage);
         _interactor = FindAnyObjectByType<Interactor>();
+        
+        _moveAction = InputSystem.actions.FindActionMap("Player").FindAction("Move");
+        _interactAction = InputSystem.actions.FindActionMap("Player").FindAction("Interact");
     }
     
     void Update()
     {
-        if (BlockReadInputs) return;
-
-        // if (Input.GetKeyDown(KeyCode.Space))
-        //     Use();
+        if (_interactAction.IsPressed())
+            Use();
             
         HandleMoving();
     }
@@ -43,9 +48,11 @@ public class TestInputs : MonoBehaviour
     private void HandleMoving()
     {
         if (BlockReadInputs) return;
+        var moveInput = _moveAction.ReadValue<Vector2>();
+        Debug.Log($"Move input: {moveInput.x}, {moveInput.y}");
         
-        var xDirection = 0f; // Input.GetAxisRaw("Horizontal");
-        var yDirection = 0f; // Input.GetAxisRaw("Vertical");
+        var xDirection = moveInput.x;
+        var yDirection = moveInput.y;
         if (Joystick != null)
         {
             xDirection += Joystick.Horizontal;
