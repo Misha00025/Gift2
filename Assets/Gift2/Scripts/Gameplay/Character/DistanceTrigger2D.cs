@@ -16,7 +16,7 @@ public class DistanceTrigger2D : MonoBehaviour
 
     void Awake()
     {
-        OnThresholdReached.AddListener((e) => Debug.Log($"Triggered: {e.name}"));
+        // OnThresholdReached.AddListener((e) => Debug.Log($"Triggered: {e.name}"));
     }
 
     private Dictionary<GameObject, TrackedObject> _trackedObjects = new Dictionary<GameObject, TrackedObject>();

@@ -30,6 +30,8 @@ public struct CharacterStats
     
     public float MoveSpeed;
     
+    public float ResourcesRespawnSpeed;
+    
     
     public static CharacterStats Default => new()
     {
@@ -37,7 +39,8 @@ public struct CharacterStats
         Strength = 1f,
         RotationSpeed = 60f,
         RotationRadius = 2f,
-        MoveSpeed = 5f  
+        MoveSpeed = 5f,
+        ResourcesRespawnSpeed = 1f
     };
     
     public static CharacterStats One => new()
@@ -46,7 +49,8 @@ public struct CharacterStats
         Strength = 1f,
         RotationSpeed = 1f,
         RotationRadius = 1f,
-        MoveSpeed = 1f  
+        MoveSpeed = 1f,
+        ResourcesRespawnSpeed = 1f
     };
     
     public static CharacterStats operator *(CharacterStats left, CharacterStats right)
@@ -58,6 +62,7 @@ public struct CharacterStats
         result.RotationSpeed *= right.RotationSpeed;
         result.RotationRadius *= right.RotationRadius;
         result.MoveSpeed *= right.MoveSpeed;
+        result.ResourcesRespawnSpeed *= right.ResourcesRespawnSpeed;
         
         return result;
     }
@@ -71,6 +76,7 @@ public struct CharacterStats
         result.RotationSpeed += right.RotationSpeed;
         result.RotationRadius += right.RotationRadius;
         result.MoveSpeed += right.MoveSpeed;
+        result.ResourcesRespawnSpeed += right.ResourcesRespawnSpeed;
         
         return result;
     }

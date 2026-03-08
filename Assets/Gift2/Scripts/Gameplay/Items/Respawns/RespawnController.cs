@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Gift2.Core;
 using UnityEngine;
 
 namespace Gift2
@@ -14,19 +15,31 @@ namespace Gift2
         }
         
         private List<RespawnInfo> Respawns = new();
+        private Player _player;
         
         void Awake()
         {
             if (Instance == null)
                 Instance = this;
+            _player = FindAnyObjectByType<Player>();
         }
         
         void Update()
         {
+            var deltaTime = Time.deltaTime;
+                
+            if (_player?.Character != null)
+            {
+                deltaTime *= _player.Character.Stats.ResourcesRespawnSpeed;
+            }
+            
             for (int i = Respawns.Count-1; i >= 0; i--)
             {
                 var respawn = Respawns[i];
-                respawn.RemainingTime -= Time.deltaTime;
+                
+                respawn.Respawnble.AddDelta(Time.deltaTime);
+                                                                
+                respawn.RemainingTime -= deltaTime;
                 if (respawn.RemainingTime < 0)
                 {
                     Respawns.Remove(respawn);

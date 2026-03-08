@@ -24,3 +24,4 @@ MonoBehaviour:
     RotationSpeed: 1000
     RotationRadius: 2
     MoveSpeed: 5
+    ResourcesRespawnSpeed: 2
