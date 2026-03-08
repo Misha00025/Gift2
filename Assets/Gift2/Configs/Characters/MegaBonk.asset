@@ -14,15 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartWeapons>k__BackingField:
   - {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
-  - {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
-  - {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
-  - {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
-  - {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
-  - {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
-  - {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
-  - {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
-  - {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
-  - {fileID: 7644038515823341362, guid: fc7be8500b1bc87639fc7f04de88209a, type: 3}
   <Info>k__BackingField:
     Name: 
     Description: 

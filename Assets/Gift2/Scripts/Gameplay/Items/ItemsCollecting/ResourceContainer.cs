@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Gift2;
 using Gift2.Core;
 using UnityEngine;
 
-public class ResourceContainer : MonoBehaviour, IDamageable
+public class ResourceContainer : Respawnble, IDamageable
 {
     [Serializable]
     public struct Threshold
@@ -31,7 +32,6 @@ public class ResourceContainer : MonoBehaviour, IDamageable
         {
             Health.Changed.AddListener((health) => 
             {
-                HealthView?.gameObject.SetActive(true);
                 if (threshold.Health >= _lastHealth || threshold.Health < health.Value) return;
                
                 DropItems(threshold.Item, threshold.Count);
@@ -64,9 +64,13 @@ public class ResourceContainer : MonoBehaviour, IDamageable
         Health.Value -= CalculateDamage(damage);
         
         if (Health.Value == 0)
-            Destroy(gameObject);
+            Kill();
         
     }
-    
-    
+
+    protected override void OnRespawn()
+    {
+        Health.Value = Health.MaxValue;
+        _lastHealth = Health.MaxValue;
+    }
 }

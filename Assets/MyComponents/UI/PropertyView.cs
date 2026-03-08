@@ -21,6 +21,10 @@ public class PropertyView : MonoBehaviour
     
     protected virtual void OnChange(Property property)
     {
+        if (property.MaxValue != property.Value) 
+            gameObject.SetActive(true);
+        else
+            gameObject.SetActive(false);
         Filler.fillAmount = ((float)property.Value)/(float)property.MaxValue;
         if (Text != null)
         {
