@@ -7,7 +7,7 @@ public class CharacterInitializer : MonoBehaviour
 {
     [SerializeField] private Player Player;
     [SerializeField] private CharacterConfig Config;
-    [SerializeField] private List<Weapon> StartWeapons => Config.StartWeapons;
+    private List<Weapon> StartWeapons => Config.StartWeapons;
     
     [SerializeField] private ItemsCollector Collector;
     [SerializeField] private RotateAroundCenter Rotator;
