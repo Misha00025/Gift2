@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf1def942616486782bd19884eace7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToRespawn: 180
+  TimeToRespawn: 150
   HealthView: {fileID: 1413624327047185781}
   Weaknesses: 0500000001000000
   Resists: 0200000006000000

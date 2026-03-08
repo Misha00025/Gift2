@@ -19,13 +19,15 @@ public class TestInputs : MonoBehaviour
     public QuestDialer QuestDialer;
     public CharacterMover CharacterMover;
     public List<KeyItem> Resources;
+    public ShopView Shop;
     public Joystick Joystick;
     private Interactor _interactor;
     
-    private bool BlockReadInputs => DialogueUI.instance.gameObject.activeSelf;
+    private bool BlockReadInputs => DialogueUI.instance.gameObject.activeSelf || Shop.gameObject.activeSelf;
     
     private InputAction _moveAction;
     private InputAction _interactAction;
+    private InputAction _cancelAction;
     
     void Start()
     {
@@ -35,13 +37,18 @@ public class TestInputs : MonoBehaviour
         
         _moveAction = InputSystem.actions.FindActionMap("Player").FindAction("Move");
         _interactAction = InputSystem.actions.FindActionMap("Player").FindAction("Interact");
+        _cancelAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
     }
     
     void Update()
     {
-        if (_interactAction.IsPressed())
+        if (_interactAction.WasPressedThisFrame())
             Use();
             
+        if (_cancelAction.WasPressedThisFrame())
+            Shop.CloseShop();
+            
+        if (BlockReadInputs) return;
         HandleMoving();
     }
     

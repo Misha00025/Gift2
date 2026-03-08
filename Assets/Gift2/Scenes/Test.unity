@@ -3458,6 +3458,7 @@ MonoBehaviour:
     Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
   - Key: 50
     Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+  Shop: {fileID: 4667495880785773424}
   Joystick: {fileID: 1379329272}
 --- !u!114 &587117333
 MonoBehaviour:
@@ -31959,6 +31960,10 @@ PrefabInstance:
     - target: {fileID: 3811567384079896648, guid: c6007ea236844758e80a48ff500643b6, type: 3}
       propertyPath: m_Name
       value: DialogueUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181120611814567762, guid: c6007ea236844758e80a48ff500643b6, type: 3}
+      propertyPath: m_fontSize
+      value: 44.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
