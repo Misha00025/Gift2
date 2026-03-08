@@ -34,8 +34,8 @@ public class TestInputs : MonoBehaviour
     {
         if (BlockReadInputs) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            Use();
+        // if (Input.GetKeyDown(KeyCode.Space))
+        //     Use();
             
         HandleMoving();
     }
@@ -44,8 +44,8 @@ public class TestInputs : MonoBehaviour
     {
         if (BlockReadInputs) return;
         
-        var xDirection = Input.GetAxisRaw("Horizontal");
-        var yDirection = Input.GetAxisRaw("Vertical");
+        var xDirection = 0f; // Input.GetAxisRaw("Horizontal");
+        var yDirection = 0f; // Input.GetAxisRaw("Vertical");
         if (Joystick != null)
         {
             xDirection += Joystick.Horizontal;

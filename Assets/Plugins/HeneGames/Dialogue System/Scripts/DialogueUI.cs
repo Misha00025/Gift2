@@ -69,10 +69,10 @@ namespace HeneGames.DialogueSystem
         public virtual void InputUpdate()
         {
             //Next dialogue input
-            if (Input.GetKeyDown(actionInput))
-            {
-                NextSentenceSoft();
-            }
+            // if (Input.GetKeyDown(actionInput))
+            // {
+            //     NextSentenceSoft();
+            // }
         }
 
         /// <summary>
