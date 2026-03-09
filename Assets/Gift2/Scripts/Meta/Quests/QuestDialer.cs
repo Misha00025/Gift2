@@ -8,6 +8,7 @@ public class QuestDialer : MonoBehaviour
     [field: SerializeField] public string Key { get; private set; }
     
     public QuestConfig QuestConfig;
+    public bool Completed { get; private set; }
     
     void Awake()
     {
@@ -17,7 +18,7 @@ public class QuestDialer : MonoBehaviour
     
     public Quest AcceptQuest(Player player)
     {
-        if (QuestConfig == null) return null;
+        if (QuestConfig == null || Completed) return null;
         
         var quest = QuestConfig.Build();
         quest.Accept(player);
@@ -31,7 +32,11 @@ public class QuestDialer : MonoBehaviour
         
         var status = quest.GoalsIsReached() == true;
         if (status)
+        {
+            if (QuestConfig.Repeatable == false)
+                Completed = true;
             quest.Complete();
+        }
         return status;
     }
 }

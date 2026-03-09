@@ -1,13 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Wof.DialogueSystem;
 
 namespace HeneGames.DialogueSystem
 {
     public class DialogueManager : MonoBehaviour
     {
-        public string Name = "DialogueManager";
         private int currentSentence;
         private float coolDownTimer;
         private bool dialogueIsOn;
@@ -28,7 +27,7 @@ namespace HeneGames.DialogueSystem
 
         [Header("Dialogue")]
         [SerializeField] private TriggerState triggerState;
-        [SerializeField] private List<NPC_Centence> sentences = new List<NPC_Centence>();
+        [SerializeField] private List<NPC_Sentence> sentences = new List<NPC_Sentence>();
 
         private void Update()
         {
@@ -36,6 +35,19 @@ namespace HeneGames.DialogueSystem
             if(coolDownTimer > 0f)
             {
                 coolDownTimer -= Time.deltaTime;
+            }
+        }
+
+        public void SetSentences(IReadOnlyList<SentencesConfig.Sentence> config)
+        {
+            sentences = new();
+            foreach (var sc in config)
+            {
+                sentences.Add(new ()
+                {
+                   dialogueCharacter = sc.dialogueCharacter,
+                   sentence = sc.sentence 
+                });
             }
         }
 
@@ -165,7 +177,7 @@ namespace HeneGames.DialogueSystem
     }
 
     [System.Serializable]
-    public class NPC_Centence
+    public class NPC_Sentence
     {
         [Header("------------------------------------------------------------")]
 
@@ -178,6 +190,6 @@ namespace HeneGames.DialogueSystem
 
         public AudioClip sentenceSound;
 
-        public UnityEvent sentenceEvent;
+        public UnityEvent sentenceEvent = new();
     }
 }

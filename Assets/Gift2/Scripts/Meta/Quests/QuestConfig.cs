@@ -8,6 +8,7 @@ namespace Gift2.Core
     {
         public string Name;
         [TextArea] public string Description;
+        public bool Repeatable;
 
         public abstract Quest Build();
     }

@@ -2,15 +2,15 @@ using Gift2.Core;
 using Gift2.Meta;
 using HeneGames.DialogueSystem;
 using UnityEngine;
+using Wof.DialogueSystem;
 
 namespace Gift2
 {
     [RequireComponent(typeof(QuestDialer))]
     public class InteractableQuestDealer : Interactable
     {
-        public DialogueManager StartDialogueManager;
-        public DialogueManager InProgressDialogueManager;
-        public DialogueManager EndDialogueManager;
+        public SentencesConfig SentencesConfig;
+        public DialogueManager DialogueManager;
     
         private QuestDialer _dealer;
         private Player _player;
@@ -20,8 +20,6 @@ namespace Gift2
         {
             _dealer = GetComponent<QuestDialer>();
             _player = FindAnyObjectByType<Player>();
-            StartDialogueManager?.endDialogueEvent.AddListener(AcceptQuest);
-            EndDialogueManager?.endDialogueEvent.AddListener(CompleteQuest);
             
         }
     
@@ -33,21 +31,34 @@ namespace Gift2
 
             if (quests == null || quests.Count == 0)
             {
-                StartDialogueManager?.InitDialogue();
+                if (_dealer.Completed)
+                {
+                    DialogueManager.SetSentences(SentencesConfig.GetSentences(SentenceGroupType.NoQuests));
+                }
+                else
+                {
+                    DialogueManager.endDialogueEvent.AddListener(AcceptQuest);
+                    DialogueManager.SetSentences(SentencesConfig.GetSentences(SentenceGroupType.AcceptQuest));    
+                }
+                DialogueManager.InitDialogue();
             }
             else if (quests[0].GoalsIsReached())
             {
                 _completedQuest = quests[0];
-                EndDialogueManager?.InitDialogue();
+                DialogueManager.endDialogueEvent.AddListener(CompleteQuest);
+                DialogueManager.SetSentences(SentencesConfig.GetSentences(SentenceGroupType.CompleteQuest));
+                DialogueManager.InitDialogue();
             }
             else 
             {
-                InProgressDialogueManager?.InitDialogue();
+                DialogueManager.SetSentences(SentencesConfig.GetSentences(SentenceGroupType.InProgress));
+                DialogueManager?.InitDialogue();
             }
         }
         
         private void AcceptQuest()
         {
+            DialogueManager.endDialogueEvent.RemoveListener(AcceptQuest);
             _dealer.AcceptQuest(_player);
         }
         
@@ -55,6 +66,7 @@ namespace Gift2
         {
             if (_completedQuest == null) return;
         
+            DialogueManager.endDialogueEvent.RemoveListener(CompleteQuest);
             _dealer.CompleteQuest(_completedQuest);
             _completedQuest = null;
         }

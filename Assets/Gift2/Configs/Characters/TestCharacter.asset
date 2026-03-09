@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333c452ba14acf6c095aa26b152bbbc8, type: 3}
   m_Name: TestCharacter
   m_EditorClassIdentifier: 
-  <StartWeapons>k__BackingField:
-  - {fileID: 7644038515823341362, guid: c50458550406b02799e10039e3493c65, type: 3}
-  - {fileID: 7644038515823341362, guid: 782755823eb2c320fa36fdf8eba95310, type: 3}
+  <StartWeapons>k__BackingField: []
   <Info>k__BackingField:
     Name: 
     Description: 
@@ -25,3 +23,4 @@ MonoBehaviour:
     RotationSpeed: 200
     RotationRadius: 2
     MoveSpeed: 5
+    ResourcesRespawnSpeed: 1
