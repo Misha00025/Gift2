@@ -2,6 +2,7 @@ using Gift2.Core;
 using Gift2.Meta;
 using HeneGames.DialogueSystem;
 using UnityEngine;
+using UnityEngine.Events;
 using Wof.DialogueSystem;
 
 namespace Gift2
@@ -14,18 +15,29 @@ namespace Gift2
     
         private QuestDialer _dealer;
         private Player _player;
-        private Quest _completedQuest;
+        private Quest _currentQuest;
+        private Quest _completedQuest => _currentQuest;
         
-        void Start()
+        public UnityEvent QuestAccepted = new();
+        public UnityEvent QuestGoalsReached = new();
+        public UnityEvent QuestCompleted = new();
+        
+        void OnEnable()
         {
             _dealer = GetComponent<QuestDialer>();
             _player = FindAnyObjectByType<Player>();
             
         }
     
+        void LateUpdate()
+        {
+            if (_currentQuest != null && _currentQuest.GoalsIsReached())
+                QuestGoalsReached.Invoke();
+        }
+    
         public override void Use()
         {
-            if (DialogueUI.instance.gameObject.activeSelf) return;
+            if (enabled == false || DialogueUI.instance.gameObject.activeSelf) return;
             
             var quests = QuestsManager.Instance.GetDealerQuests(_dealer.Key);
 
@@ -44,7 +56,6 @@ namespace Gift2
             }
             else if (quests[0].GoalsIsReached())
             {
-                _completedQuest = quests[0];
                 DialogueManager.endDialogueEvent.AddListener(CompleteQuest);
                 DialogueManager.SetSentences(SentencesConfig.GetSentences(SentenceGroupType.CompleteQuest));
                 DialogueManager.InitDialogue();
@@ -59,7 +70,8 @@ namespace Gift2
         private void AcceptQuest()
         {
             DialogueManager.endDialogueEvent.RemoveListener(AcceptQuest);
-            _dealer.AcceptQuest(_player);
+            _currentQuest = _dealer.AcceptQuest(_player);
+            QuestAccepted.Invoke();
         }
         
         private void CompleteQuest()
@@ -68,7 +80,8 @@ namespace Gift2
         
             DialogueManager.endDialogueEvent.RemoveListener(CompleteQuest);
             _dealer.CompleteQuest(_completedQuest);
-            _completedQuest = null;
+            _currentQuest = null;
+            QuestCompleted.Invoke();
         }
     }
 }
