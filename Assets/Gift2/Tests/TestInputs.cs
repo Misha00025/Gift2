@@ -16,7 +16,6 @@ public class TestInputs : MonoBehaviour
     }
 
     public Player Player;
-    public QuestDialer QuestDialer;
     public CharacterMover CharacterMover;
     public List<KeyItem> Resources;
     public ShopView Shop;

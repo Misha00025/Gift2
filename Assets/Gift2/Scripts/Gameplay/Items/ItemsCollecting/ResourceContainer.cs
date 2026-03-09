@@ -17,9 +17,10 @@ public class ResourceContainer : Respawnble, IDamageable
     public PropertyView HealthView;
 
     public List<Element> Weaknesses = new();
-    public List<Element> Resists = new();
     public Property Health;
     public List<Threshold> Thresholds = new();
+    
+    public float MinStrength = 0.1f;
     
     private int _lastHealth;
 
@@ -41,20 +42,25 @@ public class ResourceContainer : Respawnble, IDamageable
 
     private void DropItems(CollectableItem prefab, int count)
     {
-        for (int i = 0; i < count; i++)
-        {
+        // for (int i = 0; i < count; i++)
+        // {
             var item = Instantiate(prefab);
+            item.Amount = count;
             item.transform.position = transform.position;
-        }
+        // }
     }
 
     private int CalculateDamage(Damage damage)
     {
-        if (Weaknesses.Contains(damage.Element))
-            return damage.Value * 2;
-        if (Resists.Contains(damage.Element))
-            return Mathf.FloorToInt((float)damage.Value / 2f);
-        return damage.Value;
+        if (Weaknesses.Contains(damage.Element) == false)
+            damage.Strength -= 1f;
+        if (MinStrength > damage.Strength)
+            return 0;
+        var result = damage.Value;
+        result = Mathf.RoundToInt(result * damage.Strength);
+        if (result <= 0)
+            return 1;
+        return result;
     }
 
     public void TakeDamage(Damage damage)

@@ -151,8 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeToRespawn: 150
   HealthView: {fileID: 1413624327047185781}
-  Weaknesses: 0500000001000000
-  Resists: 0200000006000000
+  Weaknesses: 
   Health:
     _value: 300
     _maxValue: 300
@@ -169,6 +168,7 @@ MonoBehaviour:
   - Health: 200
     Count: 1
     Item: {fileID: 1281453107599118151, guid: 884bbb633a56a01aaafbe88a47b3bf44, type: 3}
+  MinStrength: 0.25
 --- !u!212 &3345402612831301470
 SpriteRenderer:
   serializedVersion: 2

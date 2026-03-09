@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public Damage DefaultDamage = new Damage() {Value = 10, Element = Element.Physical};
+    public Damage DefaultDamage = new Damage() {Value = 1, Element = Element.Physical};
 
     private Character _owner;
 
@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
         if (damageable == null) return;
         
         var damage = DefaultDamage;
-        damage.Value = Mathf.RoundToInt((float)(damage.Value) * _owner.Stats.Strength);
+        damage.Strength = _owner.Stats.Strength;
         damageable.TakeDamage(damage);
     }
 }

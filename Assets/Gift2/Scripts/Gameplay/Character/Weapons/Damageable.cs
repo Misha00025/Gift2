@@ -9,12 +9,12 @@ public interface IDamageable
 public struct Damage
 {
     public int Value;
+    public float Strength;
     public Element Element;    
 }
 
 public enum Element
 {
     Physical,
-    Fire, Ice, Water, 
-    Stone, Wind, Plant,
+    Axe, Pickaxe
 }

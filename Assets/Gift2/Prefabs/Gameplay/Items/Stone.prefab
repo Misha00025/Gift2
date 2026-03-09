@@ -152,7 +152,6 @@ MonoBehaviour:
   TimeToRespawn: 120
   HealthView: {fileID: 130883337786511325}
   Weaknesses: 02000000
-  Resists: 0100000005000000
   Health:
     _value: 400
     _maxValue: 400
@@ -175,6 +174,7 @@ MonoBehaviour:
   - Health: 350
     Count: 5
     Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
+  MinStrength: 0.1
 --- !u!61 &5445855884009042044
 BoxCollider2D:
   m_ObjectHideFlags: 0

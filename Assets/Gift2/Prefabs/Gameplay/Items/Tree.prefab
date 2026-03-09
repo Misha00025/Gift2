@@ -52,7 +52,6 @@ MonoBehaviour:
   TimeToRespawn: 90
   HealthView: {fileID: 3806034254316508691}
   Weaknesses: 01000000
-  Resists: 
   Health:
     _value: 100
     _maxValue: 100
@@ -66,6 +65,7 @@ MonoBehaviour:
   - Health: 50
     Count: 5
     Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
+  MinStrength: 0.01
 --- !u!212 &1824831859938823320
 SpriteRenderer:
   serializedVersion: 2
