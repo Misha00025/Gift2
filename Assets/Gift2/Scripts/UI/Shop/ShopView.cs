@@ -13,6 +13,7 @@ namespace Gift2
         public UnityEvent Closed = new();
         
         private ShopView Shop => this;
+        private TestInputs Inputs;
         
         
         void Start()
@@ -23,18 +24,21 @@ namespace Gift2
                 view.Initialize(ShopController, i);
             }
             gameObject.SetActive(false);
+            Inputs = FindAnyObjectByType<TestInputs>();
         }
         
         
         public void OpenShop()
         {
             Shop.gameObject.SetActive(true);
+            Inputs.Shop = this;
             Opened.Invoke();
         }
         
         public void CloseShop()
         {
             Closed.Invoke();
+            Inputs.Shop = null;
             Shop.gameObject.SetActive(false);
         }
     }

@@ -22,7 +22,7 @@ public class TestInputs : MonoBehaviour
     public Joystick Joystick;
     private Interactor _interactor;
     
-    private bool BlockReadInputs => DialogueUI.instance.gameObject.activeSelf || Shop.gameObject.activeSelf;
+    private bool BlockReadInputs => DialogueUI.instance.gameObject.activeSelf || (Shop != null && Shop.gameObject.activeSelf);
     
     private InputAction _moveAction;
     private InputAction _interactAction;
