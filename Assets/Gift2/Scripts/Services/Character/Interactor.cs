@@ -42,9 +42,10 @@ namespace Gift2
             List<Interactable> interactables = new List<Interactable>();
             foreach (var col in colliders)
             {
-                Interactable interactable = col.GetComponent<Interactable>();
-                if (interactable != null)
-                    interactables.Add(interactable);
+                Interactable[] interactable = col.GetComponents<Interactable>();
+                foreach (var i in interactable)
+                    if (i != null && i.enabled)
+                        interactables.Add(i);
             }
 
             if (interactables.Count == 0)

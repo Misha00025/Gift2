@@ -19,7 +19,7 @@ namespace Gift2
         private Quest _completedQuest => _currentQuest;
         
         public UnityEvent QuestAccepted = new();
-        public UnityEvent QuestGoalsReached = new();
+        public UnityEvent<bool> QuestGoalsReached = new();
         public UnityEvent QuestCompleted = new();
         
         void OnEnable()
@@ -31,8 +31,7 @@ namespace Gift2
     
         void LateUpdate()
         {
-            if (_currentQuest != null && _currentQuest.GoalsIsReached())
-                QuestGoalsReached.Invoke();
+            QuestGoalsReached.Invoke(_currentQuest != null && _currentQuest.GoalsIsReached());
         }
     
         public override void Use()

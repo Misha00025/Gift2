@@ -24,6 +24,11 @@ namespace Gift2
                 _groupSortingOrder = sortingGroup.sortingOrder;
                 sortingGroup.sortingOrder = _groupSortingOrder + (int)(-transform.position.y);
             }
+            if (sortingGroup == null && spriteRenderer == null)
+            {
+                sortingGroup = gameObject.AddComponent<SortingGroup>();
+                sortingGroup.sortingOrder = _groupSortingOrder + (int)(-transform.position.y);
+            }
         }
 
         void LateUpdate()
