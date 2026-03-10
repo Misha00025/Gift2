@@ -9,7 +9,8 @@ namespace Gift2
     
         public override void Use()
         {
-            Interacted.Invoke();
+            if (enabled)
+                Interacted.Invoke();
         }
     }
 }

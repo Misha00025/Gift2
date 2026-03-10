@@ -1,23 +1,37 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Gift2
 {
-    [RequireComponent(typeof(SpriteRenderer))]
     public class YSorter : MonoBehaviour
     {
+        private SortingGroup sortingGroup;
         private SpriteRenderer spriteRenderer;
+        private int _groupSortingOrder;
         private int _sortingOrder;
 
         void Awake()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
-            _sortingOrder = spriteRenderer.sortingOrder;
-            spriteRenderer.sortingOrder = _sortingOrder + (int)(-transform.position.y);
+            sortingGroup = GetComponent<SortingGroup>();
+            if (spriteRenderer != null)
+            {
+                _sortingOrder = spriteRenderer.sortingOrder;
+                spriteRenderer.sortingOrder = _sortingOrder + (int)(-transform.position.y);
+            }
+            if (sortingGroup != null)
+            {
+                _groupSortingOrder = sortingGroup.sortingOrder;
+                sortingGroup.sortingOrder = _groupSortingOrder + (int)(-transform.position.y);
+            }
         }
 
         void LateUpdate()
         {
-            spriteRenderer.sortingOrder = _sortingOrder + (int)(-transform.position.y);
+            if (sortingGroup != null)
+                sortingGroup.sortingOrder = _groupSortingOrder + (int)(-transform.position.y);
+            if (spriteRenderer != null)
+                spriteRenderer.sortingOrder = _sortingOrder + (int)(-transform.position.y);
         }
     }
 }

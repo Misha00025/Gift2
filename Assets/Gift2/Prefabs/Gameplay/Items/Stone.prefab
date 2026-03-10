@@ -113,6 +113,8 @@ GameObject:
   - component: {fileID: 2711200432945930327}
   - component: {fileID: 6088243318030505624}
   - component: {fileID: 5445855884009042044}
+  - component: {fileID: -3826335825619083175}
+  - component: {fileID: 691768214779980270}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Untagged
@@ -221,6 +223,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9936851, y: 1.0390979}
   m_EdgeRadius: 0
+--- !u!114 &-3826335825619083175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7785663164503317635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff260e5eaa8db2ecb278702c2c8ab75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MyComponents::Gift2.YSorter
+--- !u!210 &691768214779980270
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7785663164503317635}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
 --- !u!1 &8105009445482618496
 GameObject:
   m_ObjectHideFlags: 0

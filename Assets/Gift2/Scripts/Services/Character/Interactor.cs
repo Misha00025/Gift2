@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 namespace Gift2
 {
@@ -7,6 +8,9 @@ namespace Gift2
     {
         [SerializeField] private float detectionRadius = 3f;
         [SerializeField] private LayerMask interactableLayer;
+        
+        public UnityEvent Selected = new();
+        public UnityEvent Deselected = new();
 
         private Interactable currentSelected;
 
@@ -30,6 +34,7 @@ namespace Gift2
                 {
                     currentSelected.Deselect();
                     currentSelected = null;
+                    Deselected.Invoke();
                 }
                 return;
             }
@@ -48,6 +53,7 @@ namespace Gift2
                 {
                     currentSelected.Deselect();
                     currentSelected = null;
+                    Deselected.Invoke();
                 }
                 return;
             }
@@ -69,9 +75,14 @@ namespace Gift2
             if (closest != currentSelected)
             {
                 if (currentSelected != null)
+                {
                     currentSelected.Deselect();
+                    Deselected.Invoke();
+                }
                 currentSelected = closest;
                 currentSelected.Select();
+                if (currentSelected != null)
+                    Selected.Invoke();
             }
         }
 

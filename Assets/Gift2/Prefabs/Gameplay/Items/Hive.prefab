@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 1243509380046345381}
   - component: {fileID: 3345402612831301470}
   - component: {fileID: 4954003336881833222}
+  - component: {fileID: -2289990320373348932}
   m_Layer: 0
   m_Name: Hive
   m_TagString: Untagged
@@ -216,7 +217,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6887037048493858617, guid: 2aba2cd26c3238b82a3f51c89b12f094, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -274,6 +275,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0585938, y: 1.4023438}
   m_EdgeRadius: 0
+--- !u!114 &-2289990320373348932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146738209778887730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff260e5eaa8db2ecb278702c2c8ab75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MyComponents::Gift2.YSorter
 --- !u!1001 &6785628830776536794
 PrefabInstance:
   m_ObjectHideFlags: 0
