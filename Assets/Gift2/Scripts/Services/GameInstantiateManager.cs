@@ -10,7 +10,7 @@ namespace Gift2
         {
             var player = FindAnyObjectByType<Player>();
             var inventoryView = FindAnyObjectByType<InventoryDisplay>();
-            inventoryView.Initialize(player.Inventory);
+            inventoryView?.Initialize(player.Inventory);
             var camera = Camera.main; 
             camera.transparencySortMode = TransparencySortMode.CustomAxis; camera.transparencySortAxis = Vector3.up;
         }

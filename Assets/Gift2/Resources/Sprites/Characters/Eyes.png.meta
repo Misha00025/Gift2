@@ -156,7 +156,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 180
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -201,19 +201,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Eyes_0
+      name: Eyes_Blue_0
       rect:
         serializedVersion: 2
         x: 52
         y: 922
-        width: 132
+        width: 256
         height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -227,59 +240,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eyes_1
+      name: Eyes_Blue_1
       rect:
         serializedVersion: 2
-        x: 196
-        y: 921
-        width: 106
-        height: 144
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9647822d1098b67c0800000000000000
-      internalID: -4077014396740012951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eyes_2
-      rect:
-        serializedVersion: 2
-        x: 399
-        y: 920
-        width: 94
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0d6ab9d04ffc521d0800000000000000
-      internalID: -3376063698537044272
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eyes_3
-      rect:
-        serializedVersion: 2
-        x: 528
+        x: 395
         y: 923
-        width: 73
-        height: 100
+        width: 206
+        height: 145
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -293,37 +262,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eyes_4
+      name: Eyes_Blue_2
       rect:
         serializedVersion: 2
-        x: 702
-        y: 979
-        width: 82
-        height: 56
+        x: 694
+        y: 923
+        width: 210
+        height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7806115b3a2a8d220800000000000000
-      internalID: 2510935616260235399
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eyes_5
-      rect:
-        serializedVersion: 2
-        x: 839
-        y: 978
-        width: 65
-        height: 59
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -337,15 +284,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eyes_6
+      name: Eyes_Blue_3
       rect:
         serializedVersion: 2
-        x: 1035
-        y: 937
-        width: 80
+        x: 1037
+        y: 935
+        width: 184
         height: 123
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -359,59 +306,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eyes_7
+      name: Eyes_Blue_4
       rect:
         serializedVersion: 2
-        x: 1164
-        y: 945
-        width: 56
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 40b26ddab529a8f50800000000000000
-      internalID: 6884475902845397764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eyes_8
-      rect:
-        serializedVersion: 2
-        x: 1373
-        y: 954
-        width: 71
-        height: 97
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3fdac8e5b5e375a70800000000000000
-      internalID: 8815583357750259187
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eyes_9
-      rect:
-        serializedVersion: 2
-        x: 1494
+        x: 1365
         y: 955
-        width: 57
-        height: 97
+        width: 186
+        height: 111
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -425,37 +328,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eyes_10
+      name: Eyes_Blue_5
       rect:
         serializedVersion: 2
-        x: 1626
-        y: 980
-        width: 95
-        height: 52
+        x: 1621
+        y: 974
+        width: 234
+        height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6a5c6bfdcb3919ea0800000000000000
-      internalID: -5867746400070613594
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eyes_11
-      rect:
-        serializedVersion: 2
-        x: 1774
-        y: 982
-        width: 81
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -469,37 +350,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eyes_12
+      name: Eyes_Green_0
       rect:
         serializedVersion: 2
         x: 60
-        y: 640
-        width: 132
-        height: 144
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c735cba063e1d5c0800000000000000
-      internalID: -4192319773767026743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eyes_13
-      rect:
-        serializedVersion: 2
-        x: 204
         y: 639
-        width: 106
+        width: 250
         height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -513,37 +372,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Eyes_14
+      name: Eyes_Gree_1
       rect:
         serializedVersion: 2
-        x: 407
-        y: 638
-        width: 94
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c6955a94bafdb8f80800000000000000
-      internalID: -8103137177755100820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eyes_15
-      rect:
-        serializedVersion: 2
-        x: 536
+        x: 402
         y: 641
-        width: 73
-        height: 100
+        width: 207
+        height: 141
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -565,7 +402,7 @@ TextureImporter:
         width: 82
         height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -587,7 +424,7 @@ TextureImporter:
         width: 65
         height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -609,7 +446,7 @@ TextureImporter:
         width: 80
         height: 123
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -631,7 +468,7 @@ TextureImporter:
         width: 56
         height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -653,7 +490,7 @@ TextureImporter:
         width: 71
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -675,7 +512,7 @@ TextureImporter:
         width: 57
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -697,7 +534,7 @@ TextureImporter:
         width: 95
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -719,7 +556,7 @@ TextureImporter:
         width: 81
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -741,7 +578,7 @@ TextureImporter:
         width: 132
         height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -763,7 +600,7 @@ TextureImporter:
         width: 106
         height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -785,7 +622,7 @@ TextureImporter:
         width: 94
         height: 93
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -807,7 +644,7 @@ TextureImporter:
         width: 73
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -829,7 +666,7 @@ TextureImporter:
         width: 82
         height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -851,7 +688,7 @@ TextureImporter:
         width: 65
         height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -873,7 +710,7 @@ TextureImporter:
         width: 80
         height: 123
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -895,7 +732,7 @@ TextureImporter:
         width: 56
         height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -917,7 +754,7 @@ TextureImporter:
         width: 71
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -939,7 +776,7 @@ TextureImporter:
         width: 57
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -961,7 +798,7 @@ TextureImporter:
         width: 95
         height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -983,7 +820,7 @@ TextureImporter:
         width: 81
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1000,7 +837,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7c05b627a488f56bc82d2fd7a948acb4
     internalID: 0
     vertices: []
     indices: 
@@ -1010,19 +847,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Eyes_0: 5141760670510271424
-      Eyes_1: -4077014396740012951
       Eyes_10: -5867746400070613594
-      Eyes_11: -4200391073233996551
       Eyes_12: -4192319773767026743
-      Eyes_13: -6101575405433040557
       Eyes_14: -8103137177755100820
-      Eyes_15: -9138411774189521591
       Eyes_16: -6497561339368074995
       Eyes_17: -2428906283287267063
       Eyes_18: 5060467556722376820
       Eyes_19: 6612930063515712285
-      Eyes_2: -3376063698537044272
       Eyes_20: 1458053923170071442
       Eyes_21: 165181573776634128
       Eyes_22: 5990039466960142754
@@ -1033,19 +864,22 @@ TextureImporter:
       Eyes_27: 489717771679770316
       Eyes_28: 5356818707514478837
       Eyes_29: 5526745343735789194
-      Eyes_3: -5550155211335367034
       Eyes_30: -7951484086332692249
       Eyes_31: -2349986039294547333
       Eyes_32: -5961756279573871655
       Eyes_33: -4502145327936421632
       Eyes_34: -9070214336757272751
       Eyes_35: 4251662798359261438
-      Eyes_4: 2510935616260235399
-      Eyes_5: 5708961479443090928
-      Eyes_6: 4729202038203089788
       Eyes_7: 6884475902845397764
       Eyes_8: 8815583357750259187
-      Eyes_9: -8265303323800331961
+      Eyes_Blue_0: 5141760670510271424
+      Eyes_Blue_1: -5550155211335367034
+      Eyes_Blue_2: 5708961479443090928
+      Eyes_Blue_3: 4729202038203089788
+      Eyes_Blue_4: -8265303323800331961
+      Eyes_Blue_5: -4200391073233996551
+      Eyes_Gree_1: -9138411774189521591
+      Eyes_Green_0: -6101575405433040557
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
