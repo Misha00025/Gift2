@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c0accabe0c01899a0636fd95276aac, type: 3}
+  m_Name: LastQuest
+  m_EditorClassIdentifier: Assembly-CSharp::Gift2.Meta.DeliverQuest
+  Name: "\u0414\u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0432\u043E\u0441\u043A"
+  Description: 
+  Repeatable: 0
+  goals:
+  - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+    Amount: 1000
+  rewards: []

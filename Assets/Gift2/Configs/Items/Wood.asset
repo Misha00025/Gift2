@@ -15,4 +15,4 @@ MonoBehaviour:
   <Name>k__BackingField: "\u0414\u0435\u0440\u0435\u0432\u043E"
   <Icon>k__BackingField: {fileID: 8807175068910088666, guid: 2aba2cd26c3238b82a3f51c89b12f094, type: 3}
   <Description>k__BackingField: 
-  <MaxStack>k__BackingField: 10000
+  <MaxStack>k__BackingField: 50000
