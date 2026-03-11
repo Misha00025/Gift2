@@ -41,7 +41,7 @@ MonoBehaviour:
     WeaponPrefab: {fileID: 7644038515823341362, guid: c50458550406b02799e10039e3493c65, type: 3}
     UpgradeModifiers:
       CollectingRadiusScale: 0
-      Strength: 0.2
+      Strength: 0
       RotationSpeed: 0
       RotationRadius: 0
       MoveSpeed: 0
@@ -74,7 +74,51 @@ MonoBehaviour:
     WeaponPrefab: {fileID: 7644038515823341362, guid: 782755823eb2c320fa36fdf8eba95310, type: 3}
     UpgradeModifiers:
       CollectingRadiusScale: 0
-      Strength: 0.2
+      Strength: 0
+      RotationSpeed: 0
+      RotationRadius: 0
+      MoveSpeed: 0
+      ResourcesRespawnSpeed: 0
+  - Name: "\u0421\u0438\u043B\u0430"
+    Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+      \u0443\u0440\u043E\u043D \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u043E\u0432"
+    Icon: {fileID: 7362465455875783212, guid: 053bf77d3136912728e462bcaf555288, type: 3}
+    CostsOnBuy:
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 150
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 380
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 550
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 900
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 1200
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 1500
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 5
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 1800
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 10
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 2000
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 20
+    Type: 0
+    WeaponPrefab: {fileID: 0}
+    UpgradeModifiers:
+      CollectingRadiusScale: 0
+      Strength: 0.125
       RotationSpeed: 0
       RotationRadius: 0
       MoveSpeed: 0

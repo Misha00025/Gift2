@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f4a308dae7ffd048a8b0eb8d5ae4a02, type: 3}
-  m_Name: Wind
+  m_Name: Stone
   m_EditorClassIdentifier: Assembly-CSharp-firstpass::HeneGames.DialogueSystem.DialogueCharacter
-  characterPhoto: {fileID: -3779420353340960863, guid: 451169b979d60666082bfcc4f7f3ba4c, type: 3}
-  characterName: Bruh
+  characterPhoto: {fileID: 4646101929521763914, guid: add51b07c3ac8360e881fd1af0703661, type: 3}
+  characterName: Rin0
