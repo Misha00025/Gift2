@@ -17,5 +17,5 @@ MonoBehaviour:
   Repeatable: 0
   goals:
   - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-    Amount: 1500
+    Amount: 3000
   rewards: []

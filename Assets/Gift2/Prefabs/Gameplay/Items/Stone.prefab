@@ -155,28 +155,28 @@ MonoBehaviour:
   HealthView: {fileID: 130883337786511325}
   Weaknesses: 02000000
   Health:
-    _value: 400
-    _maxValue: 400
+    _value: 1000
+    _maxValue: 1000
     Changed:
       m_PersistentCalls:
         m_Calls: []
   Thresholds:
   - Health: 0
-    Count: 25
-    Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
-  - Health: 100
-    Count: 20
-    Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
-  - Health: 200
-    Count: 15
+    Count: 50
     Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
   - Health: 300
+    Count: 40
+    Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
+  - Health: 500
+    Count: 30
+    Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
+  - Health: 700
+    Count: 20
+    Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
+  - Health: 900
     Count: 10
     Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
-  - Health: 350
-    Count: 5
-    Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
-  MinStrength: 0.1
+  MinStrength: -0.1
 --- !u!61 &5445855884009042044
 BoxCollider2D:
   m_ObjectHideFlags: 0

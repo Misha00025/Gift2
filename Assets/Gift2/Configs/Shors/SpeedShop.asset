@@ -149,7 +149,7 @@ MonoBehaviour:
     UpgradeModifiers:
       CollectingRadiusScale: 0
       Strength: 0
-      RotationSpeed: 0.25
+      RotationSpeed: 0.4
       RotationRadius: 0
       MoveSpeed: 0
       ResourcesRespawnSpeed: 0

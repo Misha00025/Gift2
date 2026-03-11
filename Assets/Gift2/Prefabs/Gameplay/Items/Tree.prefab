@@ -53,20 +53,32 @@ MonoBehaviour:
   HealthView: {fileID: 3806034254316508691}
   Weaknesses: 01000000
   Health:
-    _value: 100
-    _maxValue: 100
+    _value: 400
+    _maxValue: 400
     Changed:
       m_PersistentCalls:
         m_Calls: []
   Thresholds:
   - Health: 0
-    Count: 15
+    Count: 40
     Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
-  - Health: 50
-    Count: 8
+  - Health: 150
+    Count: 30
     Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
-  - Health: 70
+  - Health: 150
+    Count: 40
+    Item: {fileID: 9097598139059078645, guid: 203fead68f8006ab9a85918df504c150, type: 3}
+  - Health: 300
+    Count: 20
+    Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
+  - Health: 300
+    Count: 30
+    Item: {fileID: 9097598139059078645, guid: 203fead68f8006ab9a85918df504c150, type: 3}
+  - Health: 380
     Count: 10
+    Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
+  - Health: 380
+    Count: 20
     Item: {fileID: 9097598139059078645, guid: 203fead68f8006ab9a85918df504c150, type: 3}
   MinStrength: 0.01
 --- !u!212 &1824831859938823320
