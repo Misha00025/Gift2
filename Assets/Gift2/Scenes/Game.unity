@@ -9391,6 +9391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 488245815}
+  - component: {fileID: 488245817}
   - component: {fileID: 488245814}
   - component: {fileID: 488245813}
   - component: {fileID: 488245816}
@@ -9469,11 +9470,11 @@ Transform:
   m_GameObject: {fileID: 488245812}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.5, y: -0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1731135035}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &488245816
 MonoBehaviour:
@@ -9519,6 +9520,24 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &488245817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488245812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addc77803ce1401608907c58253a649e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MyComponents::CameraFollow2D
+  target: {fileID: 1731135035}
+  offset: {x: 0, y: 0, z: -10}
+  aheadDistance: 2
+  smoothTime: 0.3
+  directionSmoothTime: 0.2
+  minSpeedThreshold: 0.1
 --- !u!1001 &488617361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98736,10 +98755,7 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7834715607579607154, guid: bd9042c3c37a30e5ea7dae2871af03c2, type: 3}
     - {fileID: 8909054693057716330, guid: bd9042c3c37a30e5ea7dae2871af03c2, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8345248207119995040, guid: bd9042c3c37a30e5ea7dae2871af03c2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 488245815}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd9042c3c37a30e5ea7dae2871af03c2, type: 3}
 --- !u!114 &1731135034 stripped
@@ -107005,6 +107021,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1740898082}
+  - {fileID: 488245815}
   - {fileID: 1450564178}
   - {fileID: 4717960608424603768}
   - {fileID: 587117330}

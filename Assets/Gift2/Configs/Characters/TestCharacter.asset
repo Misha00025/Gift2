@@ -22,7 +22,7 @@ MonoBehaviour:
   <Stats>k__BackingField:
     CollectingRadiusScale: 1.3
     Strength: 1
-    RotationSpeed: 200
+    RotationSpeed: 180
     RotationRadius: 2
-    MoveSpeed: 5
+    MoveSpeed: 4
     ResourcesRespawnSpeed: 1

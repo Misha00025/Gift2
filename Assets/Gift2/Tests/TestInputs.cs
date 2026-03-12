@@ -33,10 +33,14 @@ public class TestInputs : MonoBehaviour
         var collector = FindAnyObjectByType<ItemsCollector>();
         collector?.SetStorage(Player.ResourcesStorage);
         _interactor = FindAnyObjectByType<Interactor>();
-        
-        _moveAction = InputSystem.actions.FindActionMap("Player").FindAction("Move");
-        _interactAction = InputSystem.actions.FindActionMap("Player").FindAction("Interact");
-        _cancelAction = InputSystem.actions.FindActionMap("UI").FindAction("Cancel");
+        var playerActions = InputSystem.actions.FindActionMap("Player");
+        var uiActions = InputSystem.actions.FindActionMap("UI");
+        playerActions.Enable();
+        uiActions.Enable();
+        _moveAction = playerActions.FindAction("Move");
+        _interactAction = playerActions.FindAction("Interact");
+
+        _cancelAction = uiActions.FindAction("Cancel");
     }
     
     void Update()
