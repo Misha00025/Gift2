@@ -29,6 +29,9 @@ public class CharacterMover : MonoBehaviour
         var acceleration = Acceleration;
         if (delta == Vector3.zero)
             acceleration *= StopMultiplier;
-        _rb.linearVelocity = Vector2.Lerp(_rb.linearVelocity, delta, acceleration * Time.deltaTime);
+        var velocity = Vector2.Lerp(_rb.linearVelocity, delta, acceleration * Time.deltaTime);
+        if (velocity.magnitude < 0.01f)
+            velocity = Vector2.zero;
+        _rb.linearVelocity = velocity;
     }
 }
