@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Gift2;
 using Gift2.Core;
+using Gift2.Meta;
 using HeneGames.DialogueSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,6 +27,7 @@ public class TestInputs : MonoBehaviour
     
     private InputAction _moveAction;
     private InputAction _interactAction;
+    private InputAction _cheatAction;
     private InputAction _cancelAction;
     
     void Start()
@@ -39,12 +41,16 @@ public class TestInputs : MonoBehaviour
         uiActions.Enable();
         _moveAction = playerActions.FindAction("Move");
         _interactAction = playerActions.FindAction("Interact");
+        _cheatAction = playerActions.FindAction("Cheat");
 
         _cancelAction = uiActions.FindAction("Cancel");
     }
     
     void Update()
     {
+        if (_cheatAction.WasPressedThisFrame())
+            Cheat();
+    
         if (_interactAction.WasPressedThisFrame())
             Use();
             
@@ -52,6 +58,13 @@ public class TestInputs : MonoBehaviour
             Shop.CloseShop();
             
         HandleMoving();
+    }
+    
+    private void Cheat()
+    {
+        var quests = QuestsManager.Instance.Quests;
+        for (int i = quests.Count -1; i>=0; i--)
+            quests[i].Complete();
     }
     
     private void HandleMoving()

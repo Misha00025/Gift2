@@ -84,7 +84,7 @@ MonoBehaviour:
   - Name: "\u0421\u0438\u043B\u0430"
     Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
       \u0443\u0440\u043E\u043D \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u043E\u0432"
-    Icon: {fileID: 7362465455875783212, guid: 053bf77d3136912728e462bcaf555288, type: 3}
+    Icon: {fileID: 6012119055133807157, guid: 75f4558a6d77ba278989ec2c32ae8ee3, type: 3}
     CostsOnBuy:
     - Costs:
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}

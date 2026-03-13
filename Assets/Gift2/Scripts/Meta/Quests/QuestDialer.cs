@@ -21,6 +21,7 @@ public class QuestDialer : MonoBehaviour
         if (QuestConfig == null || Completed) return null;
         
         var quest = QuestConfig.Build();
+        quest.Completed.AddListener(OnComplete);
         quest.Accept(player);
         QuestsManager.Instance.AddQuest(quest, this);
         return quest;
@@ -33,10 +34,14 @@ public class QuestDialer : MonoBehaviour
         var status = quest.GoalsIsReached() == true;
         if (status)
         {
-            if (QuestConfig.Repeatable == false)
-                Completed = true;
             quest.Complete();
         }
         return status;
+    }
+    
+    private void OnComplete(Quest quest)
+    {
+        if (QuestConfig.Repeatable == false)
+            Completed = true;
     }
 }

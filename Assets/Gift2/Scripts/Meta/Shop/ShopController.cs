@@ -73,6 +73,14 @@ namespace Gift2
             var slot = Slots[slotIndex];
             TakeCost(slot);
             
+            FreeBuy(slotIndex);
+        }
+        
+        public void FreeBuy(int slotIndex)
+        {
+            if (Slots.Count <= slotIndex || slotIndex < 0) return;
+            
+            var slot = Slots[slotIndex];
             switch (slot.Type)
             {
                 case ShopSlot.ProductType.Upgrade:
@@ -83,6 +91,6 @@ namespace Gift2
                     break;
             }
             slot.AddBuy();
-        }        
+        } 
     }
 }

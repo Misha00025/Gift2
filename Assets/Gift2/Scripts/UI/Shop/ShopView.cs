@@ -23,13 +23,13 @@ namespace Gift2
                 var view = Instantiate(SlotViewPrefab, Content);
                 view.Initialize(ShopController, i);
             }
-            gameObject.SetActive(false);
-            Inputs = FindAnyObjectByType<TestInputs>();
+            CloseShop();
         }
         
         
         public void OpenShop()
         {
+            Inputs = FindAnyObjectByType<TestInputs>();
             Shop.gameObject.SetActive(true);
             Inputs.Shop = this;
             Opened.Invoke();
@@ -37,6 +37,7 @@ namespace Gift2
         
         public void CloseShop()
         {
+            Inputs = FindAnyObjectByType<TestInputs>();
             Closed.Invoke();
             Inputs.Shop = null;
             Shop.gameObject.SetActive(false);

@@ -17,7 +17,7 @@ MonoBehaviour:
     Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
       \u0440\u0430\u0434\u0438\u0443\u0441 \u0432\u0440\u0430\u0449\u0435\u043D\u0438\u044F
       \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u043E\u0432"
-    Icon: {fileID: -6906745942558526650, guid: 053bf77d3136912728e462bcaf555288, type: 3}
+    Icon: {fileID: 7362465455875783212, guid: 75f4558a6d77ba278989ec2c32ae8ee3, type: 3}
     CostsOnBuy:
     - Costs:
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
@@ -91,7 +91,7 @@ MonoBehaviour:
   - Name: "\u0421\u0431\u043E\u0440"
     Description: "\u041F\u043E\u0432\u044B\u0448\u0430\u0435\u0442 \u0440\u0430\u0434\u0438\u0443\u0441
       \u0441\u0431\u043E\u0440\u0430 \u0440\u0435\u0441\u0443\u0440\u0441\u043E\u0432"
-    Icon: {fileID: 42108304028850019, guid: 053bf77d3136912728e462bcaf555288, type: 3}
+    Icon: {fileID: -7102370534733445332, guid: 75f4558a6d77ba278989ec2c32ae8ee3, type: 3}
     CostsOnBuy:
     - Costs:
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
@@ -165,7 +165,7 @@ MonoBehaviour:
   - Name: "\u0420\u043E\u0441\u0442"
     Description: "\u0423\u0441\u043A\u043E\u0440\u044F\u0435\u0442 \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435
       \u0440\u0435\u0441\u0443\u0440\u0441\u043E\u0432"
-    Icon: {fileID: -1259146384207752979, guid: 053bf77d3136912728e462bcaf555288, type: 3}
+    Icon: {fileID: 42108304028850019, guid: 75f4558a6d77ba278989ec2c32ae8ee3, type: 3}
     CostsOnBuy:
     - Costs:
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}

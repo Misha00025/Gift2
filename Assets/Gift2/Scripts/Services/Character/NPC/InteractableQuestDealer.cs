@@ -23,10 +23,14 @@ namespace Gift2
         public UnityEvent<bool> QuestGoalsReached = new();
         public UnityEvent QuestCompleted = new();
         
-        void OnEnable()
+        void Awake()
         {
             _dealer = GetComponent<QuestDialer>();
             _player = FindAnyObjectByType<Player>();
+        }
+        
+        void OnEnable()
+        {
             QuestEnabled.Invoke();
         }
     
@@ -71,7 +75,14 @@ namespace Gift2
         {
             DialogueManager.endDialogueEvent.RemoveListener(AcceptQuest);
             _currentQuest = _dealer.AcceptQuest(_player);
+            _currentQuest.Completed.AddListener(OnComplete);
             QuestAccepted.Invoke();
+        }
+        
+        public Quest SilenceAcceptQuest()
+        {
+            AcceptQuest();
+            return _currentQuest;
         }
         
         private void CompleteQuest()
@@ -80,6 +91,12 @@ namespace Gift2
         
             DialogueManager.endDialogueEvent.RemoveListener(CompleteQuest);
             _dealer.CompleteQuest(_completedQuest);
+        }
+        
+        private void OnComplete(Quest quest)
+        {
+            if (_completedQuest == null) return;
+            
             _currentQuest = null;
             QuestCompleted.Invoke();
         }

@@ -94,7 +94,7 @@ namespace Gift2.Core
             {
                 reward.Give();
             }
-            Completed.Invoke(this);
+            Completed?.Invoke(this);
         }
     }
 }

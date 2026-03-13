@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Gift2.Core;
+using Gift2.Meta;
 using UnityEngine;
 
 namespace Gift2.Core
@@ -30,6 +31,7 @@ namespace Gift2.Core
         
         public Inventory Inventory => _inventory;
         public ResourcesStorage ResourcesStorage => _resourcesStorage;
+        public QuestsManager QuestsManager => QuestsManager.Instance;
         public IReadOnlyList<IInventorySlot> Items => _inventory?.Slots;
         public IReadOnlyList<IInventorySlot> Resources => _resourcesStorage?.Slots;
         
