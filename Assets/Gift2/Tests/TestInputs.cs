@@ -75,7 +75,6 @@ public class TestInputs : MonoBehaviour
             return;
         }
         var moveInput = _moveAction.ReadValue<Vector2>();
-        Debug.Log($"Move input: {moveInput.x}, {moveInput.y}");
         
         var xDirection = moveInput.x;
         var yDirection = moveInput.y;

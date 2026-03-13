@@ -7,12 +7,27 @@ namespace Gift2
         [SerializeField] private float TimeToRespawn = 300f;
         [Range(0f, 1f)]
         [SerializeField] private float RandomDeltaPercent = 0.1f;
+        [SerializeField] private Vector2 RandomOffset = Vector2.one;
         private float _timeAfterKill;
         private float RandomDelta => TimeToRespawn * RandomDeltaPercent;
+        private Vector3 _startPosition = Vector3.zero;
+    
+        private Vector3 GetRandomPosition()
+        {
+            var position = _startPosition;
+            var delta = Vector3.zero;
+            delta.x = Random.Range(-RandomOffset.x, RandomOffset.x);
+            delta.y = Random.Range(-RandomOffset.y, RandomOffset.y);
+            position = position + delta;
+            return position;
+        }
     
         public void Respawn()
         {
-            Debug.Log($"{name} respawned after {_timeAfterKill} seconds");            
+            if (_startPosition == Vector3.zero)
+                _startPosition = transform.position;
+            Debug.Log($"{name} respawned after {_timeAfterKill} seconds");
+            transform.position = GetRandomPosition();
             gameObject.SetActive(true);
             OnRespawn();
         }
