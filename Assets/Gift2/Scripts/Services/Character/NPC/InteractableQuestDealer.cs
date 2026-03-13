@@ -18,6 +18,8 @@ namespace Gift2
         private Quest _currentQuest;
         private Quest _completedQuest => _currentQuest;
         
+        public QuestDialer Dialer => _dealer;
+        
         public UnityEvent QuestEnabled = new();
         public UnityEvent QuestAccepted = new();
         public UnityEvent<bool> QuestGoalsReached = new();

@@ -82,5 +82,26 @@ namespace Gift2
 
             yield return result;
         }
+        
+        public static void Clear(string fileName)
+        {
+            try
+            {
+                string path = GetFullPath(fileName);
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                    Debug.Log($"Файл {fileName} удалён");
+                }
+                else
+                {
+                    Debug.LogWarning($"Файл {fileName} не найден, удаление не требуется");
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"Ошибка удаления файла {fileName}: {e.Message}");
+            }
+        }
     }
 }
