@@ -106415,6 +106415,10 @@ PrefabInstance:
       propertyPath: QuestCompleted.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3568042444248277809, guid: b20853acef5ebca2cb9b17779b239472, type: 3}
+      propertyPath: Interacted.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6946441063927097803, guid: b20853acef5ebca2cb9b17779b239472, type: 3}
       propertyPath: m_Name
       value: Fire
