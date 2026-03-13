@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Gift2.Core;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Gift2
 {
@@ -25,6 +24,8 @@ namespace Gift2
         public ShopView WeaponShop;
         public List<ShopView> Shops => new() {SpeedShop, GrowShop, WeaponShop};
         
+        public UnityEvent OnFirstLoad = new();
+        
         [Header("Test")]
         public bool UseTest = false;
         public int TestQuestsCompleted = 3;
@@ -42,14 +43,27 @@ namespace Gift2
             public List<Resource> Resources;            
         }
         
+        
+        
         void Start()
         {
-            LoadFromSave();
+            var data = Load(out var firstLoad);
+            if (firstLoad)
+                OnFirstLoad.Invoke();
+            else
+                LoadFromSave(data);
+            PostProcess();
         }
         
-        private void LoadFromSave()
+        private void PostProcess()
         {
-            var data = Load();
+            foreach (var shop in Shops)
+                shop.CloseShop();
+            
+        }
+        
+        private void LoadFromSave(PlayerData data)
+        {
             for (int i = 0; i < data.QuestsCompleted; i++)
             {
                 if (Dealers.Count > i)
@@ -71,7 +85,6 @@ namespace Gift2
                     for (int i = 0; i < slot.Amount; i++)
                         controller.FreeBuy(slot.Slot);
                 }
-                shop.CloseShop();
             }
             
             foreach (var r in data.Resources)
@@ -121,11 +134,14 @@ namespace Gift2
             SaveManager.Save(FileName, data);
         }
         
-        private PlayerData Load()
+        private PlayerData Load() => Load(out var _);
+        private PlayerData Load(out bool firstLoad)
         {
             var data = new PlayerData();
+            firstLoad = true;
             if (UseTest)
             {
+                firstLoad = false;
                 data.QuestsCompleted = TestQuestsCompleted;
                 data.Purchases = Purchases;
                 data.Resources = new();
@@ -137,6 +153,7 @@ namespace Gift2
             else
             {
                 var ok = SaveManager.Load(FileName, out data);
+                firstLoad = !ok;
                 if (data.Purchases == null)
                     data.Purchases = new();
                 if (data.Resources == null)
