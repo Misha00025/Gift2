@@ -14,6 +14,7 @@ public class ResourceContainer : Respawnble, IDamageable
         public CollectableItem Item;
     }
 
+    public string Key = "Resource";
     public PropertyView HealthView;
 
     public List<Element> Weaknesses = new();
@@ -57,7 +58,8 @@ public class ResourceContainer : Respawnble, IDamageable
         if (MinStrength > damage.Strength)
             return 0;
         var result = damage.Value;
-        result = Mathf.RoundToInt(result * damage.Strength);
+        var scale = DamageScaler.Instance?.GetScale(Key) ?? 1f;
+        result = Mathf.RoundToInt(result * damage.Strength * scale);
         if (result <= 0)
             return 1;
         return result;

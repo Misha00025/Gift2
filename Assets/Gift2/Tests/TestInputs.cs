@@ -51,13 +51,16 @@ public class TestInputs : MonoBehaviour
         if (_cancelAction.WasPressedThisFrame())
             Shop.CloseShop();
             
-        if (BlockReadInputs) return;
         HandleMoving();
     }
     
     private void HandleMoving()
     {
-        if (BlockReadInputs) return;
+        if (BlockReadInputs) 
+        {
+            CharacterMover.Move(Vector2.zero);
+            return;
+        }
         var moveInput = _moveAction.ReadValue<Vector2>();
         Debug.Log($"Move input: {moveInput.x}, {moveInput.y}");
         

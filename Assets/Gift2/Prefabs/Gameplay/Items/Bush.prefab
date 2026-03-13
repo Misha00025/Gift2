@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeToRespawn: 45
+  RandomDeltaPercent: 0.3
   HealthView: {fileID: 3806034254316508691}
   Weaknesses: 01000000
   Health:

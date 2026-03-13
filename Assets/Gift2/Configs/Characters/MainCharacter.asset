@@ -22,5 +22,5 @@ MonoBehaviour:
     Strength: 1
     RotationSpeed: 180
     RotationRadius: 2
-    MoveSpeed: 8
+    MoveSpeed: 6
     ResourcesRespawnSpeed: 1

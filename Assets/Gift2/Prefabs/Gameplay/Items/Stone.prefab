@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeToRespawn: 120
+  RandomDeltaPercent: 0.1
+  Key: Stone
   HealthView: {fileID: 130883337786511325}
   Weaknesses: 02000000
   Health:

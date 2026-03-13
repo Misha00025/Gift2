@@ -5,7 +5,10 @@ namespace Gift2
     public abstract class Respawnble : MonoBehaviour
     {
         [SerializeField] private float TimeToRespawn = 300f;
+        [Range(0f, 1f)]
+        [SerializeField] private float RandomDeltaPercent = 0.1f;
         private float _timeAfterKill;
+        private float RandomDelta => TimeToRespawn * RandomDeltaPercent;
     
         public void Respawn()
         {
@@ -25,7 +28,9 @@ namespace Gift2
         {
             _timeAfterKill = 0f;
             gameObject.SetActive(false);
-            RespawnController.Instance?.AddToRespawn(this, TimeToRespawn);
+            var timeToRespawn = TimeToRespawn;
+            timeToRespawn += Random.Range(-RandomDelta, RandomDelta);
+            RespawnController.Instance?.AddToRespawn(this, timeToRespawn);
         }
     }
 }

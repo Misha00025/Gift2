@@ -78,7 +78,7 @@ MonoBehaviour:
       Strength: 0
       RotationSpeed: 0
       RotationRadius: 0
-      MoveSpeed: 0.2
+      MoveSpeed: 0.1
       ResourcesRespawnSpeed: 0
   - Name: "\u0412\u0440\u0430\u0449\u0435\u043D\u0438\u0435"
     Description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
@@ -149,7 +149,7 @@ MonoBehaviour:
     UpgradeModifiers:
       CollectingRadiusScale: 0
       Strength: 0
-      RotationSpeed: 0.2
+      RotationSpeed: 0.5
       RotationRadius: 0
       MoveSpeed: 0
       ResourcesRespawnSpeed: 0
