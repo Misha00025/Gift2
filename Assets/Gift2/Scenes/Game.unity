@@ -11606,7 +11606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59e29c4bfe8e8a73682b7dc856c61cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gift2.SaveLoader
-  FileName: gift2.save
+  FileName: player.save
   Player: {fileID: 587117329}
   Dealers:
   - {fileID: 634895966}
@@ -11631,6 +11631,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ClearDebug: 1
   UseTest: 0
   TestQuestsCompleted: 3
   Purchases:

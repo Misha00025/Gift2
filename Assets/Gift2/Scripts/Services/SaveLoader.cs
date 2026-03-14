@@ -14,7 +14,7 @@ namespace Gift2
         public struct Resource {public string Key; public int Amount;}
         
     
-        public string FileName = "gift2.save";
+        public string FileName = "player.save";
         public Player Player;
         
         public List<InteractableQuestDealer> Dealers = new();
@@ -26,7 +26,8 @@ namespace Gift2
         
         public UnityEvent OnFirstLoad = new();
         
-        [Header("Test")]
+        [Header("Debug")]
+        public bool ClearDebug = true;
         public bool UseTest = false;
         public int TestQuestsCompleted = 3;
         [Serializable]
@@ -47,6 +48,11 @@ namespace Gift2
         
         void Start()
         {
+            #if UNITY_EDITOR
+            FileName = "debug.save";
+            if (ClearDebug)
+                Clear();
+            #endif
             var data = Load(out var firstLoad);
             if (firstLoad)
                 OnFirstLoad.Invoke();
