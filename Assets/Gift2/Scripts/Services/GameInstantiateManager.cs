@@ -1,6 +1,7 @@
 using Gift2.Core;
 using Gift2.Meta;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Gift2
 {
@@ -13,6 +14,11 @@ namespace Gift2
             inventoryView?.Initialize(player.Inventory);
             var camera = Camera.main; 
             camera.transparencySortMode = TransparencySortMode.CustomAxis; camera.transparencySortAxis = Vector3.up;
+        }
+        
+        public void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         
         void OnDestroy()
