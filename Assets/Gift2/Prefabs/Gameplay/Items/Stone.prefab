@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 6242750659039341433}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.003, y: 0.003, z: 0.003}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2622653835971672202}
@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.123, y: 0.011}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2800756977246504416
@@ -60,7 +60,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!114 &2922175356432932726
 MonoBehaviour:
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeToRespawn: 120
   RandomDeltaPercent: 0.1
+  RandomOffset: {x: 1, y: 1}
   Key: Stone
   HealthView: {fileID: 130883337786511325}
   Weaknesses: 02000000
@@ -364,6 +365,10 @@ PrefabInstance:
     - target: {fileID: 5576669980791293271, guid: 0cc534e4594b42d4eb13e1d7f22fdc90, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5599477015811599279, guid: 0cc534e4594b42d4eb13e1d7f22fdc90, type: 3}
+      propertyPath: HideAfterSeconds
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6638472330484514682, guid: 0cc534e4594b42d4eb13e1d7f22fdc90, type: 3}
       propertyPath: m_Name

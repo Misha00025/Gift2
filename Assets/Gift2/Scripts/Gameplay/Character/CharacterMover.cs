@@ -6,7 +6,7 @@ public class CharacterMover : MonoBehaviour
     private Character _character;
     private Rigidbody2D _rb;
 
-    public float Acceleration = 2f;
+    public float AccelerationTime = 0.1f;
     public float StopMultiplier = 5f;
     public float Speed => _character.Stats.MoveSpeed;
 
@@ -26,7 +26,7 @@ public class CharacterMover : MonoBehaviour
         if ((direction.x + direction.y) > 1f)
             direction = direction.normalized;
         Vector3 delta = direction * speed;
-        var acceleration = Acceleration;
+        var acceleration = 1f/AccelerationTime;
         if (delta == Vector3.zero)
             acceleration *= StopMultiplier;
         var velocity = Vector2.Lerp(_rb.linearVelocity, delta, acceleration * Time.deltaTime);

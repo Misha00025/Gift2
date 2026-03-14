@@ -6,7 +6,10 @@ public class PropertyView : MonoBehaviour
     public SlicedFilledImage Filler;
     public TextMeshProUGUI Text;
     
+    public bool HideOnMax = true;
+    public float HideAfterSeconds = -1f;
     private Property _property;
+    private float _secondsAfterChange;
     
     public void SetProperty(Property property)
     {
@@ -19,9 +22,19 @@ public class PropertyView : MonoBehaviour
         OnChange(_property);
     }
     
+    void Update()
+    {
+        if (HideAfterSeconds > 0)
+        {
+            _secondsAfterChange += Time.deltaTime;
+            if (_secondsAfterChange > HideAfterSeconds && gameObject.activeSelf)
+                gameObject.SetActive(false);
+        }
+    }
+    
     protected virtual void OnChange(Property property)
     {
-        if (property.MaxValue != property.Value) 
+        if (property.MaxValue != property.Value || HideOnMax == false) 
             gameObject.SetActive(true);
         else
             gameObject.SetActive(false);
@@ -30,5 +43,6 @@ public class PropertyView : MonoBehaviour
         {
             Text.SetText($"{property.Value}/{property.MaxValue}");
         }
+        _secondsAfterChange = 0;
     }
 }

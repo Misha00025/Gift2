@@ -52,7 +52,7 @@ public class TestInputs : MonoBehaviour
             Cheat();
     
         if (_interactAction.WasPressedThisFrame())
-            Use();
+            UseOrSkip();
             
         if (_cancelAction.WasPressedThisFrame())
             Shop.CloseShop();
@@ -88,14 +88,20 @@ public class TestInputs : MonoBehaviour
         CharacterMover.Move(direction);
     }
     
-    public void Use()
+    private void UseOrSkip()
     {
         if (DialogueUI.instance.gameObject.activeSelf)
         {
             DialogueUI.instance.NextSentenceSoft();
-            return;
         }
+        else
+        {
+            Use();
+        }
+    }
     
+    public void Use()
+    {
         if (BlockReadInputs) return;
         
         var obj = _interactor.GetSelectedObject();

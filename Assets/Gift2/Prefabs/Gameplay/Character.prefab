@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d064b978df4e3918a5fe72304e5fb10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acceleration: 4
+  Acceleration: 10
   StopMultiplier: 4
 --- !u!114 &6288111939984578518
 MonoBehaviour:
