@@ -709,6 +709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7243665896159077815}
   - component: {fileID: 3129605536171504982}
+  - component: {fileID: 3737132729605494545}
   m_Layer: 0
   m_Name: CenterOfRotation
   m_TagString: Untagged
@@ -747,6 +748,19 @@ MonoBehaviour:
   Objects: []
   RotationSpeed: 30
   FaceAwayFromCenter: 1
+--- !u!210 &3737132729605494545
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9148751103186698161}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
 --- !u!1001 &1815156069719130080
 PrefabInstance:
   m_ObjectHideFlags: 0
