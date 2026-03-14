@@ -197,4 +197,4 @@ MonoBehaviour:
       RotationSpeed: 0
       RotationRadius: 0
       MoveSpeed: 0
-      ResourcesRespawnSpeed: 0.75
+      ResourcesRespawnSpeed: 1

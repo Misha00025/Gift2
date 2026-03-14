@@ -6,6 +6,12 @@ using UnityEngine;
 
 public class ResourceContainer : Respawnble, IDamageable
 {
+    public enum DropTypeEnum
+    {
+        Thresholds,
+        EveryDamage
+    }
+
     [Serializable]
     public struct Threshold
     {
@@ -19,7 +25,11 @@ public class ResourceContainer : Respawnble, IDamageable
 
     public List<Element> Weaknesses = new();
     public Property Health;
+    
+    public DropTypeEnum DropType;
     public List<Threshold> Thresholds = new();
+    public Threshold DamageToDrop;    
+    
     
     public float MinStrength = 0.1f;
     
@@ -30,16 +40,31 @@ public class ResourceContainer : Respawnble, IDamageable
         HealthView?.SetProperty(Health);
         HealthView?.gameObject.SetActive(false);
         _lastHealth = Health.Value;
-        foreach (var threshold in Thresholds)
+        if (DropType == DropTypeEnum.Thresholds)
+        {
+            foreach (var threshold in Thresholds)
+            {
+                Health.Changed.AddListener((health) => 
+                {
+                    if (threshold.Health >= _lastHealth || threshold.Health < health.Value) return;
+                    DropItems(threshold.Item, threshold.Count);
+                    _lastHealth = Health.Value;
+                });
+            }
+        }
+        else
         {
             Health.Changed.AddListener((health) => 
             {
-                if (threshold.Health >= _lastHealth || threshold.Health < health.Value) return;
-               
-                DropItems(threshold.Item, threshold.Count);
+                if (_lastHealth - health.Value > DamageToDrop.Health)
+                {
+                    _lastHealth -= DamageToDrop.Health;
+                    DropItems(DamageToDrop.Item, DamageToDrop.Count);
+                }
             });
         }
     }
+
 
     private void DropItems(CollectableItem prefab, int count)
     {
@@ -67,7 +92,6 @@ public class ResourceContainer : Respawnble, IDamageable
 
     public void TakeDamage(Damage damage)
     {
-        _lastHealth = Health.Value;
         
         Health.Value -= CalculateDamage(damage);
         

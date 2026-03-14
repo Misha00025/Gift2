@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf1def942616486782bd19884eace7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToRespawn: 120
+  TimeToRespawn: 180
   RandomDeltaPercent: 0.1
   RandomOffset: {x: 1, y: 1}
   Key: Stone
@@ -163,6 +163,7 @@ MonoBehaviour:
     Changed:
       m_PersistentCalls:
         m_Calls: []
+  DropType: 1
   Thresholds:
   - Health: 0
     Count: 50
@@ -178,6 +179,10 @@ MonoBehaviour:
     Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
   - Health: 900
     Count: 10
+    Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
+  DamageToDrop:
+    Health: 100
+    Count: 22
     Item: {fileID: 9097598139059078645, guid: 65e572cebe404ed5fa182e0de2e2cb2e, type: 3}
   MinStrength: -0.1
 --- !u!61 &5445855884009042044

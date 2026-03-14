@@ -28,47 +28,41 @@ MonoBehaviour:
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 500
-      - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 150
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 1500
-      - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 250
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 2000
-      - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 700
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 3000
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 1000
+        Amount: 300
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 4000
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 1200
+        Amount: 500
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 5000
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 1500
+        Amount: 800
       - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
         Amount: 5
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 6000
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 2000
+        Amount: 1200
       - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
         Amount: 10
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 10000
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 3000
+        Amount: 1500
       - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
         Amount: 20
     Type: 0
@@ -95,61 +89,53 @@ MonoBehaviour:
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 1000
-      - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 300
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 1800
-      - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 700
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 2600
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 1000
+        Amount: 300
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 3400
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 1600
+        Amount: 500
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 4600
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 2000
-      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 300
+        Amount: 800
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
         Amount: 5800
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 2800
-      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 700
+        Amount: 1200
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
-        Amount: 8000
+        Amount: 9000
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 3200
+        Amount: 1500
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 1400
+        Amount: 500
       - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
-        Amount: 10
+        Amount: 40
     - Costs:
       - Item: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
-        Amount: 10000
+        Amount: 12000
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 5000
+        Amount: 2000
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 1900
+        Amount: 800
       - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
-        Amount: 20
+        Amount: 60
     Type: 0
     WeaponPrefab: {fileID: 0}
     UpgradeModifiers:
       CollectingRadiusScale: 0
       Strength: 0
-      RotationSpeed: 0.5
+      RotationSpeed: 0.3
       RotationRadius: 0
       MoveSpeed: 0
       ResourcesRespawnSpeed: 0

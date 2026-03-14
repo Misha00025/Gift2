@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf1def942616486782bd19884eace7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToRespawn: 90
+  TimeToRespawn: 150
   RandomDeltaPercent: 0.2
   RandomOffset: {x: 1, y: 1}
   Key: Tree
@@ -63,25 +63,25 @@ MonoBehaviour:
         m_Calls: []
   Thresholds:
   - Health: 0
+    Count: 50
+    Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
+  - Health: 150
     Count: 40
     Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
   - Health: 150
     Count: 30
-    Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
-  - Health: 150
-    Count: 40
     Item: {fileID: 9097598139059078645, guid: 203fead68f8006ab9a85918df504c150, type: 3}
+  - Health: 300
+    Count: 30
+    Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
   - Health: 300
     Count: 20
-    Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
-  - Health: 300
-    Count: 30
     Item: {fileID: 9097598139059078645, guid: 203fead68f8006ab9a85918df504c150, type: 3}
+  - Health: 380
+    Count: 20
+    Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
   - Health: 380
     Count: 10
-    Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
-  - Health: 380
-    Count: 20
     Item: {fileID: 9097598139059078645, guid: 203fead68f8006ab9a85918df504c150, type: 3}
   MinStrength: 0.01
 --- !u!212 &1824831859938823320

@@ -1653,6 +1653,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2058826311718564997}
     m_Modifications:
+    - target: {fileID: 3070546605571673052, guid: 90b4771188dbf77b0a93cda57db7b563, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070546605571673052, guid: 90b4771188dbf77b0a93cda57db7b563, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070546605571673052, guid: 90b4771188dbf77b0a93cda57db7b563, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070546605571673052, guid: 90b4771188dbf77b0a93cda57db7b563, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5439695540799277158, guid: 90b4771188dbf77b0a93cda57db7b563, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1736,6 +1752,10 @@ PrefabInstance:
     - target: {fileID: 6953637496240512747, guid: 90b4771188dbf77b0a93cda57db7b563, type: 3}
       propertyPath: m_Name
       value: MobileControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461454182508444746, guid: 90b4771188dbf77b0a93cda57db7b563, type: 3}
+      propertyPath: m_fontSize
+      value: 51.2
       objectReference: {fileID: 0}
     - target: {fileID: 7619855824079308442, guid: 90b4771188dbf77b0a93cda57db7b563, type: 3}
       propertyPath: m_RenderMode
