@@ -162,6 +162,12 @@ MonoBehaviour:
     Changed:
       m_PersistentCalls:
         m_Calls: []
+  SoundsOnDamage:
+  - {fileID: 8300000, guid: 9f33149556574e358b022a715bd460cf, type: 3}
+  - {fileID: 8300000, guid: 737788cae9077bcd098221ad2cdb7b41, type: 3}
+  - {fileID: 8300000, guid: ca1496bffdded3c90a20227dbace2de7, type: 3}
+  - {fileID: 8300000, guid: cf6a70fc6d9f72cb0bfd3db7513dd829, type: 3}
+  - {fileID: 8300000, guid: ef7bf40686b1523e3a078e6009e110af, type: 3}
   DropType: 2
   Thresholds:
   - Health: 0

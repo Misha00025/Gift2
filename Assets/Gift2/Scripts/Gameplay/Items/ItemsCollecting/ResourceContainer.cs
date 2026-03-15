@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Gift2;
-using Gift2.Core;
 using UnityEngine;
 
 public class ResourceContainer : Respawnble, IDamageable
@@ -26,6 +25,7 @@ public class ResourceContainer : Respawnble, IDamageable
 
     public List<Element> Weaknesses = new();
     public Property Health;
+    public List<AudioClip> SoundsOnDamage = new();
     
     public DropTypeEnum DropType;
     public List<Threshold> Thresholds = new();
@@ -69,6 +69,7 @@ public class ResourceContainer : Respawnble, IDamageable
     }
 
 
+
     private void DropItems(CollectableItem prefab, int count)
     {
         // for (int i = 0; i < count; i++)
@@ -95,8 +96,9 @@ public class ResourceContainer : Respawnble, IDamageable
 
     public void TakeDamage(Damage damage)
     {
-        
         Health.Value -= CalculateDamage(damage);
+        
+        RandomSoundPlayer.Instance.Play(SoundsOnDamage);
         
         if (Health.Value == 0)
             Kill();
