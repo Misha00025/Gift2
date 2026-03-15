@@ -23,21 +23,29 @@ MonoBehaviour:
         Amount: 1500
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
         Amount: 1500
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 10
     - Costs:
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
         Amount: 1500
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
         Amount: 1500
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 10
     - Costs:
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
         Amount: 1500
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
         Amount: 1500
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 10
     - Costs:
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
         Amount: 1500
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
         Amount: 1500
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 10
     Type: 1
     WeaponPrefab: {fileID: 7644038515823341362, guid: c50458550406b02799e10039e3493c65, type: 3}
     UpgradeModifiers:
@@ -57,21 +65,29 @@ MonoBehaviour:
         Amount: 1500
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
         Amount: 1500
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 10
     - Costs:
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
         Amount: 1500
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
         Amount: 1500
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 10
     - Costs:
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
         Amount: 1500
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
         Amount: 1500
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 10
     - Costs:
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
         Amount: 1500
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
         Amount: 1500
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 10
     Type: 1
     WeaponPrefab: {fileID: 7644038515823341362, guid: 782755823eb2c320fa36fdf8eba95310, type: 3}
     UpgradeModifiers:
@@ -88,39 +104,50 @@ MonoBehaviour:
     CostsOnBuy:
     - Costs:
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 150
+        Amount: 400
     - Costs:
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 380
+        Amount: 700
     - Costs:
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 550
-    - Costs:
-      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 900
-    - Costs:
-      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 1200
-    - Costs:
-      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 1500
-      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
-        Amount: 5
-    - Costs:
-      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 1800
+        Amount: 1000
       - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
         Amount: 10
     - Costs:
       - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 2000
+        Amount: 1400
       - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
         Amount: 20
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 1800
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 30
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 2000
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 40
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 2500
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 50
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 2800
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 60
+    - Costs:
+      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+        Amount: 3000
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 70
     Type: 0
     WeaponPrefab: {fileID: 0}
     UpgradeModifiers:
       CollectingRadiusScale: 0
-      Strength: 0.125
+      Strength: 0.25
       RotationSpeed: 0
       RotationRadius: 0
       MoveSpeed: 0

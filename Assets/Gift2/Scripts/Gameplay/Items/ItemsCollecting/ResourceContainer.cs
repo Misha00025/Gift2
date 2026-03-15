@@ -9,7 +9,8 @@ public class ResourceContainer : Respawnble, IDamageable
     public enum DropTypeEnum
     {
         Thresholds,
-        EveryDamage
+        EveryDamage,
+        All
     }
 
     [Serializable]
@@ -33,14 +34,16 @@ public class ResourceContainer : Respawnble, IDamageable
     
     public float MinStrength = 0.1f;
     
+    private int _lastThreshold;
     private int _lastHealth;
 
     void Start()
     {
         HealthView?.SetProperty(Health);
         HealthView?.gameObject.SetActive(false);
+        _lastThreshold = Health.Value;
         _lastHealth = Health.Value;
-        if (DropType == DropTypeEnum.Thresholds)
+        if (DropType == DropTypeEnum.Thresholds || DropType == DropTypeEnum.All)
         {
             foreach (var threshold in Thresholds)
             {
@@ -52,13 +55,13 @@ public class ResourceContainer : Respawnble, IDamageable
                 });
             }
         }
-        else
+        if (DropType == DropTypeEnum.EveryDamage || DropType == DropTypeEnum.All)
         {
             Health.Changed.AddListener((health) => 
             {
-                if (_lastHealth - health.Value > DamageToDrop.Health)
+                if (_lastThreshold - health.Value > DamageToDrop.Health || health.Value == 0)
                 {
-                    _lastHealth -= DamageToDrop.Health;
+                    _lastThreshold -= DamageToDrop.Health;
                     DropItems(DamageToDrop.Item, DamageToDrop.Count);
                 }
             });
@@ -104,5 +107,6 @@ public class ResourceContainer : Respawnble, IDamageable
     {
         Health.Value = Health.MaxValue;
         _lastHealth = Health.MaxValue;
+        _lastThreshold = _lastHealth;
     }
 }

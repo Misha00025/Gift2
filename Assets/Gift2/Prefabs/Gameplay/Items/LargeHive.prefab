@@ -157,15 +157,15 @@ MonoBehaviour:
   HealthView: {fileID: 1413624327047185781}
   Weaknesses: 
   Health:
-    _value: 100000
-    _maxValue: 100000
+    _value: 40000
+    _maxValue: 40000
     Changed:
       m_PersistentCalls:
         m_Calls: []
   DropType: 1
   Thresholds: []
   DamageToDrop:
-    Health: 100
+    Health: 40
     Count: 1
     Item: {fileID: 1281453107599118151, guid: 884bbb633a56a01aaafbe88a47b3bf44, type: 3}
   MinStrength: -0.1

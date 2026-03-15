@@ -151,32 +151,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeToRespawn: 210
-  RandomDeltaPercent: 0.2
+  RandomDeltaPercent: 0.05
   RandomOffset: {x: 0.1, y: 0.1}
   Key: Resource
   HealthView: {fileID: 1413624327047185781}
   Weaknesses: 
   Health:
-    _value: 700
-    _maxValue: 500
+    _value: 300
+    _maxValue: 300
     Changed:
       m_PersistentCalls:
         m_Calls: []
-  DropType: 0
+  DropType: 2
   Thresholds:
   - Health: 0
     Count: 3
     Item: {fileID: 1281453107599118151, guid: 884bbb633a56a01aaafbe88a47b3bf44, type: 3}
-  - Health: 300
+  - Health: 150
     Count: 2
     Item: {fileID: 1281453107599118151, guid: 884bbb633a56a01aaafbe88a47b3bf44, type: 3}
-  - Health: 550
+  - Health: 250
     Count: 1
     Item: {fileID: 1281453107599118151, guid: 884bbb633a56a01aaafbe88a47b3bf44, type: 3}
   DamageToDrop:
-    Health: 0
-    Count: 0
-    Item: {fileID: 0}
+    Health: 20
+    Count: 1
+    Item: {fileID: 1281453107599118151, guid: 884bbb633a56a01aaafbe88a47b3bf44, type: 3}
   MinStrength: -0.1
 --- !u!212 &3345402612831301470
 SpriteRenderer:

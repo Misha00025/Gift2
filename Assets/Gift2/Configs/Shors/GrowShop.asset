@@ -172,23 +172,19 @@ MonoBehaviour:
         Amount: 1000
     - Costs:
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-        Amount: 3000
-      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 1000
-    - Costs:
-      - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
         Amount: 5000
-      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 2000
       - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
-        Amount: 10
+        Amount: 100
     - Costs:
       - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
         Amount: 8000
-      - Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-        Amount: 4000
       - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
-        Amount: 20
+        Amount: 200
+    - Costs:
+      - Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
+        Amount: 10000
+      - Item: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+        Amount: 400
     Type: 0
     WeaponPrefab: {fileID: 0}
     UpgradeModifiers:

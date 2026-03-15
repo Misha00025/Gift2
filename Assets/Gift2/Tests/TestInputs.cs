@@ -48,8 +48,10 @@ public class TestInputs : MonoBehaviour
     
     void Update()
     {
+        #if UNITY_EDITOR
         if (_cheatAction.WasPressedThisFrame())
             Cheat();
+        #endif
     
         if (_interactAction.WasPressedThisFrame())
             UseOrSkip();
@@ -102,6 +104,12 @@ public class TestInputs : MonoBehaviour
     
     public void Use()
     {
+        if (DialogueUI.instance.gameObject.activeSelf)
+        {
+            DialogueUI.instance.NextSentenceSoft();
+            return;
+        }
+    
         if (BlockReadInputs) return;
         
         var obj = _interactor.GetSelectedObject();

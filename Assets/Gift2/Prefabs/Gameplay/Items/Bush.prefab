@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeToRespawn: 120
-  RandomDeltaPercent: 0.3
+  RandomDeltaPercent: 0.05
   RandomOffset: {x: 1, y: 1}
   Key: Bush
   HealthView: {fileID: 3806034254316508691}
@@ -60,19 +60,24 @@ MonoBehaviour:
     Changed:
       m_PersistentCalls:
         m_Calls: []
+  DropType: 0
   Thresholds:
   - Health: 0
     Count: 2
     Item: {fileID: 9097598139059078645, guid: 69d1eb865bb76ba88aeff90a5c767cbc, type: 3}
   - Health: 25
-    Count: 15
+    Count: 14
     Item: {fileID: 9097598139059078645, guid: 203fead68f8006ab9a85918df504c150, type: 3}
   - Health: 50
-    Count: 10
+    Count: 12
     Item: {fileID: 9097598139059078645, guid: 203fead68f8006ab9a85918df504c150, type: 3}
   - Health: 75
-    Count: 5
+    Count: 4
     Item: {fileID: 9097598139059078645, guid: 203fead68f8006ab9a85918df504c150, type: 3}
+  DamageToDrop:
+    Health: 0
+    Count: 0
+    Item: {fileID: 0}
   MinStrength: -0.01
 --- !u!212 &1824831859938823320
 SpriteRenderer:
