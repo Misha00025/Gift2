@@ -133,10 +133,10 @@ TextureImporter:
         serializedVersion: 2
         x: 541
         y: 123
-        width: 574
-        height: 627
+        width: 573
+        height: 559
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: WhaterIcon_0
       rect:
         serializedVersion: 2
-        x: 1182
+        x: 1246
         y: 136
-        width: 526
-        height: 628
+        width: 435
+        height: 552
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,10 +177,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1729
         y: 143
-        width: 492
-        height: 597
+        width: 486
+        height: 534
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
