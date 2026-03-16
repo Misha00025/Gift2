@@ -145,6 +145,7 @@ namespace Gift2
         {
             var data = new PlayerData();
             firstLoad = true;
+            #if UNITY_EDITOR
             if (UseTest)
             {
                 firstLoad = false;
@@ -155,16 +156,16 @@ namespace Gift2
                 {
                     data.Resources.Add(new(){Key=r.Key, Amount=r.Amount});
                 }
+                return data;
             }
-            else
-            {
-                var ok = SaveManager.Load(FileName, out data);
-                firstLoad = !ok;
-                if (data.Purchases == null)
-                    data.Purchases = new();
-                if (data.Resources == null)
-                    data.Resources = new();
-            }
+            #endif
+            var ok = SaveManager.Load(FileName, out data);
+            firstLoad = !ok;
+            if (data.Purchases == null)
+                data.Purchases = new();
+            if (data.Resources == null)
+                data.Resources = new();
+            
             return data;
         }
         

@@ -12002,8 +12002,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ClearDebug: 0
-  UseTest: 1
+  ClearDebug: 1
+  UseTest: 0
   TestQuestsCompleted: 4
   Purchases:
   - Shop: SpeedShop
