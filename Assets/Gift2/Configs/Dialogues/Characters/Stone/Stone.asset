@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4a308dae7ffd048a8b0eb8d5ae4a02, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: Assembly-CSharp-firstpass::HeneGames.DialogueSystem.DialogueCharacter
-  characterPhoto: {fileID: 4646101929521763914, guid: add51b07c3ac8360e881fd1af0703661, type: 3}
+  characterPhoto: {fileID: 343801298, guid: b4ea5921e9d288f41b8944446f2a7fd9, type: 3}
   characterName: Rin0

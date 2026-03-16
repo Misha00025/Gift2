@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4a308dae7ffd048a8b0eb8d5ae4a02, type: 3}
   m_Name: Wind
   m_EditorClassIdentifier: Assembly-CSharp-firstpass::HeneGames.DialogueSystem.DialogueCharacter
-  characterPhoto: {fileID: -3779420353340960863, guid: 451169b979d60666082bfcc4f7f3ba4c, type: 3}
+  characterPhoto: {fileID: -1028577521, guid: b4ea5921e9d288f41b8944446f2a7fd9, type: 3}
   characterName: Bruh

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4a308dae7ffd048a8b0eb8d5ae4a02, type: 3}
   m_Name: Fire
   m_EditorClassIdentifier: Assembly-CSharp-firstpass::HeneGames.DialogueSystem.DialogueCharacter
-  characterPhoto: {fileID: 5270528129628455424, guid: e745d57fe4a27aed59be9731e485d7c6, type: 3}
+  characterPhoto: {fileID: -4040590563582487463, guid: b4ea5921e9d288f41b8944446f2a7fd9, type: 3}
   characterName: NaSimLaur
