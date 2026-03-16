@@ -7,15 +7,14 @@ namespace Gift2
     {
         [Header("Настройки")]
         [SerializeField] private AudioSource audioSourceTemplate;
-        [SerializeField] private int maxConcurrentSounds = 20;    // Максимальное количество одновременно играющих звуков
+        [SerializeField] private int maxConcurrentSounds = 20;
 
-        private List<AudioSource> audioSources;                   // Пул источников звука
+        private List<AudioSource> audioSources;
 
         public static RandomSoundPlayer Instance { get; private set; }
 
         private void Awake()
         {
-            // Инициализация пула AudioSource
             if (Instance == null)
                 Instance = this;
             audioSources = new List<AudioSource>();
@@ -23,16 +22,14 @@ namespace Gift2
             {
                 AudioSource source = gameObject.AddComponent<AudioSource>();
 
-                // Если задан шаблон — копируем его настройки
                 if (audioSourceTemplate != null)
                 {
                     CopyAudioSourceSettings(audioSourceTemplate, source);
                 }
                 else
                 {
-                    // Иначе устанавливаем значения по умолчанию (можно настроить под себя)
                     source.playOnAwake = false;
-                    source.spatialBlend = 0f; // 2D звук
+                    source.spatialBlend = 0f;
                 }
 
                 audioSources.Add(source);
@@ -52,7 +49,7 @@ namespace Gift2
             to.bypassEffects = from.bypassEffects;
             to.bypassListenerEffects = from.bypassListenerEffects;
             to.bypassReverbZones = from.bypassReverbZones;
-            to.playOnAwake = from.playOnAwake; // обычно false, но копируем на всякий случай
+            to.playOnAwake = from.playOnAwake;
             to.loop = from.loop;
 
             to.priority = from.priority;
@@ -62,16 +59,12 @@ namespace Gift2
             to.spatialBlend = from.spatialBlend;
             to.reverbZoneMix = from.reverbZoneMix;
 
-            // 3D звук
             to.dopplerLevel = from.dopplerLevel;
             to.spread = from.spread;
             to.minDistance = from.minDistance;
             to.maxDistance = from.maxDistance;
 
             to.rolloffMode = from.rolloffMode;
-            // Дополнительные параметры, если нужны:
-            // to.ignoreListenerPause = from.ignoreListenerPause;
-            // to.ignoreListenerVolume = from.ignoreListenerVolume;
         }
 
         /// <summary>
@@ -86,18 +79,15 @@ namespace Gift2
                 return;
             }
 
-            // Ищем свободный источник (не играет в данный момент)
             AudioSource freeSource = audioSources.Find(source => !source.isPlaying);
             if (freeSource != null)
             {
-                // Выбираем случайный клип из переданного списка
                 AudioClip clip = sounds[Random.Range(0, sounds.Count)];
                 freeSource.clip = clip;
                 freeSource.Play();
             }
             else
             {
-                // Все источники заняты — ничего не воспроизводим
                 Debug.Log("Достигнут лимит одновременных звуков, пропускаем.");
             }
         }

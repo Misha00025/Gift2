@@ -22,6 +22,10 @@ public class CharacterMover : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
+        if (enabled == false) {
+            _rb.linearVelocity = Vector3.zero;
+            return;
+        }
         var speed = Speed;
         if ((direction.x + direction.y) > 1f)
             direction = direction.normalized;
