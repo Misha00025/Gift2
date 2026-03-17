@@ -5,13 +5,17 @@ public class CharacterMover : MonoBehaviour
 {
     private Character _character;
     private Rigidbody2D _rb;
+    private Animator _animator;
 
     public float AccelerationTime = 0.1f;
     public float StopMultiplier = 5f;
     public float Speed => _character.Stats.MoveSpeed;
+    
+    
 
     void Awake()
     {
+        _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -36,6 +40,13 @@ public class CharacterMover : MonoBehaviour
         var velocity = Vector2.Lerp(_rb.linearVelocity, delta, acceleration * Time.deltaTime);
         if (velocity.magnitude < 0.01f)
             velocity = Vector2.zero;
+        
+        if (_animator?.runtimeAnimatorController != null)
+        {
+            var speedPercent = velocity.magnitude / Speed;
+            _animator.SetFloat("Speed", speedPercent);
+        }
+        
         _rb.linearVelocity = velocity;
     }
 }
