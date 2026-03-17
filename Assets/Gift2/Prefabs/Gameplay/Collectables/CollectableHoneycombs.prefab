@@ -208,7 +208,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   dropDuration: 1
   pullMaxSpeed: 100
-  pullSmoothTime: 0.3
+  epsilon: 0.5
 --- !u!114 &739543924479579847
 MonoBehaviour:
   m_ObjectHideFlags: 0

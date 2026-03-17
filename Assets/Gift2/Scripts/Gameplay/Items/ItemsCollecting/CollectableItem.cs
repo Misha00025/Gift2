@@ -17,11 +17,11 @@ public class CollectableItem : MonoBehaviour
     [Header("Drop Animation")]
     [SerializeField] private float dropRadius = 1f;
     [SerializeField] private AnimationCurve dropHeightCurve;
-    [SerializeField] private float dropDuration = 0.2f;
+    [SerializeField] private float dropDuration = 0.1f;
 
     [Header("Collect Pull")]
     [SerializeField] private float pullMaxSpeed = 10f;
-    [SerializeField] private float epsilon = 0.2f;
+    [SerializeField] private float epsilon = 0.5f;
 
     private Coroutine moveCoroutine;
     
@@ -109,8 +109,6 @@ public class CollectableItem : MonoBehaviour
         foreach (var collider in _colliders)
             collider.enabled = false;
         
-        Vector3 velocity = Vector3.zero;
-
         var speed = pullMaxSpeed * 0.1f;
 
         while (Vector3.Distance(transform.position, target.position) > epsilon)

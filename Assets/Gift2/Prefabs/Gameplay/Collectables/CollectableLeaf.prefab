@@ -104,7 +104,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   dropDuration: 1
   pullMaxSpeed: 100
-  pullSmoothTime: 0.3
 --- !u!212 &-6906561775931712188
 SpriteRenderer:
   serializedVersion: 2
@@ -152,7 +151,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2168758814192672963, guid: ff33fecbe8fe51145933ef58b1f21e85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
