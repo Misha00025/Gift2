@@ -24,6 +24,13 @@ public class CollectableItem : MonoBehaviour
     [SerializeField] private float epsilon = 0.2f;
 
     private Coroutine moveCoroutine;
+    
+    private Collider2D[] _colliders;
+    
+    void Awake()
+    {
+        _colliders = GetComponents<Collider2D>();
+    }
 
     /// <summary>
     /// Начинает процедурную анимацию падения предмета из указанной точки.
@@ -35,6 +42,8 @@ public class CollectableItem : MonoBehaviour
         // Останавливаем текущую анимацию или движение
         StopAllCoroutines();
         moveCoroutine = null;
+        foreach (var collider in _colliders)
+            collider.enabled = true;
         
         // Помещаем объект в центр выпадения
         transform.position = position;
@@ -97,6 +106,8 @@ public class CollectableItem : MonoBehaviour
     private IEnumerator MoveToTarget(Transform target, Func<CollectableItem, bool> callback)
     {
         CanBeCollected = false;
+        foreach (var collider in _colliders)
+            collider.enabled = false;
         
         Vector3 velocity = Vector3.zero;
 

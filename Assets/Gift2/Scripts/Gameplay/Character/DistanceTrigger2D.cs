@@ -5,8 +5,11 @@ using UnityEngine.Events;
 public class DistanceTrigger2D : MonoBehaviour
 {
     public float ThresholdDistance = 0.5f;
+    public int frameRate = 15;
     public UnityEvent<GameObject> OnThresholdReached = new();
     public List<GameObject> Ignore = new();
+    
+    private float _accumulatedTime = 0f;
 
     private class TrackedObject
     {
@@ -48,6 +51,9 @@ public class DistanceTrigger2D : MonoBehaviour
 
     private void Update()
     {
+        _accumulatedTime += Time.deltaTime;
+        if (_accumulatedTime < 1f/frameRate) return;
+    
         List<GameObject> toRemove = null;
         List<GameObject> toInvoke = null;
 
@@ -84,6 +90,8 @@ public class DistanceTrigger2D : MonoBehaviour
         if (toRemove != null)
             foreach (var obj in toRemove)
                 _trackedObjects.Remove(obj);
+                
+        _accumulatedTime = 0;
     }
 
     private void OnDrawGizmosSelected()

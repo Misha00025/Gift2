@@ -12004,15 +12004,15 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   ClearDebug: 0
-  UseTest: 0
-  TestQuestsCompleted: 4
+  UseTest: 1
+  TestQuestsCompleted: 3
   Purchases:
   - Shop: SpeedShop
     Slot: 0
-    Amount: 5
+    Amount: 10
   - Shop: SpeedShop
     Slot: 1
-    Amount: 6
+    Amount: 10
   - Shop: GrowShop
     Slot: 0
     Amount: 4
@@ -12030,12 +12030,12 @@ MonoBehaviour:
     Amount: 4
   - Shop: WeaponsShop
     Slot: 2
-    Amount: 6
+    Amount: 8
   Resources:
   - Key: Leaf
-    Amount: 100000
+    Amount: 0
   - Key: Wood
-    Amount: 100000
+    Amount: 0
   - Key: Stone
     Amount: 50000
   - Key: Honeycomb
