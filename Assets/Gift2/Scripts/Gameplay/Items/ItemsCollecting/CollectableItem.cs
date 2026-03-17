@@ -3,6 +3,7 @@ using System.Collections;
 using Gift2.Core;
 using UnityEngine;
 using UnityEngine.Events;
+using Wof;
 
 public class CollectableItem : MonoBehaviour
 {
@@ -20,7 +21,6 @@ public class CollectableItem : MonoBehaviour
 
     [Header("Collect Pull")]
     [SerializeField] private float pullMaxSpeed = 10f;
-    [SerializeField] private float pullSmoothTime = 0.3f;
     [SerializeField] private float epsilon = 0.2f;
 
     private Coroutine moveCoroutine;
@@ -119,7 +119,8 @@ public class CollectableItem : MonoBehaviour
         
         if (destroy)
         {
-            Destroy(gameObject);
+            StopAllCoroutines();
+            PoolManager.Instance.ReturnObject(gameObject);
         }
         else
         {

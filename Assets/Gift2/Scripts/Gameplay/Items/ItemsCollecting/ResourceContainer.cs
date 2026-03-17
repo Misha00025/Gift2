@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Gift2;
 using UnityEngine;
+using Wof;
 using Wof.Types;
 using Wof.UI;
 using Wof.Views;
@@ -77,7 +78,8 @@ public class ResourceContainer : Respawnble, IDamageable
     {
         // for (int i = 0; i < count; i++)
         // {
-            var item = Instantiate(prefab);
+            var item = PoolManager.Instance.GetObject(prefab);
+            item.CanCollectEvent.RemoveAllListeners();
             item.Amount = count;
             item.transform.parent = transform.parent;
             item.Drop(transform.position);

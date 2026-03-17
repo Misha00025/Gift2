@@ -11868,6 +11868,7 @@ GameObject:
   - component: {fileID: 587117338}
   - component: {fileID: 587117339}
   - component: {fileID: 587117341}
+  - component: {fileID: 587117342}
   - component: {fileID: 587117340}
   m_Layer: 0
   m_Name: Game
@@ -12318,6 +12319,18 @@ MonoBehaviour:
           m_StringArgument: Show
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &587117342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587117328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047dac2ff56651a2988607b266244d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MyComponents::Wof.PoolManager
 --- !u!1001 &588088830
 PrefabInstance:
   m_ObjectHideFlags: 0
