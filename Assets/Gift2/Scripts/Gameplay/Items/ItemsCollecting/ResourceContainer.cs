@@ -79,7 +79,8 @@ public class ResourceContainer : Respawnble, IDamageable
         // {
             var item = Instantiate(prefab);
             item.Amount = count;
-            item.transform.position = transform.position;
+            item.transform.parent = transform.parent;
+            item.Drop(transform.position);
         // }
     }
 

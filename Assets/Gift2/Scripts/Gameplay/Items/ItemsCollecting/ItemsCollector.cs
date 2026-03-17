@@ -32,15 +32,26 @@ public class ItemsCollector : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<CollectableItem>(out var collectable) && collectable.CanBeCollected)
+        if (collision.TryGetComponent<CollectableItem>(out var collectable))
         {
-            var item = collectable.Item;
-            var count = collectable.Amount;
+            if (collectable.CanBeCollected == false) 
+            {
+                collectable.CanCollectEvent.AddListener(OnCanCollect);
+                return;
+            }
             
-            if (_storage.IsFull(item)) return;
-            
-            _storage.Add(item, count);
-            Destroy(collectable.gameObject);
+            OnCanCollect(collectable);
         }
+    }
+    
+    void OnCanCollect(CollectableItem collectable)
+    {
+        var item = collectable.Item;
+        var count = collectable.Amount;
+        
+        if (_storage.IsFull(item)) return;
+        
+        _storage.Add(item, count);
+        collectable.Collect();
     }
 }
