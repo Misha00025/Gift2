@@ -65,9 +65,9 @@ build_platform() {
 }
 
 # Используем устаревшие ключи
-# build_platform "-buildWindowsPlayer" "$BUILD_PATH/Windows/Game.exe"
+build_platform "-buildWindowsPlayer" "$BUILD_PATH/Windows/Game.exe"
 build_platform "-buildLinux64Player" "$BUILD_PATH/Linux/Game.x86_64"
-# build_platform "-buildAndroid"       "$BUILD_PATH/Android/Game.apk"
+build_platform "-buildAndroid"       "$BUILD_PATH/Android/Game.apk"
 
 echo -e "${GREEN}Все сборки успешно завершены!${NC}"
 echo "Бинарные файлы находятся в: $BUILD_PATH"
