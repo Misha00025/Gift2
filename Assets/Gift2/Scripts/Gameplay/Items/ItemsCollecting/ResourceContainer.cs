@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using Gift2;
 using UnityEngine;
+using Wof.Types;
+using Wof.UI;
+using Wof.Views;
 
 public class ResourceContainer : Respawnble, IDamageable
 {

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace Gift2
+namespace Wof.Views
 {
     public class YSorter : MonoBehaviour
     {

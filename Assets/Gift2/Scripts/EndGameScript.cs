@@ -2,6 +2,7 @@ using System.Collections;
 using Gift2.Core;
 using UnityEngine;
 using UnityEngine.Events;
+using Wof.Views;
 
 namespace Gift2
 {

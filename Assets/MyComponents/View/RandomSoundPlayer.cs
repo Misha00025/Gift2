@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gift2
+namespace Wof.Views
 {
     public class RandomSoundPlayer : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 
-namespace Gift2
+namespace Wof.Saves
 {
     public static class SaveManager
     {

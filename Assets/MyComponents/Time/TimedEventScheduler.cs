@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Gift2
+namespace Wof.TimeManagement
 {
     public class TimedEventScheduler : MonoBehaviour
     {
