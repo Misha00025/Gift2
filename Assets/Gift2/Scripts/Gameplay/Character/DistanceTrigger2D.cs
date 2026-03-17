@@ -5,11 +5,10 @@ using UnityEngine.Events;
 public class DistanceTrigger2D : MonoBehaviour
 {
     public float ThresholdDistance = 0.5f;
-    public int frameRate = 15;
     public UnityEvent<GameObject> OnThresholdReached = new();
     public List<GameObject> Ignore = new();
-    
-    private float _accumulatedTime = 0f;
+
+    [SerializeField] private int _batchSize = 20; // количество объектов за кадр
 
     private class TrackedObject
     {
@@ -17,55 +16,76 @@ public class DistanceTrigger2D : MonoBehaviour
         public float accumulatedDistance;
     }
 
-    void Awake()
-    {
-        // OnThresholdReached.AddListener((e) => Debug.Log($"Triggered: {e.name}"));
-    }
-
-    private Dictionary<GameObject, TrackedObject> _trackedObjects = new Dictionary<GameObject, TrackedObject>();
+    private Dictionary<GameObject, TrackedObject> _trackedObjects = new();
+    private List<GameObject> _trackedKeys = new();          // кэшированный список ключей для итерации
+    private int _nextIndex = 0;                              // следующий индекс для обработки
+    private bool _keysDirty = true;                          // флаг необходимости обновить список ключей
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         GameObject obj = other.gameObject;
 
-        if (!_trackedObjects.ContainsKey(obj) && Ignore.Contains(obj) == false)
+        if (!_trackedObjects.ContainsKey(obj) && !Ignore.Contains(obj))
         {
-            TrackedObject data = new TrackedObject
+            var data = new TrackedObject
             {
                 previousLocalPosition = transform.InverseTransformPoint(obj.transform.position),
                 accumulatedDistance = 0f
             };
             _trackedObjects.Add(obj, data);
-            OnThresholdReached.Invoke(obj);
+            _keysDirty = true;   // состав ключей изменился
+            OnThresholdReached.Invoke(obj); // оригинал вызывает событие сразу при входе
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         GameObject obj = other.gameObject;
-        if (_trackedObjects.ContainsKey(obj))
+        if (_trackedObjects.Remove(obj))
         {
-            _trackedObjects.Remove(obj);
+            _keysDirty = true;   // состав ключей изменился
         }
     }
 
     private void Update()
     {
-        _accumulatedTime += Time.deltaTime;
-        if (_accumulatedTime < 1f/frameRate) return;
-    
-        List<GameObject> toRemove = null;
-        List<GameObject> toInvoke = null;
+        if (_trackedObjects.Count == 0) return;
 
-        foreach (var key in _trackedObjects.Keys)
+        // Обновляем список ключей, если были изменения
+        if (_keysDirty)
         {
-            GameObject obj = key;
-            TrackedObject data = _trackedObjects[key];
+            _trackedKeys.Clear();
+            _trackedKeys.AddRange(_trackedObjects.Keys);
+            _nextIndex = 0;
+            _keysDirty = false;
+        }
+
+        // Определяем, сколько объектов обработать в этом кадре
+        int objectsToProcess = Mathf.Min(_batchSize, _trackedKeys.Count - _nextIndex);
+        if (objectsToProcess <= 0 && _trackedKeys.Count > 0)
+        {
+            // Дошли до конца списка – начинаем сначала
+            _nextIndex = 0;
+            objectsToProcess = Mathf.Min(_batchSize, _trackedKeys.Count);
+        }
+
+        if (objectsToProcess == 0) return;
+
+        List<GameObject> toInvoke = null;
+        List<GameObject> toRemove = null;
+
+        int endIndex = _nextIndex + objectsToProcess;
+        for (int i = _nextIndex; i < endIndex; i++)
+        {
+            GameObject obj = _trackedKeys[i];
+
+            // Объект мог быть удалён из словаря (например, через OnTriggerExit2D) после обновления ключей
+            if (!_trackedObjects.TryGetValue(obj, out TrackedObject data))
+                continue;
 
             if (obj == null || !obj.activeInHierarchy)
             {
-                if (toRemove == null) toRemove = new List<GameObject>();
-                toRemove.Add(obj);
+                (toRemove ??= new List<GameObject>()).Add(obj);
                 continue;
             }
 
@@ -75,23 +95,32 @@ public class DistanceTrigger2D : MonoBehaviour
 
             while (data.accumulatedDistance >= ThresholdDistance)
             {
-                if (toInvoke == null) toInvoke = new List<GameObject>();
-                toInvoke.Add(obj);
+                (toInvoke ??= new List<GameObject>()).Add(obj);
                 data.accumulatedDistance -= ThresholdDistance;
             }
 
             data.previousLocalPosition = currentLocalPosition;
         }
 
+        // Сдвигаем индекс для следующего кадра
+        _nextIndex += objectsToProcess;
+        if (_nextIndex >= _trackedKeys.Count)
+            _nextIndex = 0;
+
+        // Вызываем события
         if (toInvoke != null)
+        {
             foreach (var obj in toInvoke)
                 OnThresholdReached?.Invoke(obj);
+        }
 
+        // Удаляем мёртвые/неактивные объекты
         if (toRemove != null)
+        {
             foreach (var obj in toRemove)
                 _trackedObjects.Remove(obj);
-                
-        _accumulatedTime = 0;
+            _keysDirty = true; // после удаления ключи устарели
+        }
     }
 
     private void OnDrawGizmosSelected()
