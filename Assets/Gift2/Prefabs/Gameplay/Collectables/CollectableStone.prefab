@@ -193,7 +193,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  dropDuration: 1
+  dropDuration: 0.7
+  pullMaxSpeed: 100
+  pullSmoothTime: 0.3
+  epsilon: 0.2
 --- !u!58 &75125225124113250
 CircleCollider2D:
   m_ObjectHideFlags: 0

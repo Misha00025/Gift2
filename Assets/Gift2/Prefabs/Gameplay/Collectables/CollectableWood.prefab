@@ -103,6 +103,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   dropDuration: 1
+  pullMaxSpeed: 100
+  pullSmoothTime: 0.3
 --- !u!212 &-6906561775931712188
 SpriteRenderer:
   serializedVersion: 2

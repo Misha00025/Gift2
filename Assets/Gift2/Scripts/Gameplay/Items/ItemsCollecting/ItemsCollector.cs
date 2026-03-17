@@ -34,6 +34,9 @@ public class ItemsCollector : MonoBehaviour
     {
         if (collision.TryGetComponent<CollectableItem>(out var collectable))
         {
+            var item = collectable.Item;
+            if (_storage.IsFull(item)) return;
+            
             if (collectable.CanBeCollected == false) 
             {
                 collectable.CanCollectEvent.AddListener(OnCanCollect);
@@ -46,12 +49,17 @@ public class ItemsCollector : MonoBehaviour
     
     void OnCanCollect(CollectableItem collectable)
     {
+        collectable.Collect(transform, OnCollect);
+    }
+    
+    private bool OnCollect(CollectableItem collectable)
+    {
         var item = collectable.Item;
         var count = collectable.Amount;
         
-        if (_storage.IsFull(item)) return;
+        if (_storage.IsFull(item)) return false;
         
         _storage.Add(item, count);
-        collectable.Collect();
+        return true;
     }
 }
