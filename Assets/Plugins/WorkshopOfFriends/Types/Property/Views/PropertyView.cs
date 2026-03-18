@@ -1,8 +1,7 @@
 using TMPro;
 using UnityEngine;
-using Wof.Types;
 
-namespace Wof.UI
+namespace Wof.Types.UI
 {
     public class PropertyView : MonoBehaviour
     {

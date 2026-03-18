@@ -34,6 +34,12 @@ namespace Wof.Types
         }
         
         public UnityEvent<Property> Changed = new();
+        
+        public static Property operator +(Property p, int i)
+        {
+            p.Value += i;
+            return p;
+        }
     }
 
     public class FloatProperty : Property
@@ -45,6 +51,12 @@ namespace Wof.Types
             var sum = value + _accumulatedValue;
             Value += (int)sum;
             _accumulatedValue = sum - (int)sum;        
+        }
+        
+        public static FloatProperty operator +(FloatProperty p, float f)
+        {
+            p.AddFloat(f);
+            return p;
         }
     }
 }

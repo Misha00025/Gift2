@@ -4,7 +4,7 @@ using Gift2;
 using UnityEngine;
 using Wof;
 using Wof.Types;
-using Wof.UI;
+using Wof.Types.UI;
 using Wof.Views;
 
 public class ResourceContainer : Respawnble, IDamageable

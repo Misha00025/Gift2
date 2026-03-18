@@ -4,6 +4,8 @@
   <Project Path="PauseManager.csproj" />
   <Project Path="DOTween.Modules.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
-  <Project Path="MyComponents.csproj" />
+  <Project Path="WorkshopOfFriends.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="WofTypes.csproj" />
+  <Project Path="WofUI.csproj" />
 </Solution>
