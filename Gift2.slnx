@@ -7,5 +7,4 @@
   <Project Path="WorkshopOfFriends.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="WofTypes.csproj" />
-  <Project Path="WofUI.csproj" />
 </Solution>
