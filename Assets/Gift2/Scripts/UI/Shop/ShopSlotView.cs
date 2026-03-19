@@ -32,8 +32,6 @@ namespace Gift2
         
         private void Buy()
         {
-            if (_controller.CanBuy(_index) == false) return;
-              
             _controller.Buy(_index);
             ReloadCosts();
         }

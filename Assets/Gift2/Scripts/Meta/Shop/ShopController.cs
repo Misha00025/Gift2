@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Gift2.Core;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Gift2
 {
@@ -12,6 +13,9 @@ namespace Gift2
         private List<ShopSlot> _slots = new();
         
         public IReadOnlyList<ShopSlot> Slots => _slots;
+        
+        public UnityEvent SuccessBuy = new ();
+        public UnityEvent CancelBuy = new ();
         
         void Awake()
         {
@@ -68,11 +72,14 @@ namespace Gift2
         
         public void Buy(int slotIndex)
         {
-            if (CanBuy(slotIndex) == false) return;
-            
+            if (CanBuy(slotIndex) == false) {
+                CancelBuy.Invoke();
+                return;
+            }
             var slot = Slots[slotIndex];
             TakeCost(slot);
-            
+
+            SuccessBuy.Invoke();
             FreeBuy(slotIndex);
         }
         
