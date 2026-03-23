@@ -3,6 +3,7 @@ using Gift2.Core;
 using UnityEngine;
 using UnityEngine.Events;
 using Wof.Views;
+using Zenject;
 
 namespace Gift2
 {
@@ -12,8 +13,9 @@ namespace Gift2
         [SerializeField] private AnimationEventHandler _eventHandler;
         
         public Transform point;
-        public Player Player;
         public UnityEvent Showed = new ();
+        
+        [Inject] private Player Player;
         
         public void Play()
         {

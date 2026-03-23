@@ -11859,6 +11859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 587117330}
+  - component: {fileID: 587117344}
   - component: {fileID: 587117334}
   - component: {fileID: 587117329}
   - component: {fileID: 587117331}
@@ -12191,7 +12192,6 @@ MonoBehaviour:
   _animator: {fileID: 2096148164}
   _eventHandler: {fileID: 2096148165}
   point: {fileID: 587117330}
-  Player: {fileID: 587117329}
   Showed:
     m_PersistentCalls:
       m_Calls:
@@ -12424,6 +12424,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &587117344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587117328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca45a712b725f03b49b15056d4577c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gift2.MainInstaller
 --- !u!1001 &588088830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96145,7 +96157,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1568696251}
-  - component: {fileID: 1568696253}
   - component: {fileID: 1568696252}
   m_Layer: 0
   m_Name: Boot
@@ -96182,7 +96193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Zenject::Zenject.SceneContext
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 587117344}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -96200,34 +96212,6 @@ MonoBehaviour:
   _parentNewObjectsUnderSceneContext: 0
   _contractNames: []
   _parentContractNames: []
---- !u!114 &1568696253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1568696250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e6589720da476459dc6dd71624b071, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Zenject::Zenject.ProjectContext
-  _scriptableObjectInstallers: []
-  _monoInstallers: []
-  _installerPrefabs: []
-  _parentNewObjectsUnderContext: 1
-  _editorReflectionBakingCoverageMode: 0
-  _buildsReflectionBakingCoverageMode: 0
-  _settings:
-    _ensureDeterministicDestructionOrderOnApplicationQuit: 0
-    _displayWarningWhenResolvingDuringInstall: 1
-    _validationRootResolveMethod: 0
-    _validationErrorResponse: 0
-    _signalSettings:
-      _defaultSyncMode: 0
-      _missingHandlerDefaultResponse: 2
-      _requireStrictUnsubscribe: 0
-      _defaultAsyncTickPriority: 1
 --- !u!1001 &1569946209
 PrefabInstance:
   m_ObjectHideFlags: 0

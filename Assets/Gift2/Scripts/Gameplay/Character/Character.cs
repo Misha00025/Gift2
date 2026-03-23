@@ -8,7 +8,7 @@ public class Character : MonoBehaviour
     private CharacterConfig _config;
     private RotateAroundCenter _rotator;
 
-    public void Initialize(CharacterConfig config, CharacterMover mover, Player player, RotateAroundCenter rotator)
+    public void Initialize(CharacterConfig config, CharacterMover mover, RotateAroundCenter rotator)
     {
         _config = config;
         _mover = mover;

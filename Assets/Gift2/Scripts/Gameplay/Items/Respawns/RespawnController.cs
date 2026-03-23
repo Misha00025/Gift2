@@ -1,13 +1,12 @@
 using System.Collections.Generic;
 using Gift2.Core;
 using UnityEngine;
+using Zenject;
 
 namespace Gift2
 {
     public class RespawnController : MonoBehaviour
     {
-        public static RespawnController Instance { get; private set; }
-        
         private class RespawnInfo
         {
             public Respawnble Respawnble;
@@ -15,14 +14,7 @@ namespace Gift2
         }
         
         private List<RespawnInfo> Respawns = new();
-        private Player _player;
-        
-        void Awake()
-        {
-            if (Instance == null)
-                Instance = this;
-            _player = FindAnyObjectByType<Player>();
-        }
+        [Inject] private Player _player;
         
         void Update()
         {

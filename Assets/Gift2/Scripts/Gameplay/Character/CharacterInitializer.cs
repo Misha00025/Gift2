@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using Gift2.Core;
 using UnityEngine;
+using Zenject;
 
 [RequireComponent(typeof(Character), typeof(CharacterMover))]
 public class CharacterInitializer : MonoBehaviour
 {
-    [SerializeField] private Player Player;
+    [Inject] private Player Player;
     [SerializeField] private CharacterConfig Config;
     private List<Weapon> StartWeapons => Config.StartWeapons;
     
@@ -16,7 +17,7 @@ public class CharacterInitializer : MonoBehaviour
     {
         var character = GetComponent<Character>();
         var mover = GetComponent<CharacterMover>();
-        character.Initialize(Config, mover, Player, Rotator);
+        character.Initialize(Config, mover, Rotator);
         mover.Initialize(character);
         Collector.Initialize(character);
         Rotator.Initialize(character);

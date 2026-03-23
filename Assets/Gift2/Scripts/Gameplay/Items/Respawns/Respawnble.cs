@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 namespace Gift2
 {
@@ -11,6 +12,7 @@ namespace Gift2
         private float _timeAfterKill;
         private float RandomDelta => TimeToRespawn * RandomDeltaPercent;
         private Vector3 _startPosition = Vector3.zero;
+        [Inject] private RespawnController respawnController;
     
         private Vector3 GetRandomPosition()
         {
@@ -45,7 +47,7 @@ namespace Gift2
             gameObject.SetActive(false);
             var timeToRespawn = TimeToRespawn;
             timeToRespawn += Random.Range(-RandomDelta, RandomDelta);
-            RespawnController.Instance?.AddToRespawn(this, timeToRespawn);
+            respawnController.AddToRespawn(this, timeToRespawn);
         }
     }
 }
