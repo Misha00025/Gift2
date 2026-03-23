@@ -3611,7 +3611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7305029509220555853, guid: a59e7402efb9c0536908f2c7f5189f07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000044988035
+      value: 0.00020962159
       objectReference: {fileID: 0}
     - target: {fileID: 7965352353327372168, guid: a59e7402efb9c0536908f2c7f5189f07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -11923,11 +11923,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 587117329}
   CharacterMover: {fileID: 1731135034}
-  Resources:
-  - Key: 49
-    Item: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-  - Key: 50
-    Item: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
   Shop: {fileID: 0}
   Joystick: {fileID: 1379329272}
 --- !u!114 &587117334
@@ -12004,8 +11999,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  ClearDebug: 0
-  UseTest: 1
+  ClearDebug: 1
+  UseTest: 0
   TestQuestsCompleted: 3
   Purchases:
   - Shop: SpeedShop
@@ -16943,6 +16938,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1868198157552236907, guid: 75947a98379060abba709f0f5cc245d1, type: 3}
   m_PrefabInstance: {fileID: 843074347}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &853946257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8756435898277711919, guid: d180df4f674b1cd908b7ef8c649ea384, type: 3}
+  m_PrefabInstance: {fileID: 4717960608424603768}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7042630f3ea0cae48f6b601e4292237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &854555120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89521,7 +89527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7305029509220555853, guid: a59e7402efb9c0536908f2c7f5189f07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000044988035
+      value: 0.00020962159
       objectReference: {fileID: 0}
     - target: {fileID: 7965352353327372168, guid: a59e7402efb9c0536908f2c7f5189f07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -99598,7 +99604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7305029509220555853, guid: a59e7402efb9c0536908f2c7f5189f07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000044988035
+      value: 0.00020962159
       objectReference: {fileID: 0}
     - target: {fileID: 7965352353327372168, guid: a59e7402efb9c0536908f2c7f5189f07, type: 3}
       propertyPath: m_AnchorMax.y
@@ -109596,6 +109602,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 587117329}
+    - target: {fileID: 8173961984763521722, guid: d180df4f674b1cd908b7ef8c649ea384, type: 3}
+      propertyPath: ResourcesView
+      value: 
+      objectReference: {fileID: 853946257}
     - target: {fileID: 8370245297114671462, guid: d180df4f674b1cd908b7ef8c649ea384, type: 3}
       propertyPath: m_Name
       value: ==UI==

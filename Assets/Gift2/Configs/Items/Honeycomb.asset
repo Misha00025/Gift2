@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a135eb14371000143a3c46255085cecb, type: 3}
+  m_Script: {fileID: 11500000, guid: 35c39a1008bcca679bce52a079d2c32a, type: 3}
   m_Name: Honeycomb
   m_EditorClassIdentifier: 
   <Name>k__BackingField: "\u0412\u043E\u0441\u043A"
   <Icon>k__BackingField: {fileID: -4633134661340006208, guid: 2aba2cd26c3238b82a3f51c89b12f094, type: 3}
   <Description>k__BackingField: 
-  <MaxStack>k__BackingField: 5000
+  <MaxStack>k__BackingField: 1000

@@ -6,6 +6,7 @@ using Gift2.Meta;
 using HeneGames.DialogueSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Wof.InventoryManagement;
 
 public class TestInputs : MonoBehaviour
 {
@@ -18,7 +19,6 @@ public class TestInputs : MonoBehaviour
 
     public Player Player;
     public CharacterMover CharacterMover;
-    public List<KeyItem> Resources;
     public ShopView Shop;
     public Joystick Joystick;
     private Interactor _interactor;

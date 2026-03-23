@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da8f1f84488c6659af47c709aa52068, type: 3}
+  m_Script: {fileID: 11500000, guid: 53c4fcfd2f424442abac99b855414fb1, type: 3}
   m_Name: TestInventory
   m_EditorClassIdentifier: 
-  SlotsCount: 4
+  SlotsCount: 20
   Items: []

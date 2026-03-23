@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gift2.Core
+namespace Wof.InventoryManagement
 {    
     public interface IItemConfig 
     {

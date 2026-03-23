@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gift2.Core
+namespace Wof.InventoryManagement
 {
     [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
     public class ItemConfig : ScriptableObject, IItemConfig

@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
-using Gift2.Core;
 using UnityEngine;
 using UnityEngine.Events;
 using Wof;
+using Wof.InventoryManagement;
 
 public class CollectableItem : MonoBehaviour
 {

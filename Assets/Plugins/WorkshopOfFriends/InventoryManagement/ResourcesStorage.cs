@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Gift2.Core
+namespace Wof.InventoryManagement
 {
     public class ResourcesStorage
     {
@@ -11,6 +11,18 @@ namespace Gift2.Core
         
         public event Action<IInventorySlot> OnSlotChanged;
         
+        public ResourcesStorage(IReadOnlyList<InventorySlot> slots)
+        {
+            _resources = new InventorySlot[slots.Count];
+            _indexByKey = new Dictionary<string, int>(slots.Count);
+            
+            for (var i = 0; i < slots.Count; i++)
+            {
+                _resources[i] = slots[i];
+                _indexByKey[slots[i].Item.Key] = i;
+            }
+        }
+
         public ResourcesStorage(IReadOnlyList<Item> resources)
         {
             _resources = new InventorySlot[resources.Count()];
@@ -82,7 +94,7 @@ namespace Gift2.Core
             if (string.IsNullOrEmpty(key) || !_indexByKey.TryGetValue(key, out int index))
                 return false;
                 
-            return Count(key) == Slots[index].Item.MaxStack;
+            return Count(key) == Slots[index].MaxAmount;
         }
         
         public void Clear()

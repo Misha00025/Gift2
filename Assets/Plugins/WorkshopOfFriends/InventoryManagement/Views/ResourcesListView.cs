@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 
-namespace Gift2.Core
+namespace Wof.InventoryManagement.UI
 {
-    public class ResourcesRowView : ResourcesView
+    public class ResourcesListView : ResourcesView
     {
         [Header("Prefabs")]
         [SerializeField] private ResourceItemUI resourceItemPrefab; 

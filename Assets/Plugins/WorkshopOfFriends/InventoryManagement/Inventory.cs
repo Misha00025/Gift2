@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 
 
-namespace Gift2.Core
+namespace Wof.InventoryManagement
 {    
     public interface IInventorySlot
     {
         public Item Item { get; }
         public int Amount { get; }
+        public int MaxAmount { get; }
         public bool IsEmpty { get; }
         public bool IsFull { get; }
     }
@@ -17,6 +18,7 @@ namespace Gift2.Core
     {
         public Item Item { get; set; }
         public int Amount { get; set; }
+        public int MaxAmount { get; set; }
 
         public InventorySlot()
         {
@@ -28,6 +30,7 @@ namespace Gift2.Core
         {
             this.Item = item;
             this.Amount = amount;
+            this.MaxAmount = item.MaxStack;
         }
 
         public bool IsEmpty => Item?.Config == null || Amount == 0;

@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Gift2.Core;
-using Unity.VisualScripting;
 using UnityEngine;
+using Wof.InventoryManagement;
 
 namespace Gift2
 {

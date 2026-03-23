@@ -1,5 +1,5 @@
-using Gift2.Core;
 using UnityEngine;
+using Wof.InventoryManagement;
 
 [RequireComponent(typeof(Collider2D))]
 public class ItemsCollector : MonoBehaviour

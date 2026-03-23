@@ -2,6 +2,7 @@ using Gift2.Core;
 using Gift2.Meta;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Wof.InventoryManagement.UI;
 
 namespace Gift2
 {

@@ -1,5 +1,6 @@
 using Gift2.Core;
 using UnityEngine;
+using Wof.InventoryManagement.UI;
 
 public class HUDController : MonoBehaviour
 {

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gift2.Core
+namespace Wof.InventoryManagement
 {
     [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory/Config")]
     public class InventoryConfig : ScriptableObject

@@ -1,4 +1,5 @@
 using Gift2.Core;
+using Wof.InventoryManagement;
 
 namespace Gift2.Meta
 {

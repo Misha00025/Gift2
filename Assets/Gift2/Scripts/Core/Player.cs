@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Gift2.Core;
 using Gift2.Meta;
 using UnityEngine;
+using Wof.InventoryManagement;
 
 namespace Gift2.Core
 {

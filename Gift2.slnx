@@ -2,9 +2,11 @@
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="PauseManager-Editor.csproj" />
   <Project Path="PauseManager.csproj" />
+  <Project Path="Wof.InventoryManagement.csproj" />
   <Project Path="DOTween.Modules.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="WorkshopOfFriends.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="WofTypes.csproj" />
+  <Project Path="Wof.InventoryManagement.UI.csproj" />
 </Solution>

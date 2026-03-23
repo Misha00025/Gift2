@@ -2,13 +2,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Gift2.Core
+namespace Wof.InventoryManagement.UI
 {
     public class ResourceItemUI : MonoBehaviour
     {
-        [SerializeField] private Image iconImage;
-        [SerializeField] private TextMeshProUGUI currentText;
-        [SerializeField] private TextMeshProUGUI maxText;
+        [SerializeField] private Image _iconImage;
+        [SerializeField] private TextMeshProUGUI _nameText;
+        [SerializeField] private TextMeshProUGUI _currentAmountText;
+        [SerializeField] private TextMeshProUGUI _maxAmountText;
         public RectTransform Container;
 
         public int CurrentAmount { get; private set; }
@@ -18,7 +19,10 @@ namespace Gift2.Core
         {
             if (slot.Item.Config == null) return;
 
-            iconImage.sprite = slot.Item.Config.Icon;
+            if (_nameText != null)
+                _nameText.SetText(slot.Item.Config.Name);
+
+            _iconImage.sprite = slot.Item.Config.Icon;
             CurrentAmount = slot.Amount;
             maxAmount = slot.Item.MaxStack;
 
@@ -33,8 +37,8 @@ namespace Gift2.Core
 
         private void UpdateTexts()
         {
-            currentText.text = CurrentAmount.ToString();
-            maxText.text = maxAmount.ToString();
+            _currentAmountText.text = CurrentAmount.ToString();
+            _maxAmountText.text = maxAmount.ToString();
         }
     }
 }

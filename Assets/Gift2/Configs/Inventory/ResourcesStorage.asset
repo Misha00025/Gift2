@@ -9,11 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae904d297f21368699887c66712fca8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c227388145cc6d86a6f286afb255505, type: 3}
   m_Name: ResourcesStorage
   m_EditorClassIdentifier: 
   Resources:
-  - {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
-  - {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
-  - {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
-  - {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+  - Config: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
+    OverrideMaxAmount: 0
+    NewMaxAmount: 0
+  - Config: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
+    OverrideMaxAmount: 0
+    NewMaxAmount: 0
+  - Config: {fileID: 11400000, guid: eb7a95af6574cf67baa9f1240219badd, type: 2}
+    OverrideMaxAmount: 0
+    NewMaxAmount: 0
+  - Config: {fileID: 11400000, guid: 30030445b4609f449bfcff38e6cff952, type: 2}
+    OverrideMaxAmount: 0
+    NewMaxAmount: 0

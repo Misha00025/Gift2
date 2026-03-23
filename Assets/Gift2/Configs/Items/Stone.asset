@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a135eb14371000143a3c46255085cecb, type: 3}
+  m_Script: {fileID: 11500000, guid: 35c39a1008bcca679bce52a079d2c32a, type: 3}
   m_Name: Stone
   m_EditorClassIdentifier: 
   <Name>k__BackingField: "\u041A\u0430\u043C\u0435\u043D\u044C"
-  <Icon>k__BackingField: {fileID: -7888296697152109952, guid: 83db8f44a4829183eb7f9dcb6b510add, type: 3}
+  <Icon>k__BackingField: {fileID: 4337684191699249041, guid: f5f7a124c3b1e584296799f943fa7de3, type: 3}
   <Description>k__BackingField: 
   <MaxStack>k__BackingField: 50000
