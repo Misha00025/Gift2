@@ -16,7 +16,7 @@ namespace Gift2.Meta
 
         public override void Give()
         {
-            Quest.Player.Inventory.AddItem(_item, _amount);
+            Quest.Player.Inventory.Add(_item, _amount);
         }
     }
 }

@@ -32,8 +32,6 @@ public class TestInputs : MonoBehaviour
     
     void Start()
     {
-        var collector = FindAnyObjectByType<ItemsCollector>();
-        collector?.SetStorage(Player.ResourcesStorage);
         _interactor = FindAnyObjectByType<Interactor>();
         var playerActions = InputSystem.actions.FindActionMap("Player");
         var uiActions = InputSystem.actions.FindActionMap("UI");

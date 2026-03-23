@@ -24,7 +24,7 @@ namespace Wof.InventoryManagement
             {
                 var item = slot.Config.Build();
                 var count = slot.Amount;
-                inventory.AddItem(item, count);
+                inventory.Add(item, count);
             }
             return inventory;
         }

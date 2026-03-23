@@ -1,5 +1,3 @@
-using Gift2.Core;
-using Gift2.Gameplay;
 using UnityEngine;
 
 public class Character : MonoBehaviour

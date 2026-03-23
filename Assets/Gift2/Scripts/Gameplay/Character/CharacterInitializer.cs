@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Gift2.Core;
 using UnityEngine;
+using Wof.InventoryManagement;
 using Zenject;
 
 [RequireComponent(typeof(Character), typeof(CharacterMover))]
@@ -15,9 +16,10 @@ public class CharacterInitializer : MonoInstaller
     public override void InstallBindings()
     {
         var character = GetComponent<Character>();
+        var inventory = Player.ResourcesStorage;
         
         Container.Bind<Character>().FromInstance(character).AsSingle();
-        
+        Container.Bind<IInventory>().FromInstance(inventory).AsCached();
     }
     
     void Awake()

@@ -16,14 +16,14 @@ namespace Wof.InventoryManagement.UI
         [HideInInspector] public int Index;            // индекс слота в инвентаре
         [HideInInspector] public Inventory Inventory;  // ссылка на инвентарь (для взаимодействия)
         
-        private InventorySlot currentSlot;
+        private IInventorySlot currentSlot;
         
         // Можно добавить обработчики кликов, перетаскивания и т.п.
         
         /// <summary>
         /// Обновляет отображение слота на основе данных из InventorySlot.
         /// </summary>
-        public void SetSlot(InventorySlot slot)
+        public void SetSlot(IInventorySlot slot)
         {
             currentSlot = slot;
             

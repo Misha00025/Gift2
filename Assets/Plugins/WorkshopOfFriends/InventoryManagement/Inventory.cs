@@ -5,47 +5,17 @@ using System.Collections.Generic;
 
 namespace Wof.InventoryManagement
 {    
-    public interface IInventorySlot
+    public interface IInventory 
     {
-        public Item Item { get; }
-        public int Amount { get; }
-        public int MaxAmount { get; }
-        public bool IsEmpty { get; }
-        public bool IsFull { get; }
+        public IReadOnlyList<IInventorySlot> Slots { get; }
+        public bool Add(Item item, int amount);
+        public bool Remove(string key, int amount);
+        public int Count(string key);
+        public bool IsFull(Item item);
     }
 
-    public class InventorySlot : IInventorySlot
+    public class Inventory : IInventory
     {
-        public Item Item { get; set; }
-        public int Amount { get; set; }
-        public int MaxAmount { get; set; }
-
-        public InventorySlot()
-        {
-            Item = default;
-            Amount = 0;
-        }
-
-        public InventorySlot(Item item, int amount)
-        {
-            this.Item = item;
-            this.Amount = amount;
-            this.MaxAmount = item.MaxStack;
-        }
-
-        public bool IsEmpty => Item?.Config == null || Amount == 0;
-        public bool IsFull => !IsEmpty && Amount >= Item.MaxStack;
-
-        public void Clear()
-        {
-            Item = default;
-            Amount = 0;
-        }
-    }
-
-    public class Inventory
-    {
-        private int _slotCount;
         private List<InventorySlot> _slots;
 
         public event Action<InventorySlot> SlotChanged;
@@ -53,15 +23,14 @@ namespace Wof.InventoryManagement
 
         public Inventory(int slotCount)
         {
-            _slotCount = slotCount;
             _slots = new();
             for (int i = 0; i < slotCount; i++)
                 _slots.Add(new InventorySlot());
         }
 
-        public IReadOnlyList<InventorySlot> Slots => _slots;
+        public IReadOnlyList<IInventorySlot> Slots => _slots;
 
-        public bool AddItem(Item item, int amount = 1)
+        public bool Add(Item item, int amount = 1)
         {
             if (item.Config == null || amount <= 0) return false; 
 
@@ -102,7 +71,7 @@ namespace Wof.InventoryManagement
             return success;
         }
 
-        public bool RemoveItem(string key, int amount = 1)
+        public bool Remove(string key, int amount = 1)
         {
             if (string.IsNullOrEmpty(key) || amount <= 0) return false;
 
@@ -141,7 +110,20 @@ namespace Wof.InventoryManagement
             return true;
         }
 
-        public int CountItem(string key)
+        public bool IsFull(Item item)
+        {
+            var full = true;
+            foreach (var slot in _slots)
+            {
+                if (slot.Item.Key == item.Key && slot.Amount < slot.MaxAmount)
+                    full = false;
+                if (slot.IsEmpty)
+                    full = false;
+            }
+            return full;
+        }
+
+        public int Count(string key)
         {
             int total = 0;
             foreach (var slot in _slots)

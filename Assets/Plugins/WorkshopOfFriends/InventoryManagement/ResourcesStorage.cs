@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Wof.InventoryManagement
 {
-    public class ResourcesStorage
+    public class ResourcesStorage : IInventory
     {
         private InventorySlot[] _resources;
         private readonly Dictionary<string, int> _indexByKey;

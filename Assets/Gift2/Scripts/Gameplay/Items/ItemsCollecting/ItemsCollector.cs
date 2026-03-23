@@ -1,21 +1,17 @@
 using UnityEngine;
 using Wof.InventoryManagement;
+using Zenject;
 
 [RequireComponent(typeof(Collider2D))]
 public class ItemsCollector : MonoBehaviour
 {
     private Vector3 _defaultScale;
-    private ResourcesStorage _storage;
-    private Character _character;
+    [Inject] private IInventory _storage;
+    [Inject] private Character _character;
 
     void Awake()
     {
         _defaultScale = transform.localScale;
-    }
-
-    public void SetStorage(ResourcesStorage storage)
-    {
-        _storage = storage;
     }
     
     void FixedUpdate()

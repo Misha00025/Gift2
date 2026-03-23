@@ -14,8 +14,8 @@ namespace Gift2.Core
         private ResourcesStorage _resourcesStorage;
         
         public Character Character;
-        
-        void Awake()
+    
+        public void Initialize()
         {
             if (DefaultInventory != null)
                 _inventory = DefaultInventory.Build();
