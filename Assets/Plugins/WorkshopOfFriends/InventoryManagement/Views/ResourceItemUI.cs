@@ -24,7 +24,7 @@ namespace Wof.InventoryManagement.UI
 
             _iconImage.sprite = slot.Item.Config.Icon;
             CurrentAmount = slot.Amount;
-            maxAmount = slot.Item.MaxStack;
+            maxAmount = slot.MaxAmount;
 
             UpdateTexts();
         }

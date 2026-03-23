@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Resources:
   - Config: {fileID: 11400000, guid: 5dcb98913abf1d71c8e35a3dda837986, type: 2}
-    OverrideMaxAmount: 0
-    NewMaxAmount: 0
+    OverrideMaxAmount: 1
+    NewMaxAmount: 500000
   - Config: {fileID: 11400000, guid: ec17fba11c61e0a9cbd22145cbb640c3, type: 2}
     OverrideMaxAmount: 0
     NewMaxAmount: 0

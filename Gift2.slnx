@@ -5,8 +5,9 @@
   <Project Path="Wof.InventoryManagement.csproj" />
   <Project Path="DOTween.Modules.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="WofTypesUI.csproj" />
   <Project Path="WorkshopOfFriends.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
-  <Project Path="WofTypes.csproj" />
   <Project Path="Wof.InventoryManagement.UI.csproj" />
+  <Project Path="WofTypes.csproj" />
 </Solution>
