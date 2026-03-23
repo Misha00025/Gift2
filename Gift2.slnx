@@ -1,5 +1,7 @@
 ﻿<Solution>
+  <Project Path="Zenject.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Zenject-Editor.csproj" />
   <Project Path="PauseManager-Editor.csproj" />
   <Project Path="PauseManager.csproj" />
   <Project Path="Wof.InventoryManagement.csproj" />
