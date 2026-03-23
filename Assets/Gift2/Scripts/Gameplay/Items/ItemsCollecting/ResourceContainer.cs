@@ -6,6 +6,7 @@ using Wof;
 using Wof.Types;
 using Wof.Types.UI;
 using Wof.Views;
+using Zenject;
 
 public class ResourceContainer : Respawnble, IDamageable
 {
@@ -40,6 +41,8 @@ public class ResourceContainer : Respawnble, IDamageable
     
     private int _lastThreshold;
     private int _lastHealth;
+    
+    [Inject] private DamageScaler DamageScaler;
 
     void Start()
     {
@@ -93,7 +96,7 @@ public class ResourceContainer : Respawnble, IDamageable
         if (MinStrength > damage.Strength)
             return 0;
         var result = damage.Value;
-        var scale = DamageScaler.Instance?.GetScale(Key) ?? 1f;
+        var scale = DamageScaler?.GetScale(Key) ?? 1f;
         result = Mathf.RoundToInt(result * damage.Strength * scale);
         if (result <= 0)
             return 1;

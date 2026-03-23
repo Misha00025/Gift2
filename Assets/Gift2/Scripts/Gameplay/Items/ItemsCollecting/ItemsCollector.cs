@@ -18,11 +18,6 @@ public class ItemsCollector : MonoBehaviour
         _storage = storage;
     }
     
-    public void Initialize(Character character)
-    {
-        _character = character;
-    }
-    
     void FixedUpdate()
     {
         if (_character == null) return;

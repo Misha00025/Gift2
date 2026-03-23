@@ -1,9 +1,10 @@
 using UnityEngine;
+using Zenject;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterMover : MonoBehaviour
 {
-    private Character _character;
+    [Inject] private Character _character;
     private Rigidbody2D _rb;
     private Animator _animator;
 
@@ -17,11 +18,6 @@ public class CharacterMover : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
-    }
-
-    public void Initialize(Character character)
-    {
-        _character = character;
     }
 
     public void Move(Vector2 direction)

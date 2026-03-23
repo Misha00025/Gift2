@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
+using Zenject;
 
 public class RotateAroundCenter : MonoBehaviour
 {
@@ -19,17 +20,12 @@ public class RotateAroundCenter : MonoBehaviour
     public bool FaceAwayFromCenter = false;
     private float _currentAngle = 0f;
     private float _angleStep;
-    private Character _character;
+    [Inject] private Character _character;
 
     void Start()
     {
         _angleStep = 360f / Objects.Count;
         PositionObjects();
-    }
-
-    public void Initialize(Character character)
-    {
-        _character = character;
     }
 
     public void AddObject(Transform transform)
